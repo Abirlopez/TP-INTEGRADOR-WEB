@@ -1,14 +1,8 @@
 *{
     margin: 0;
-    font-family: Roboto, sans-serif;
-*{  margin: 0;
-  margin: 0;
-  padding: 0;
     padding: 0;
     font-family: Poppins, sans-serif;
     box-sizing: border-box;
-  font-family: Poppins, sans-serif;
-  box-sizing: border-box;
 }
 
 .menu{
@@ -24,26 +18,15 @@
   margin: 0;
 }
 
-.menu-derecha{
-    display: flex;
-    align-items: center;
 .menu .menu-izquierda{
   display: flex;
   align-items: center;
   width: 35%;
 }
 
-.logo{
-    width: 120px;
-    margin-left: 30px;
 .menu .menu-medio{
   width: 30%;
-}
 
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 0 50px;
 }
 
 .menu .menu-medio ul{
@@ -52,33 +35,18 @@
   list-style-type: none;
 }
 
-
-.menu ul li a {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0px;
-  color: #222121;
 a{
   text-decoration: none;
-  padding: 10px;
-  margin: 0 10px;
   padding: 0;
   margin: 0;
   color: white;
 }
 
-.usuario{
-    width: 30px;
-    margin-left: 30x;
-    margin-right: 30px;
-}.menu .menu-derecha {
-  justify-content: flex-end;
 .menu .menu-derecha {
   justify-content: flex-end;
   display: flex;
   width: 35%;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .menu .menu-derecha .iniciar-sesion{
@@ -86,7 +54,6 @@ a{
   background-color: #FF6B00;
   border-radius: 20px;
   padding: 0.4rem 1rem 0.4rem 1rem;
-  padding: 0.4rem;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
@@ -94,5 +61,4 @@ a{
 
 .menu-medio a:hover {
   border-bottom: 3px solid #FF6B00 ;               
-}
 }
