@@ -2,9 +2,12 @@
     margin: 0;
     font-family: Roboto, sans-serif;
 *{  margin: 0;
+  margin: 0;
   padding: 0;
     font-family: Poppins, sans-serif;
     box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
 }
 
 .menu{
@@ -57,8 +60,9 @@ a{
   text-decoration: none;
   padding: 10px;
   margin: 0 10px;
+  padding: 0;
+  margin: 0;
   color: white;
-
 }
 
 .usuario{
@@ -67,9 +71,11 @@ a{
     margin-right: 30px;
 }.menu .menu-derecha {
   justify-content: flex-end;
+.menu .menu-derecha {
   display: flex;
   width: 35%;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .menu .menu-derecha .iniciar-sesion{
@@ -77,6 +83,7 @@ a{
   background-color: #FF6B00;
   border-radius: 20px;
   padding: 0.4rem 1rem 0.4rem 1rem;
+  padding: 0.4rem;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
