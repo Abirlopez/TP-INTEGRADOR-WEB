@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #073B4C;
+  background-color: #315762;
   width: 100%;
   height: 3.5rem;
   padding: 2rem;
@@ -52,6 +53,7 @@ a{
 .menu .menu-derecha .iniciar-sesion{
   display: flex;
   background-color: #FF6B00;
+  background-color: #E9631A;
   border-radius: 20px;
   padding: 0.4rem 1rem 0.4rem 1rem;
   align-items: center;
@@ -61,6 +63,7 @@ a{
 
 .menu-medio a:hover {
   border-bottom: 3px solid #FF6B00 ;               
+  border-bottom: 3px solid #E9631A ;               
 }
 
 main{
@@ -151,6 +154,7 @@ input, select {
 
 input:focus, select:focus {
   border-color: #007bff;
+  border-color: #315762;
 }
 
 .boton{
@@ -159,6 +163,7 @@ input:focus, select:focus {
 
 .btn-buscar {
   background-color: #FF6B00;
+  background-color: #E9631A;
   color: white;
   border: none;
   padding: 0.8rem 1.5rem;
@@ -169,6 +174,7 @@ input:focus, select:focus {
 
 .btn-buscar:hover {
   background-color: #0056b3;
+  background-color: #315762;
 }
 
 .ofertas{
@@ -234,6 +240,7 @@ input:focus, select:focus {
 .promo {
   top: 20px;
   background: #FF6B00;
+  background: #E9631A;
   padding: 4px 8px;
   border-radius: 6px;
   font-size: 12px;
