@@ -102,7 +102,6 @@ form{
 .busqueda form{
   width: 100%;
   display:grid;
-  grid-template-columns: repeat(5, 1fr);
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
   gap:0.8rem;
@@ -155,7 +154,6 @@ input:focus, select:focus {
 }
 
 .boton{
-  grid-column:3/4;
   grid-column:1/7;
 }
 
