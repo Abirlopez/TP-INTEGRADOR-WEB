@@ -251,6 +251,7 @@ input:focus, select:focus {
 
 
    @media (max-width: 767px) {
+    @media (max-width: 767px) {
   .menu {
     flex-direction: column;
     width: 100%;
@@ -279,6 +280,7 @@ input:focus, select:focus {
     border-top: 1px solid rgba(255,255,255,0.1);
   }
 }
+
 
     main {
         height: auto;
@@ -348,9 +350,12 @@ input:focus, select:focus {
         gap: 1rem;
         text-align: center;
     }
+    } 
+  }
 
 
 @media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1000px) {
 
     .menu {
       display: flex;
@@ -445,5 +450,6 @@ input:focus, select:focus {
     }
 
   }
+  } 
 
 
