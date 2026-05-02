@@ -352,6 +352,7 @@ input:focus, select:focus {
 
 
 @media (min-width: 768px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 1024px) {
 
     .menu {
       display: flex;
@@ -381,6 +382,10 @@ input:focus, select:focus {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr 1fr;
         gap: 1.2em;
+    }
+    main{
+      height: auto;
+      padding: 2em;
     }
 
   
@@ -421,6 +426,9 @@ input:focus, select:focus {
 
     .boton {
         grid-column: 1/4; 
+    }
+    .ofertas{
+      margin: 2em;
     }
 
     .ofertas .contenedor-ofertas {
