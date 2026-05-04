@@ -1,0 +1,423 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
+}
+
+.menu{
+  position: relative;
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #315762;
+  width: 100%;
+  height: 3.5rem;
+  padding: 2rem;
+  margin: 0;
+}
+
+.menu .menu-izquierda{
+  display: flex;
+  align-items: center;
+  width: 35%;
+}
+
+.menu .menu-medio{
+  width: 30%;
+
+}
+
+.menu .menu-medio ul{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.menu .menu-derecha {
+  justify-content: flex-end;
+  display: flex;
+  width: 35%;
+  align-items: center;
+}
+
+.menu .menu-derecha .iniciar-sesion{
+  display: flex;
+  background-color: #E9631A;
+  border-radius: 20px;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.menu-medio a:hover {
+  border-bottom: 3px solid #E9631A ;               
+}
+
+
+body{
+    width: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+main{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto ;
+    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.contenido div{
+    place-content: center;
+
+}
+
+
+.contenido{
+    padding-top:3%;
+    grid-column: 2/3;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    
+}
+
+.tarjeta-vuelo {
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    display: grid;
+    grid-template-columns: 80% 20%; 
+    border: 0.02em solid #bab7b7;
+    border-radius: 1em;
+    background-color: rgb(255, 255, 255);
+   padding: 0;
+   align-items: center;
+    
+}
+/*es la imagen y el nombre*/
+.aerolinea{
+    display: flex;
+    align-items: center; 
+    gap: 0.8em;          
+    text-align: left;   
+}
+
+.nombreAerolinea{
+    font-size: 0.8em;
+    color: #000000;
+}
+
+/*medida de la imagen*/
+.aeroargentina {
+    width: 4em;
+    height: auto;
+}
+
+/*contiene el vuelo, ida y vuelta*/
+.informacion{
+    display: flex;
+    flex-direction: column; /* Apila Ida arriba de Vuelta */
+    padding: 1em;
+    gap: 1em; /* Espacio entre Ida y Vuelta */
+}
+
+/*hora del viaje*/
+.info{
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column; /* Esto hace que IDA, Hora y EZE se apilen */
+    align-items: flex-start; 
+    justify-content: center;
+}
+
+/*ida o vuelta*/
+.fila {
+    display: grid;
+    /*  Aerolinea, Origen, Línea/Duración, Destino, Iconos(equipaje) */
+    grid-template-columns:  9.3em 6.25em 1fr 6.25em 6.25em;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.etiqueta {
+    font-size: 0.7em;
+    color: #777;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.hora {
+    font-size: 1.1em;
+    color: #000;
+}
+
+.ciudad {
+    font-size: 0.8em;
+    color: #444;
+}
+
+.duracion {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: 0 0.6em;
+    font-size: 0.7em;
+}
+
+.linea-trayecto {
+    width: 100%;       
+    height: 0.03em;       /* El grosor de la línea */
+    background-color: #ccc;
+    margin: 5px 0;   
+    position: relative;
+}
+
+.precio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: 0.03em solid #eee; /* Línea vertical que separa el precio */
+    padding: 0.9em;
+    background-color: white;
+}
+
+
+span{
+    font-size: 1em;
+    color: #555;
+}
+
+
+.monto{
+    font-size: 1.5em;
+     margin-top: 0.3em;
+}
+
+
+/* boton*/
+.oferta{
+    background-color: #e9631a;
+    color: white;
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    cursor: pointer; /*puntero mano*/
+    font-size: 0.9em;
+    border: none;
+}
+
+.mochila, .valija, .maleta {
+    width: 1.2em;
+    height: auto;
+}
+
+
+
+aside{/* Estilo del contenedor principal lateral */
+  grid-column: 1/2;
+  height: auto;
+  margin-left: 2em;
+}
+.vuelos{/* Estilo del contenedor verde */
+  display: flex;
+  flex-direction: column;
+  background-color: #315762;
+  height: 70vh;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  align-self: flex-start;
+  margin-left: 5%;
+}
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.tipo-vuelo {/* Contenedor de los botones de tipo de vuelo */
+  align-self: flex-start;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;  
+  margin-left: 5%;
+}
+
+.tipo-vuelo button {/* Botones de tipo de vuelo*/
+  flex: 1;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  white-space: nowrap; 
+  
+}
+.tipo-vuelo .activo {
+  background-color: white;
+  border: 1px solid #e9631a;
+  color: #e9631a;
+  
+}
+
+.contenedor-viaje { /* Bloque blanco de Origen/Destino */
+  background-color: white;
+  border-radius: 4px; 
+  padding: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 90%;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.origenydestino{ /* Fila interna de origen o destino */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 0;
+}
+
+.linea-separadora {
+  height: 1px;
+  background-color: #eee;
+  margin-left: 45px; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+input {/* Inputs de texto (Buenos Aires, etc.) */
+  border: none;           
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif ;
+}
+
+
+.texto {
+  display: flex;
+  flex-direction: column; 
+}
+
+
+.contenedor-fechas{/* Bloque de fechas */
+  width: 90%;
+  padding:2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  margin-top: 15px;
+}
+
+.fecha{
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.divisor-vertical {
+  width: 1px;
+  height: 40px;
+  background-color: #eee;
+}
+
+.contenedor-pasajero{/* Bloque de pasajero */
+  width: 90%;
+  padding: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  background-color: white;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+.fila-datos {  /* Contenedor para alinear el número y el select */
+  display: flex;
+  align-items: center; 
+  gap: 4px;            
+  font-size: 1rem;
+  font-weight: 600;    
+  color: #333;
+}
+#pasajeros{ /* Alinar el numero de pasajeros*/
+  text-align: center;
+}
+.buscar { 
+  width: 80%;
+  background-color: #E9631A;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+label{/* Etiquetas de título internas */
+  font-family: Arial, Helvetica, sans-serif ;
+  font-size: 15px;
+}
+
+.origen{
+  width: 5%;
+  padding-left: 4%;
+  
+}
+.destino{
+  width: 5%;
+  padding-left: 4%;
+  
+}
+.logo-pasajero{
+  width: 5%;
+  padding-left: 4%;
+}
+.filtros{/* Bloque de filtros */
+  border: 0.05em solid #eee;
+  margin-top: 1em;
+  padding-bottom: 2em;
+  
+  accent-color: #E9631A;;
+}
+.range{ /* Barra de precio */
+  width: 90%;
+}
+
+
+.rango-valores { /* Contenedor de los precios */
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 8px; 
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 2%;
+}

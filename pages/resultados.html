@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/resultados.css">
+    <title>Resultados</title>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+        <section class="menu-izquierda">
+          <a href="index.html"><img class="logo"  src="..\images\logo.png" alt="logo" height="35"></a>
+        </section>
+
+        <section class="menu-medio">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Vuelos</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Nosotros</a></li>
+        </ul>
+        </section>
+
+        <section class="menu-derecha">
+            <div class="iniciar-sesion">
+                <a href="#">Iniciar sesión</a>
+            <img class="usuario"   src="..\images\usuario.png" alt="usuario" width="30">
+            </div>
+        </section>
+    </nav>
+    </header>
+    <main>
+                <aside >
+                    <section class="vuelos"> <!-- Contenedor verde -->
+                    <h1> Vuelos </h1>
+                    <div class="tipo-vuelo"> <!-- Tipo de vuelo -->
+                    <button class="activo">Ida y vuelta</button>
+                    <button>Solo Ida</button>
+                    </div>
+                    <div class="contenedor-viaje">
+                        <div class="origenydestino"><!-- Contenedor origen y destino -->
+                        <img class="origen" src="..\images\Origen.svg">
+                        <div class="texto">
+                        <label>ORIGEN</label>
+                        <input type="text" value="Buenos Aires, Argentina">
+                        </div>
+                        </div>
+                        <div class="linea-separadora"></div>
+                        <div class="origenydestino">
+                        <img class="destino" src="..\images\Destino.svg">
+                        <div class="texto">
+                        <label>DESTINO</label>
+                        <input type="text" value="Madrid, España">
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="contenedor-fechas"><!-- Contenedor de fecha de ida y vuelta -->
+                        <div class="fecha">
+                        <label>FECHA SALIDA</label>
+                        <input type="date" value="2026-05-01">
+                        </div>
+                        <div class="divisor-vertical"></div>
+                        <div class="fecha">
+                        <label>FECHA VUELTA</label>
+                        <input type="date" value="2026-05-20">
+                        </div>
+                    </div>
+
+                    <div class="contenedor-pasajero"><!-- Contenedor de pasajero y el tipo de clase -->
+                        <img class="logo-pasajero" src="..\images\Pasajero.svg">
+                        <div class="texto">
+                        <label>PASAJEROS Y CLASES</label>
+                        <div class="datos">
+                        <input type="number" id="pasajeros" min="1" max="10" value="1">
+                        <select>
+                            <option>Económica</option>
+                            <option>Premium Economy</option>
+                            <option>Business</option>
+                            <option>Primera Clase</option>
+                        </select>
+                        </div>
+                        </div>
+                    </div>
+                    <button class="buscar">Buscar</button>
+                    </section>
+                    <section class="filtros"><!-- Comienzan los filtros -->
+                    <h2>Escalas</h2><!-- Contenedor de filtro de escala -->
+                    <input type="checkbox" id="todas-escalas" name="todas-escalas" value="todas-escalas">
+                    <label for="todas-escalas"> Todas las escalas</label><br>
+                    <input type="checkbox" id="directo" name="directo" value="directo">
+                    <label for="directo"> Directo</label><br>
+                    <input type="checkbox" id="1escala" name="1escala" value="1escala">
+                    <label for="1escala"> 1 escala</label><br>
+                    <input type="checkbox" id="2escala" name="2escala" value="2escala">
+                    <label for="2escala"> 2 o más escalas</label>
+                    
+                    <div class="linea-separadora"></div>
+                    
+                    <h2>Equipaje</h2> <!-- Contenedor de filtro de equipaje -->
+                    <input type="checkbox" id="todas-opciones" name="todas-opciones" value="todas-opciones">
+                    <label for="todas-opciones"> Todas las opciones</label><br>
+                    <input type="checkbox" id="personal" name="personal" value="personal">
+                    <label for="personal"> Articulo personal </label><br>
+                    <input type="checkbox" id="mano" name="mano" value="mano">
+                    <label for="mano"> Equipaje de mano</label><br>
+                    <input type="checkbox" id="bodega" name="bodega" value="bodega">
+                    <label for="bodega"> Equipaje de bodega</label>
+                    
+                    <div class="linea-separadora"></div>
+                    
+                    <h2>Precio</h2> <!-- Contenedor de filtro de precio -->
+                    <input class="range" type="range">
+                    <div class="rango-valores">
+                        <span>US$ 1.013</span>
+                        <span>US$ 14.630</span>
+                    </div>
+                    <div class="linea-separadora"></div>
+                    
+                    <h2>Aerolíneas</h2><!-- Contenedor de filtro de aerolineas -->
+                    <input type="checkbox" id="todas-aerolineas" name="todas-aerolineas" value="todas-aerolineas">
+                    <label for="todas-aerolineas"> Todas las aerolíneas</label><br>
+                    <input type="checkbox" id="argentinas" name="argentinas" value="argentinas">
+                    <label for="argentinas"> Aerolíneas Argentinas </label><br>
+                    <input type="checkbox" id="europa" name="europa" value="europa">
+                    <label for="europa"> Air Europa</label><br>
+                    <input type="checkbox" id="iberia" name="iberia" value="iberia">
+                    <label for="iberia"> Iberia</label><br>
+                    <input type="checkbox" id="latam" name="latam" value="latam">
+                    <label for="latam"> Latam</label><br>
+                    <input type="checkbox" id="lufthansa" name="lufthansa" value="lufthansa">
+                    <label for="lufthansa"> Lufthansa</label>
+                    </section>
+
+                </aside>
+
+           
+
+
+
+            <section class="contenido">
+                 <article class="opciones-vuelos">
+                    <div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/AeroArgentinas.jpg" class="aeroargentina">
+                                    <p class="nombreAerolinea">Aerolinea argentina</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>11:45</strong></span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">11h 00m</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>10:45</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/AeroArgentinas.jpg" class="aeroargentina">
+                                    <p class="nombreAerolinea">Aerolinea argentina</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>23:45</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">11h 00m</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>09:40</strong> </span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 1.739</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+                
+                    <div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/Iberia.jpg" class="aeroargentina">
+                                    <p class="nombreAerolinea">Iberia</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>13:00</strong></span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">11h 40m</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>05:40</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/Iberia.jpg" class="aeroargentina">
+                                    <p class="nombreAerolinea">Iberia</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>00:05</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">12h 35m</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>07:40</strong> </span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 2.036</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/AeroArgentinas.jpg" class="aeroargentina">
+                                    <p class="nombreAerolinea">Aerolinea argentina</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>23:55</strong></span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">12h 15min </span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>17:10</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/AeroArgentinas.jpg" class="aeroargentina">
+                                    <p class="nombreAerolinea">Aerolinea argentina</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>20:05</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">13h 05m</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>04:10</strong> </span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 2.286</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+                    
+
+                    <div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/airEuropa.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">Air Europa</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>12:10</strong></span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">12h  </span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>05:10</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/airEuropa.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">Air Europa</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>23:55</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">12h 45m</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>07:40</strong> </span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 3.303</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+
+
+                    <div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/latam.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">LATAM Airlines</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>12:55</strong></span>
+                                    <span class="ciudad">AEP</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">25h 15min  </span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">2 Escalas</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>19:10</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/latam.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">LATAM Airlines</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>14:45</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">23h 55min</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">1 Escala</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>09:40</strong> </span>
+                                    <span class="ciudad">AEP</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 1.667</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+
+<div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/Lufthansa.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">Lufthansa</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>16:35</strong></span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">20h 5min  </span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">2 Escalas</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>17:40</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/Lufthansa.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">Lufthansa</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>16:55</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">18h 30min</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">1 Escala</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>06:25</strong> </span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 1.973</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+                    
+
+<div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/latam.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">LATAM Airlines</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>14:55</strong></span>
+                                    <span class="ciudad">AEP</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">18h 10min  </span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">1 Escalas</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>14:05</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/latam.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">LATAM Airlines</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>23:45</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">24h 55min</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">2 Escala</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>19:40</strong> </span>
+                                    <span class="ciudad">AEP</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 2.009</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+<div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/Lufthansa.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">Lufthansa</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>16:35</strong></span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">22h 15min  </span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">1 Escalas</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>19:50</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/Lufthansa.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">Lufthansa</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>11:50</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">23h 35min</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">2 Escala</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>06:25</strong> </span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 1.982</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+                    
+<div class="tarjeta-vuelo">
+                        <div class="informacion">
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/airEuropa.png" class="aeroargentina">
+                                    <p class="nombreAerolinea">Air Europa</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">IDA</span>
+                                    <span class="hora"> <strong>12:10</strong></span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">12h  </span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>05:10</strong> </span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                
+                                <div class="icono-servicio">
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                </div>
+                            </div>
+
+
+                            <div class="fila">
+                                <div class="aerolinea">
+                                    <img src="../images/Iberia.jpg" class="aeroargentina">
+                                    <p class="nombreAerolinea">Iberia</p>
+                                </div>
+                                <div class="info">
+                                    <span class="etiqueta">VUELTA</span>
+                                    <span class="hora"> <strong>08:45</strong></span>
+                                    <span class="ciudad">MAD</span>
+                                </div>
+                                <div class="duracion">
+                                    <span class="tiempo">12h 40m</span>
+                                    <div class="linea-trayecto"></div> <span class="tipo-vuelo">Directo</span>
+                                </div>
+                                <div class="info">
+                                    <span class="hora"><strong>16:25</strong> </span>
+                                    <span class="ciudad">EZE</span>
+                                </div>
+                                <div class="icono-servicio"> 
+                                    <img src="../images/MOCHILA-color.svg" class="mochila">
+                                    <img src="../images/VALIJA-color.svg" class="valija">
+                                    <img src="../images/MALETA-color.svg" class="maleta">
+                                   </div>
+                            </div>
+
+                        </div>
+
+                        <div class="precio">
+                            <span class="desde">desde</span>
+                            <div class="monto">US$ 4.077</div>
+                            <button class="oferta">Ver oferta</button>
+                        </div>
+                    </div>
+
+                 </article>
+            </section>     
+    </main>
+    <footer>
+        
+       
+    </footer>
+</body>
+</html>
