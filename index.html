@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles\styles.css">
+    <link rel="stylesheet" href="../styles\styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <title>FlyNow!</title>
+    
 </head>
 
 <body>
@@ -20,9 +21,9 @@
             <section class="menu-medio">
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Vuelos</a></li>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="pages/DetalleDeVuelo.html">Vuelos</a></li>
+                    <li><a href="pages/ofertas.html">Ofertas</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
                 </ul>
             </section>
 
@@ -155,7 +156,36 @@
 
     </section>
 
+     <section class="faq-section">
+        <h2>Preguntas Frecuentes</h2>
 
+        <div class="faq-container">
+            <!-- Pregunta 1 -->
+            <details class="faq-item">
+                <summary>¿Cómo conseguir vuelos baratos? <span class="arrow"></span></summary>
+                <p>Aquí va la respuesta con los tips para vuelos económicos... </p>
+            </details>
+
+            <!-- Pregunta 2 -->
+            <details class="faq-item">
+                <summary>¿Dónde puedo alquilar autos baratos? <span class="arrow"></span></summary>
+                <p>Puedes comparar precios en distintas agencias locales...</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>¿Cómo conseguir vuelos baratos? <span class="arrow"></span></summary>
+                <p>Aquí va la respuesta con los tips para vuelos económicos... </p>
+            </details>
+
+            <!-- Pregunta 2 -->
+            <details class="faq-item">
+                <summary>¿Dónde puedo alquilar autos baratos? <span class="arrow"></span></summary>
+                <p>Puedes comparar precios en distintas agencias locales...</p>
+            </details>
+
+            <!-- Repite para las demás preguntas -->
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="f-suscripcion">
@@ -183,10 +213,10 @@
             <div class="f-section">
                 <h2 class="f-titulos">Mapa del sitio</h2>
                 <ul>
-                    <li>Inicio</li>
-                    <li>Contacto</li>
-                    <li>Vuelos</li>
-                    <li>Ofertas</li>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="pages/DetalleDeVuelo.html">Vuelos</a></li>
+                    <li><a href="pages/ofertas.html">Ofertas</a></li>
                 </ul>
             </div>
             <div class="f-section">
@@ -212,7 +242,6 @@
         </div>
 
     </footer>
-
 
 </body>
 
