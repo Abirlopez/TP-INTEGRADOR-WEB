@@ -388,20 +388,12 @@ label{/* Etiquetas de título internas */
   font-size: 15px;
 }
 
-.origen{
-  width: 5%;
+.origen, .destino, .logo-pasajero{
+  width: 10%;
   padding-left: 4%;
   
 }
-.destino{
-  width: 5%;
-  padding-left: 4%;
-  
-}
-.logo-pasajero{
-  width: 5%;
-  padding-left: 4%;
-}
+
 .filtros{/* Bloque de filtros */
   border: 0.05em solid #eee;
   margin-top: 1em;
