@@ -108,8 +108,8 @@ main{
    align-items: center;
     
 }
-/*es la imagen y el nombre*/
-.aerolinea{
+
+.aerolinea{/*es la imagen y el nombre*/
     display: flex;
     align-items: center; 
     gap: 0.8em;          
@@ -121,33 +121,32 @@ main{
     color: #000000;
 }
 
-/*medida de la imagen*/
-.aeroargentina {
+
+.aeroargentina {/*medida de la imagen*/
     width: 4em;
     height: auto;
 }
 
-/*contiene el vuelo, ida y vuelta*/
-.informacion{
+
+.informacion{/*contiene el vuelo, ida y vuelta*/
     display: flex;
     flex-direction: column; /* Apila Ida arriba de Vuelta */
     padding: 1em;
     gap: 1em; /* Espacio entre Ida y Vuelta */
 }
 
-/*hora del viaje*/
-.info{
+
+.info{/*hora del viaje*/
     font-size: 1.1em;
     display: flex;
-    flex-direction: column; /* Esto hace que IDA, Hora y EZE se apilen */
+    flex-direction: column; 
     align-items: flex-start; 
     justify-content: center;
 }
 
-/*ida o vuelta*/
-.fila {
+
+.fila {/*ida o vuelta*/
     display: grid;
-    /*  Aerolinea, Origen, Línea/Duración, Destino, Iconos(equipaje) */
     grid-template-columns:  9.3em 6.25em 1fr 6.25em 6.25em;
     align-items: center;
     text-align: center;
@@ -183,7 +182,7 @@ main{
 
 .linea-trayecto {
     width: 100%;       
-    height: 0.03em;       /* El grosor de la línea */
+    height: 0.03em;       
     background-color: #ccc;
     margin: 5px 0;   
     position: relative;
@@ -194,7 +193,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-left: 0.03em solid #eee; /* Línea vertical que separa el precio */
+    border-left: 0.03em solid #eee; 
     padding: 0.9em;
     background-color: white;
 }
@@ -219,7 +218,7 @@ span{
     margin-top: 0.5em;
     padding: 0.5em 1em;
     border-radius: 0.5em;
-    cursor: pointer; /*puntero mano*/
+    cursor: pointer; 
     font-size: 0.9em;
     border: none;
 }
@@ -309,7 +308,7 @@ h2{
   margin-top: 5px;
   margin-bottom: 5px;
 }
-input {/* Inputs de texto (Buenos Aires, etc.) */
+input {/* Inputs de texto*/
   border: none;           
   outline: none;
   font-family: Arial, Helvetica, sans-serif ;
@@ -372,7 +371,7 @@ input {/* Inputs de texto (Buenos Aires, etc.) */
 #pasajeros{ /* Alinar el numero de pasajeros*/
   text-align: center;
 }
-.buscar { 
+.buscar { /*boton buscar*/
   width: 80%;
   background-color: #E9631A;
   border: none;
@@ -385,10 +384,10 @@ input {/* Inputs de texto (Buenos Aires, etc.) */
 }
 label{/* Etiquetas de título internas */
   font-family: Arial, Helvetica, sans-serif ;
-  font-size: 15px;
+  font-size: 17px;
 }
 
-.origen, .destino, .logo-pasajero{
+.origen, .destino, .logo-pasajero{ /*imagenes*/
   width: 10%;
   padding-left: 4%;
   
@@ -412,4 +411,114 @@ label{/* Etiquetas de título internas */
   margin-top: 8px; 
   font-family: Arial, Helvetica, sans-serif;
   padding-right: 2%;
+}
+
+/* Estilo del título del acordeón */
+summary {
+  list-style: none; 
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  padding: 15px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+}
+/* Quita la flecha por defecto en Safari */
+summary::-webkit-details-marker {
+  display: none;
+}
+/* Agregar una flecha que rote */
+summary::after {
+  content: '▶';
+  font-size: 0.7rem;
+  transition: transform 0.3s;
+  color: #777;
+  padding-left: 10%;
+}
+details[open] summary::after { /*Se encarga de darle movimiento al hacer clic*/
+  transform: rotate(90deg);
+}
+
+.contenedor-politicas {
+  display: flex; 
+  gap: 40px;     
+  flex-wrap: wrap; 
+  align-items: flex-start;
+}
+
+.politica-item {
+  display: flex;
+  align-items: center; 
+  gap: 15px;           
+}
+
+.politica-texto {
+  width: 300px;
+  max-width: 250px;
+}
+
+.titulo-opcion {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #333;
+}
+
+.subtitulo-opcion {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #777;
+  margin: 2px 0 0 0;
+}
+
+
+.switch {/* El interruptor (switch) */
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+
+.switch input {/* Ocultar el checkbox original */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {/* El fondo del slider */
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #315762 ; 
+  transition: .4s;
+  border-radius: 34px;
+}
+
+
+.slider:before {/* El círculo blanco del slider*/
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+
+input:checked + .slider {/* Color cuando está activo */
+  background-color: #E9631A; 
+}
+
+
+input:checked + .slider:before {/* Movimiento del círculo al activar */
+  transform: translateX(24px);
 }
