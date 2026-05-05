@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    
+  background-image: url(../images/fondo.png);
+  background-size: cover;
+  background-position: top;
+
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #315762;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.formulario {
+    background: #f5f5f5;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 25rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.formulario h2 {
+    margin-bottom: 0.5rem;
+    color: #1c2b36;
+}
+
+.formulario p {
+    margin-bottom: 1rem;
+    color: gray;
+    font-size: 0.9rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+input {
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button{
+    background: #E9631A;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+}
+
+.olvi-regis {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.olv-contrasenia {
+    display: block;
+    margin-bottom: 1rem;
+    color: gray;
+    text-decoration: none;
+}
+
+.registrate {
+    color: #ff5a00;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
