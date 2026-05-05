@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../styles/InicioSesion.css">
+</head>
+<body>
+
+    <header class="encabezado"> 
+        <div class="logo">✈ FlyNow</div>
+        <nav>
+            <a href="#">Terminos y condiciones</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <section class="formulario">
+            <h2>Iniciar sesión</h2>
+            <p>Ingresá a tu cuenta para continuar</p>
+
+            <form action="../index.html">
+                <label for="email">Correo electrónico</label>
+                <input type="email" placeholder="Correo electrónico"  id="email" required>
+
+                <label for="contrasenia">Contraseña</label>
+                <input type="contrasenia" placeholder="Contraseña" id="contrasenia" required>
+                <button type="submit">Ingresar</button>
+            </form>
+
+            <div class="olvi-regis">
+                <a href="contrasenia.html" class="olv-contrasenia">¿Olvidaste tu contraseña?</a>
+                <p>¿No tenés cuenta? <a href="registrate.html" class="registrate">Registrate</a></p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
