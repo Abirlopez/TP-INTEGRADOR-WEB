@@ -5,9 +5,10 @@
     box-sizing: border-box;
 }
 
-.menu{/* contenedor principal del menu */
+.menu{
   position: relative;
   display: flex;
+  margin: 1rem;
   align-items: center;
   justify-content: space-between;
   background-color: #315762;
@@ -48,7 +49,7 @@ a{
   align-items: center;
 }
 
-.menu .menu-derecha .iniciar-sesion{/* boton de inicio de sesion */
+.menu .menu-derecha .iniciar-sesion{
   display: flex;
   background-color: #E9631A;
   border-radius: 20px;
@@ -58,7 +59,7 @@ a{
   font-size: 0.9rem;
 }
 
-.menu-medio a:hover {/*Efecto Hover en el menú central */
+.menu-medio a:hover {
   border-bottom: 3px solid #E9631A ;               
 }
 
@@ -67,6 +68,7 @@ body{
     max-width: 100%;
     margin: 0;
    background-color: rgb(243, 241, 241);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .volver {
@@ -90,8 +92,8 @@ body{
     gap: 20px;
 }
 
-
-.detalle { /* detalle de vuelo (parte izquierda)*/
+/*todo el aside*/
+.detalle { 
     height: auto;
     grid-row: 1; 
     grid-column: 1/2;
@@ -140,22 +142,22 @@ span{
 }
 
 .bloque-grafico{
-    flex-grow: 1; 
+    flex-grow: 1; /* Ocupa todo el espacio restante */
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    padding: 0 0.6em;      
+    align-items: center; /* Texto arriba, línea abajo */
+    padding: 0 0.6em;      /* Espacio con los textos de los extremos */
 }
 
 .linea{
     display: flex;
-    align-items: center; 
+    align-items: center; /* Alinea círculos y línea */
     width: 100%;
     justify-content: center;
 }
 
 .linea-horizontal{
-    flex-grow: 1; 
+    flex-grow: 1; /* La línea ocupa todo el ancho entre círculos */
     height: 1px;
     background-color: #ddd;
 }
@@ -172,7 +174,7 @@ span{
     height: 8px;
     border: 1px solid #ccc;
     border-radius: 50%;
-    background-color: white; 
+    background-color: white; /* Relleno blanco */
 }
 
 .hora {
@@ -202,17 +204,17 @@ li{
     padding: 0;
 }
 
-.chico {
+.chico, .logo-informacion{
     width: 1em;
     height: auto;
 }
 
 .separador-puntos {
-    border: none;              
-    border-top: 2px dotted #ccc; 
+    border: none;               /* Quitamos la línea sólida por defecto */
+    border-top: 2px dotted #ccc; /* Línea de 2px, punteada y color gris */
     height: 0;
     width: 100%;
-    margin: 20px 0;           
+    margin: 20px 0;             /* Espacio arriba y abajo para que no esté pegada */
 }
 
 
@@ -291,11 +293,13 @@ li{
     display: block;
     margin: 0 auto;
 }
-/* Lógica de colores por estado del asiento */
+
 .disponible { background-color: #315762; cursor: pointer; }
 .ocupado { background-color: #E0E0E0; }
 .seleccionado { background-color: #e9631a; }
 
+.check-asiento { display: none; }
+.check-asiento:checked + .disponible { background-color: #e9631a; }
 
 .pasillo { width: 30px; }
 .num-fila { color: #888; text-align: center; }
@@ -305,26 +309,24 @@ li{
     height: 300px;
     background-color: #eee;
 }
-/* logica de intercambio  */
+/* LÓGICA DE INTERCAMBIO (Sin JavaScript) */
 .seleccionar-asiento {
     display: none; /* Oculto por defecto */
 }
 
-.check-asiento { display: none; }/*  El checkbox está oculto*/
-.check-asiento:checked + .disponible { background-color: #e9631a; }/* Cuando seleccionas un asiento disponible cambia de color*/
-
+/* Mostramos Ida al cargar o cuando se clickea su flecha */
 #vuelo-ida:not(:target), 
-#vuelo-ida:target { /* Mostramos Ida al cargar o cuando se clickea su flecha */
+#vuelo-ida:target {
     display: flex;
 }
 
-
-#vuelo-vuelta:target { /* Si Vuelta es el objetivo, se oculta Ida y muestra Vuelta */
+/* Si Vuelta es el objetivo, ocultamos Ida y mostramos Vuelta */
+#vuelo-vuelta:target {
     display: flex;
 }
 
 #vuelo-vuelta:target ~ #vuelo-ida,
-#vuelo-ida:has(~ #vuelo-vuelta:target) {/* cuando se cambia a vuelo vuelta, elvuelo ida se oculta*/
+#vuelo-ida:has(~ #vuelo-vuelta:target) {
     display: none;
 }
 
@@ -338,7 +340,7 @@ li{
     transition: 0.2s; 
 }
 .flecha:hover { 
-    transform: scale(1.1); /* Efecto de crecimiento suave al pasar el mouse */
+    transform: scale(1.1); 
 }
 
 .informacion-asiento {
@@ -351,7 +353,7 @@ li{
     gap: 10px;
 }
 
-.logo-informacion { width: 20px; }
+.img-informacion { width: 20px; }
 
 
 
@@ -369,7 +371,7 @@ li{
     border-radius: 0.8em;
     padding: 1em;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between; /* Alinea texto a la izq y botón a la der */
     align-items: center;
 }
 
@@ -428,7 +430,7 @@ li{
 }
 
 .monto-final {
-    color: #e9631a; 
+    color: #e9631a; /* Naranja FlyNow */
     font-weight: bold;
     font-size: 1.3em;
 }

@@ -1,151 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/detalle_estilo.css">
     <title>Detalle de Vuelo</title>
 </head>
-
 <body>
     <header>
         <nav class="menu">
             <section class="menu-izquierda">
-                <a href="index.html"><img class="logo" src="..\images\logo.png" alt="logo" height="35"></a>
+              <a href="index.html"><img class="logo"  src="..\images\logo.png" alt="logo" width= "35" ></a>
             </section>
 
             <section class="menu-medio">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Vuelos</a></li>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                </ul> 
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Vuelos</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
             </section>
 
             <section class="menu-derecha">
                 <div class="iniciar-sesion">
                     <a href="#">Iniciar sesión</a>
-                    <img class="usuario" src="..\images\usuario.png" alt="usuario" width="30">
+                <img class="usuario"   src="..\images\usuario.png" alt="usuario" width="30">
                 </div>
             </section>
         </nav>
+    
     </header>
         <main>
          <div class="titulo">
-                <a class="volver" href="vuelo.html"> ← Volver a resultados</a>
+                <a href="vuelo.html" class="volver"> ← Volver a resultados</a>
                 <h1>Detalle de Vuelo / Selecciona tu asiento</h1> 
                 <p>Revisa los detalles de tu viaje, elige tu asiento y continúa con tu compra.</p>  
              </div>
         <div class="contenedor-principal"> 
            
-            <aside class="detalle"> <!-- Barra lateral de resumen-->
+            <aside class="detalle"> 
               <h1>Detalle de vuelo</h1>
-
-    <main>
-        <div class="titulo">
-            <a  class="volver" href="resultados.html"> ← Volver a resultados</a>
-            <h1>Detalle de Vuelo / Selecciona tu asiento</h1>
-            <p>Revisa los detalles de tu viaje, elige tu asiento y continúa con tu compra.</p>
-        </div>
-        <div class="contenedor-principal">
-
-            <aside class="detalle">
-                <h1>Detalle de vuelo</h1>
                 <section class="tramo-vuelo">
                     <div class="destino">
                         <img class="chico" src="../images/avion.svg" class="icono-destino">
                         <p class="info">Ida: Buenos Aires (EZE) ➔ Madrid (MAD)</p>
                     </div>
-
+                
                     <div class="grafico-vuelo">
 
                         <div class="punto-partida">
-                            <span class="hora"><strong>12:00</strong></span>
-                            <span class="ciudad">EZE</span>
+                             <span class="hora"><strong>12:00</strong></span>
+                             <span class="ciudad">EZE</span>
                         </div>
-
+                    
                         <div class="bloque-grafico">
-                            <span class="duracion-mini">11h 40m</span>
+                             <span class="duracion-mini">11h 40m</span>
 
                             <div class="linea">
                                 <span class="circulo"></span>
                                 <div class="linea-horizontal"></div>
-                                <span class="avion-mini"><img src="../images/avion.svg" alt="Avión"></span>
+                                <span class="avion-mini"><img class="chico" src="../images/avion.svg" alt="Avión"></span>
                                 <div class="linea-horizontal"></div>
                                 <span class="circulo"></span>
-                            </div>
+                            </div>  
                         </div>
 
                         <div class="punto-llegada">
-                            <span class="hora"><strong>08:40</strong></span>
-                            <span class="ciudad">MAD</span>
+                             <span class="hora"><strong>08:40</strong></span>
+                             <span class="ciudad">MAD</span>
                         </div>
 
                     </div>
+                    
+                <ul>
+                    <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo">   Jue. 20 Abril</li>
+                    <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo">  Duración: 11h 40m</li>
+                    <li><img class="chico" src="../images/avion.svg" class="icono-vuelo">  Sin escalas</li>
+                    <li><img class="chico"  src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
+                    <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo">  Economy</li>
+                </ul>
+                
+                <div class="separador-puntos"></div>
 
-                    <ul>
-                        <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo"> Jue. 20 Abril</li>
-                        <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo"> Duración: 11h 40m</li>
-                        <li><img class="chico" src="../images/avion.svg" class="icono-vuelo"> Sin escalas</li>
-                        <li><img class="chico" src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
-                        <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo"> Economy</li>
-                    </ul>
+                <section class="tramo-vuelo">
+                    <div class="destino">
+                        <img class="chico" src="../images/avion.svg" class="icono-destino-vuelta">
+                        <p class="info">Vuelta: Madrid (MAD) ➔ Buenos Aires (EZE) </p>
+                    </div>
+                
+                    <div class="grafico-vuelo">
 
-                    <div class="separador-puntos"></div>
+                        <div class="punto-partida">
+                             <span class="hora"><strong>18:30</strong></span>
+                             <span class="ciudad">MAD</span>
+                        </div>
+                    
+                        <div class="bloque-grafico">
+                             <span class="duracion-mini">11h 10m</span>
 
-                    <section class="tramo-vuelo">
-                        <div class="destino">
-                            <img src="../images/avion.svg" class="icono-destino-vuelta">
-                            <p class="info">Vuelta: Madrid (MAD) ➔ Buenos Aires (EZE) </p>
+                            <div class="linea">
+                                <span class="circulo"></span>
+                                <div class="linea-horizontal"></div>
+                                <span class="avion-mini"><img class="chico"  src="../images/avion.svg" alt="Avión"></span>
+                                <div class="linea-horizontal"></div>
+                                <span class="circulo"></span>
+                            </div>  
                         </div>
 
-                        <div class="grafico-vuelo">
-
-                            <div class="punto-partida">
-                                <span class="hora"><strong>18:30</strong></span>
-                                <span class="ciudad">MAD</span>
-                            </div>
-
-                            <div class="bloque-grafico">
-                                <span class="duracion-mini">11h 10m</span>
-
-                                <div class="linea">
-                                    <span class="circulo"></span>
-                                    <div class="linea-horizontal"></div>
-                                    <span class="avion-mini"><img src="../images/avion.svg" alt="Avión"></span>
-                                    <div class="linea-horizontal"></div>
-                                    <span class="circulo"></span>
-                                </div>
-                            </div>
-
-                            <div class="punto-llegada">
-                                <span class="hora"><strong>06:40</strong></span>
-                                <span class="ciudad">EZE</span>
-                            </div>
-
+                        <div class="punto-llegada">
+                             <span class="hora"><strong>06:40</strong></span>
+                             <span class="ciudad">EZE</span>
                         </div>
 
-                        <ul>
-                            <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo"> Sab. 30 Abril</li>
-                            <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo"> Duración: 11h 10m</li>
-                            <li><img class="chico" src="../images/avion.svg" class="icono-vuelo"> Sin escalas</li>
-                            <li><img class="chico" src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
-                            <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo"> Economy</li>
-                        </ul>
-                        <hr>
-                        <div class="precio">
-                            <div class="total">Total</div>
-                            <div class="monto">US$ 1.000</div>
-                        </div>
+                    </div>
+                    
+                <ul>
+                    <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo">   Sab. 30 Abril</li>
+                    <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo">  Duración: 11h 10m</li>
+                    <li><img class="chico" src="../images/avion.svg" class="icono-vuelo">  Sin escalas</li>
+                    <li><img class="chico" src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
+                    <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo">  Economy</li>
+                </ul>
+                <hr>
+                <div class="precio">
+                    <div class="total">Total</div>
+                    <div class="monto">US$ 1.000</div>
+                </div>
             </aside>
-        <!--  SELECCIÓN DE ASIENTOS - VUELO DE IDA -->
+
         <section class="asientos">
-        <section id="vuelo-ida" class="seleccionar-asiento">
+    <section id="vuelo-ida" class="seleccionar-asiento">
         <div class="texto">
         <h1>Selecciona tu asiento</h1>
-        <h2>Ida</h2>
+        <h2 class="ida">Ida</h2>
         </div>
         <div class="asiento">
             <div class="cuadrado">
@@ -162,29 +150,8 @@
             </div>
         </div>
 
-            <section class="asientos">
-                <section id="vuelo-ida" class="seleccionar-asiento">
-                    <div class="texto">
-                        <h1>Selecciona tu asiento</h1>
-                        <h2 class="ida">Ida</h2>
-                    </div>
-                    <div class="asiento">
-                        <div class="cuadrado">
-                            <span class="cuadrito disponible"></span>
-                            <p>Disponible</p>
-                        </div>
-                        <div class="cuadrado">
-                            <span class="cuadrito ocupado"></span>
-                            <p>Ocupado</p>
-                        </div>
-                        <div class="cuadrado">
-                            <span class="cuadrito seleccionado"></span>
-                            <p>Seleccionado</p>
-                        </div>
-                    </div>
-
         <div class="contenedor-asientos-navegacion">
-        <table class="mapa-asientos"><!-- Mapa de asientos del Vuelo de Ida -->
+        <table class="mapa-asientos">
             <thead>
                 <tr>
                 <th></th> 
@@ -389,16 +356,16 @@
             </a>
         </div>
 
-                    <div class="informacion-asiento">
-                        <img class="logo-informacion" src="../images/informacion.svg">
-                        <p>Los asientos con color gris no están disponibles. Selecciona tu asiento para continuar. </p>
-                    </div>
-                </section>
+        <div class="informacion-asiento">
+            <img class="logo-informacion" src="../images/informacion.svg">
+            <p>Los asientos con color gris no están disponibles. Selecciona tu asiento para continuar. </p>
+        </div>
+    </section>
 
     <section id="vuelo-vuelta" class="seleccionar-asiento">
         <div class="texto">
         <h1>Selecciona tu asiento</h1>
-        <h2>Vuelta</h2>
+        <h2 class="ida" >Vuelta</h2>
         </div>
         <div class="asiento">
             <div class="cuadrado">
@@ -414,7 +381,7 @@
                 <p>Seleccionado</p>
             </div>
         </div>
-        <!-- Mapa de asientos del Vuelo de Vuelta -->
+        
         <div  class="contenedor-asientos-navegacion"> 
         <a href="#vuelo-ida">
         <img class="flecha izquierda" src="../images/flecha izquierda.svg" alt="Anterior">
@@ -632,291 +599,46 @@
                  <div class="espaciador-flecha"></div>
         </div>
         
-        <!-- RESUMEN DE PAGO / CHECKOUT -->
+
         <div class="informacion-asiento">
-            <img class="logo-informacion" src="../images/informacion.svg">
+            <img class="img-informacion" src="../images/informacion.svg">
             <p>Los asientos con color gris no están disponibles. Selecciona tu asiento para continuar. </p>
         </div>
         </section>
     </section>
-                <section id="vuelo-vuelta" class="seleccionar-asiento">
-                    <div class="texto">
-                        <h1>Selecciona tu asiento</h1>
-                        <h2 class="ida">Vuelta</h2>
-                    </div>
-                    <div class="asiento">
-                        <div class="cuadrado">
-                            <span class="cuadrito disponible"></span>
-                            <p>Disponible</p>
-                        </div>
-                        <div class="cuadrado">
-                            <span class="cuadrito ocupado"></span>
-                            <p>Ocupado</p>
-                        </div>
-                        <div class="cuadrado">
-                            <span class="cuadrito seleccionado"></span>
-                            <p>Seleccionado</p>
-                        </div>
-                    </div>
 
-                    <div class="contenedor-asientos-navegacion">
-                        <a href="#vuelo-ida">
-                            <img class="flecha izquierda" src="../images/flecha izquierda.svg" alt="Anterior">
-                        </a>
-                        <div class="divisor-vertical"></div>
-                        <table class="mapa-asientos">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>A</th>
-                                    <th>B</th>
-                                    <th>C</th>
-                                    <th class="pasillo"></th>
-                                    <th>D</th>
-                                    <th>E</th>
-                                    <th>F</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="num-fila">1</td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-1B" class="check-asiento">
-                                        <label for="vuelta-1B" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-1C" class="check-asiento">
-                                        <label for="vuelta-1C" class="disponible"></label>
-                                    </td>
-                                    <td class="pasillo"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-1D" class="check-asiento">
-                                        <label for="vuelta-1D" class="disponible"></label>
-                                    </td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">2</td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-2A" class="check-asiento">
-                                        <label for="vuelta-2A" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-2B" class="check-asiento">
-                                        <label for="vuelta-2B" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-2C" class="check-asiento">
-                                        <label for="vuelta-2C" class="disponible"></label>
-                                    </td>
-                                    <td class="pasillo"></td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-2F" class="check-asiento">
-                                        <label for="vuelta-2F" class="disponible"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">3</td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-3A" class="check-asiento">
-                                        <label for="vuelta-3A" class="disponible"></label>
-                                    </td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td class="pasillo"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-3E" class="check-asiento">
-                                        <label for="vuelta-3E" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-3F" class="check-asiento">
-                                        <label for="vuelta-3F" class="disponible"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">4</td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-4C" class="check-asiento">
-                                        <label for="vuelta-4C" class="disponible"></label>
-                                    </td>
-                                    <td class="pasillo"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-4D" class="check-asiento">
-                                        <label for="vuelta-4D" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-4E" class="check-asiento">
-                                        <label for="vuelta-4E" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-4F" class="check-asiento">
-                                        <label for="vuelta-4F" class="disponible"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">5</td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-5C" class="check-asiento">
-                                        <label for="vuelta-5C" class="disponible"></label>
-                                    </td>
-                                    <td class="pasillo"></td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">6</td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-6A" class="check-asiento">
-                                        <label for="vuelta-6A" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-6B" class="check-asiento">
-                                        <label for="vuelta-6B" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-6C" class="check-asiento">
-                                        <label for="vuelta-6C" class="disponible"></label>
-                                    </td>
-                                    <td class="pasillo"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-6E" class="check-asiento">
-                                        <label for="vuelta-6E" class="disponible"></label>
-                                    </td>
-                                    <td class="ocupado"></td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">7</td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td class="pasillo"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-7D" class="check-asiento">
-                                        <label for="vuelta-7D" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-7E" class="check-asiento">
-                                        <label for="vuelta-7E" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-7F" class="check-asiento">
-                                        <label for="vuelta-7F" class="disponible"></label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">8</td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-8C" class="check-asiento">
-                                        <label for="vuelta-8C" class="disponible"></label>
-                                    </td>
-                                    <td class="pasillo"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-8D" class="check-asiento">
-                                        <label for="vuelta-8D" class="disponible"></label>
-                                    </td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">9</td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-9A" class="check-asiento">
-                                        <label for="vuelta-9A" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-9B" class="check-asiento">
-                                        <label for="vuelta-9B" class="disponible"></label>
-                                    </td>
-                                    <td class="ocupado"></td>
-                                    <td class="pasillo"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-9D" class="check-asiento">
-                                        <label for="vuelta-9D" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-9E" class="check-asiento">
-                                        <label for="vuelta-9E" class="disponible"></label>
-                                    </td>
-                                    <td class="ocupado"></td>
-                                </tr>
-                                <tr>
-                                    <td class="num-fila">10</td>
-                                    <td class="ocupado"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-10C" class="check-asiento">
-                                        <label for="vuelta-10C" class="disponible"></label>
-                                    </td>
-                                    <td class="pasillo"></td>
-                                    <td class="ocupado"></td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-10E" class="check-asiento">
-                                        <label for="vuelta-10E" class="disponible"></label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="vuelta-10F" class="check-asiento">
-                                        <label for="vuelta-10F" class="disponible"></label>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <section class="resumen">
+            <div class="resumen-precio">
+                <h3>Resumen de precio</h3>
 
-                        <div class="espaciador-flecha"></div>
-                    </div>
-
-
-                    <div class="informacion-asiento">
-                        <img class="logo-informacion" src="../images/informacion.svg">
-                        <p>Los asientos con color gris no están disponibles. Selecciona tu asiento para continuar. </p>
-                    </div>
-                </section>
-            </section>
-
-            <section class="resumen">
-                <div class="resumen-precio">
-                    <h3>Resumen de precio</h3>
-
-                    <div class="item-precio">
-                        <span>1 Adultos </span>
-                        <span class="monto-individual">US$ 1.000</span>
-                    </div>
-
-                    <div class="item-precio">
-                        <span>Tasas e impuestos </span>
-                        <span class="monto-individual">US$ 100</span>
-                    </div>
-
-
-                    <div class="separador-puntos"></div>
-
-                    <div class="precio total">
-                        <strong>Total</strong>
-                        <span class="monto-final">US$ 1.100</span>
-                    </div>
+                <div class="item-precio">
+                    <span>1 Adultos </span>
+                    <span class="monto-individual">US$ 1.000</span>
                 </div>
 
-                <div class="continuar">
-                    <button class="boton-continuar"><a href="checkout.html"> 
-                        Continuar ➔</a>
-                    </button>
+                <div class="item-precio">
+                    <span>Tasas e impuestos </span>
+                    <span class="monto-individual">US$ 100</span>
                 </div>
-            </section>
+            
+
+            <div class="separador-puntos"></div>
+
+             <div class="precio total">
+                <strong>Total</strong>
+                <span class="monto-final">US$ 1.100</span>
+             </div>
+            </div>
+
+            <div class="continuar">
+                <button class="boton-continuar"> 
+                    Continuar    ➔ 
+                </button>
+            </div>
+        </section>
         </div>
     </main>
-     <footer class="footer">
+    <footer class="footer">
         <div class="f-suscripcion">
             <h2>¡No te pierdas de nada!</h2>
             <p>Hey! Suscribite a nuestro newsletter para enterarte de todo antes que nadie. Que no se corte!</p>
@@ -972,6 +694,6 @@
 
     </footer>
 
-</body>
 
+</body> 
 </html>
