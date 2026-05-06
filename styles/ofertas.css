@@ -104,11 +104,9 @@ select {
 .contenedor-ofertas{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr ;
   align-content: center;
   gap: 3rem;
-  margin: 2rem 0 2rem 0;
   margin: 2rem 0 4rem 0;
 }
 
@@ -148,7 +146,7 @@ select {
 .precio {
   font-weight: 600;
   font-size: 18px;
-}}
+}
 
 /* GONZA */
 /* Empieza el FOOTER */
