@@ -32,6 +32,7 @@
             </section>
         </nav>
     </header>
+
     <main>
         <section class="main-texto">
             <p class="parrafo-1">Ofertas de vuelos</p>
@@ -55,12 +56,42 @@
 
             <div class="contenedor-ofertas">
                 <div class="tarjeta">
+            <a href="./detalleOferta.html"><img src="../images/bariloche.png" alt="foto-bariloche"></a>
+             <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Bariloche</h3>
+               <p>Desde</p>
+               <span class="precio">US$265</span>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="../images/rio.png" alt="foto-rio-de-janeiro">
+             <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Rio de Janeiro</h3>
+               <p>Desde</p>
+               <span class="precio">US$200</span>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="../images/madrid.png" alt="foto-madrid">
+             <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Madrid</h3>
+               <p>Desde</p>
+               <span class="precio">US$1500</span>
+            </div>
+        </div>
+
+                <div class="tarjeta">
                     <img src="../images/barcelona.jpg" alt="foto-barcelona">
                     <div class="info">
                         <span class="promo">PROMO</span>
                         <h3>Barcelona</h3>
                         <p>Desde</p>
-                        <span class="precio">$1.897.614</span>
+                        <span class="precio">US$1292</span>
                     </div>
 
                 </div>
@@ -70,7 +101,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Bogota</h3>
                         <p>Desde</p>
-                        <span class="precio">$670.867</span>
+                        <span class="precio">US$481</span>
                     </div>
                 </div>
 
@@ -80,7 +111,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Santiago de Chile</h3>
                         <p>Desde</p>
-                        <span class="precio">$340.780</span>
+                        <span class="precio">US$244</span>
                     </div>
                 </div>
 
@@ -90,7 +121,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Mar del Plata</h3>
                         <p>Desde</p>
-                        <span class="precio">$150.650</span>
+                        <span class="precio">US$107</span>
                     </div>
                 </div>
 
@@ -100,7 +131,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Ushuaia</h3>
                         <p>Desde</p>
-                        <span class="precio">$289.600</span>
+                        <span class="precio"><US1207></US1207></span>
                     </div>
                 </div>
 
@@ -110,7 +141,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Cordoba</h3>
                         <p>Desde</p>
-                        <span class="precio">$160.450/<span>
+                        <span class="precio">US$114</span>
                     </div>
                 </div>
 
@@ -120,7 +151,7 @@
                         <span class="promo">PROMO</span>
                         <h3>El calafate</h3>
                         <p>Desde</p>
-                        <span class="precio">$175.400</span>
+                        <span class="precio">US$122</span>
                     </div>
                 </div>
 
@@ -130,7 +161,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Neuquen</h3>
                         <p>Desde</p>
-                        <span class="precio">$114.890</span>
+                        <span class="precio">US$80</span>
                     </div>
                 </div>
 
@@ -140,7 +171,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Florianopolis</h3>
                         <p>Desde</p>
-                        <span class="precio">$245.900</span>
+                        <span class="precio">US$162</span>
                     </div>
                 </div>
 
@@ -150,7 +181,7 @@
                         <span class="promo">PROMO</span>
                         <h3> Cancun</h3>
                         <p>Desde</p>
-                        <span class="precio">$950.799</span>
+                        <span class="precio">US$879</span>
                     </div>
                 </div>
 
@@ -160,7 +191,7 @@
                         <span class="promo">PROMO</span>
                         <h3>Roma</h3>
                         <p>Desde</p>
-                        <span class="precio">$1.700.986</span>
+                        <span class="precio">US$1450</span>
                     </div>
                 </div>
 
@@ -170,9 +201,22 @@
                         <span class="promo">PROMO</span>
                         <h3>Salta</h3>
                         <p>Desde</p>
-                        <span class="precio">$175.600</span>
+                        <span class="precio">US$142</span>
                     </div>
                 </div>
+
+
+        <div class="tarjeta">
+            <img src="../images/buenosaires.png" alt="foto-buenos-aires">
+            <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Buenos Aires</h3>
+               <p>Desde</p>
+               <span class="precio">US$65</span>
+            </div>
+
+        </div>
+        
 
 
 
@@ -184,6 +228,62 @@
 
 
     </main>
+
+     <footer class="footer">
+        <div class="f-suscripcion">
+            <h2>¡No te pierdas de nada!</h2>
+            <p>Hey! Suscribite a nuestro newsletter para enterarte de todo antes que nadie. Que no se corte!</p>
+
+            <form action="/procesar-datos" method="POST">
+                <div class="divForm">
+                    <!-- <label for="mail">E-mail:</label> -->
+                    <input placeholder="Ingresá tu mail" type="email" id="mail" name="mail" required="">
+                    <button id="Enviar" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="f-Menu">
+            <div class="f-section">
+                <h2 class="f-titulos">Nosotros</h2>
+                <ul>
+                    <li>Sobre FlyNow</li>
+                    <li>Preguntas frcuentes</li>
+                    <li>Terminos y condiciones</li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Mapa del sitio</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="DetalleDeVuelo.html">Vuelos</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Redes</h2>
+                <ul class="f-redes">
+                    <li><a href="https://www.instagram.com"><img class="iconoRedes" src="../images/redes/instagram.png"
+                                alt="instagram"></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/"><img class="iconoRedes" src="../images/redes/facebook.png"
+                                alt="facebook"></a>
+                    </li>
+                    <li><a href="https://x.com/"><img class="iconoRedes" src="../images/redes/x.png"
+                                alt="X ex Twitter"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <img class="f-logo" src="../images/logo.png" alt="FlyNow">
+            </div>
+        </div>
+        <div class="f-Derechos">
+            <p>Copyright © 2010-2026 FlyNow S.A. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
 
 </body>
 

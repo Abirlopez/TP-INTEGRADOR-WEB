@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles\styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles\styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <title>FlyNow!</title>
 </head>
 <body>
@@ -108,7 +110,7 @@
                <span class="promo">PROMO</span>
                <h3>Buenos Aires</h3>
                <p>Desde</p>
-               <span class="precio">$129.890</span>
+               <span class="precio">US$65</span>
             </div>
 
         </div>
@@ -118,7 +120,7 @@
                <span class="promo">PROMO</span>
                <h3>Bariloche</h3>
                <p>Desde</p>
-               <span class="precio">$379.879</span>
+               <span class="precio">US$265</span>
             </div>
         </div>
 
@@ -128,7 +130,7 @@
                <span class="promo">PROMO</span>
                <h3>Rio de Janeiro</h3>
                <p>Desde</p>
-               <span class="precio">$290.760</span>
+               <span class="precio">US$200</span>
             </div>
         </div>
 
@@ -138,7 +140,7 @@
                <span class="promo">PROMO</span>
                <h3>Madrid</h3>
                <p>Desde</p>
-               <span class="precio">$2.260.549</span>
+               <span class="precio">US$1500</span>
             </div>
         </div>
 
@@ -151,11 +153,95 @@
 
 
 </section>
+ 
 
+     <section class="faq-section">
+        <h2>Preguntas Frecuentes</h2>
 
+        <div class="faq-container">
+            <!-- Pregunta 1 -->
+            <details class="faq-item">
+                <summary>¿Cómo conseguir vuelos baratos? <span class="arrow"></span></summary>
+                <p>Aquí va la respuesta con los tips para vuelos económicos... </p>
+            </details>
 
+            <!-- Pregunta 2 -->
+            <details class="faq-item">
+                <summary>¿Dónde puedo alquilar autos baratos? <span class="arrow"></span></summary>
+                <p>Puedes comparar precios en distintas agencias locales...</p>
+            </details>
 
+            <details class="faq-item">
+                <summary>¿Cómo conseguir vuelos baratos? <span class="arrow"></span></summary>
+                <p>Aquí va la respuesta con los tips para vuelos económicos... </p>
+            </details>
 
-    
+            <!-- Pregunta 2 -->
+            <details class="faq-item">
+                <summary>¿Dónde puedo alquilar autos baratos? <span class="arrow"></span></summary>
+                <p>Puedes comparar precios en distintas agencias locales...</p>
+            </details>
+
+            <!-- Repite para las demás preguntas -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="f-suscripcion">
+            <h2>¡No te pierdas de nada!</h2>
+            <p>Hey! Suscribite a nuestro newsletter para enterarte de todo antes que nadie. Que no se corte!</p>
+
+            <form action="/procesar-datos" method="POST">
+                <div class="divForm">
+                    <!-- <label for="mail">E-mail:</label> -->
+                    <input placeholder="Ingresá tu mail" type="email" id="mail" name="mail" required="">
+                    <button id="Enviar" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="f-Menu">
+            <div class="f-section">
+                <h2 class="f-titulos">Nosotros</h2>
+                <ul>
+                    <li>Sobre FlyNow</li>
+                    <li>Preguntas frcuentes</li>
+                    <li>Terminos y condiciones</li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Mapa del sitio</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="pages/DetalleDeVuelo.html">Vuelos</a></li>
+                    <li><a href="pages/ofertas.html">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Redes</h2>
+                <ul class="f-redes">
+                    <li><a href="https://www.instagram.com"><img class="iconoRedes" src="images/redes/instagram.png"
+                                alt="instagram"></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/"><img class="iconoRedes" src="images/redes/facebook.png"
+                                alt="facebook"></a>
+                    </li>
+                    <li><a href="https://x.com/"><img class="iconoRedes" src="images/redes/x.png"
+                                alt="X ex Twitter"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <img class="f-logo" src="images/logo.png" alt="FlyNow">
+            </div>
+        </div>
+        <div class="f-Derechos">
+            <p>Copyright © 2010-2026 FlyNow S.A. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
 </body>
+
 </html>
