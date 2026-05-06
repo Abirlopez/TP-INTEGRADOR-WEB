@@ -1,4 +1,4 @@
-/* --- RESET Y GENERAL --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body {
     background-color: rgb(243, 241, 241);
 }
 
-/* --- HEADER --- */
+
 .menu {
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@ body {
     gap: 0.5rem;
 }
 
-/* --- DISEÑO DE COLUMNAS (GRID) --- */
+
 .titulo { padding: 2em 0 1em 2em; }
 
 .contenedor-principal {
@@ -47,7 +47,7 @@ body {
     align-items: start;
 }
 
-/* Forzamos al aside a estar en la columna 1 y a la sección en la 2 */
+
 .detalle { 
     grid-column: 1;
     background-color: white;
@@ -65,9 +65,9 @@ body {
     min-height: 400px;
 }
 
-/* --- LÓGICA DE CONTROL --- */
 
-/* Escondemos los radios para que no ocupen espacio en el grid */
+
+/* Esconde los radios */
 input[type="radio"] {
     display: none;
 }
@@ -88,7 +88,7 @@ input[type="radio"] {
     color: #333;
 }
 
-/* Cambiar color del botón seleccionado */
+/* Cambiar color del boton seleccionado */
 #informacion:checked ~ .detalle label[for="informacion"],
 #vuelos:checked ~ .detalle label[for="vuelos"] {
     background-color: #E9631A;
@@ -101,7 +101,7 @@ input[type="radio"] {
 #informacion:checked ~ .bloque-informacion .panel-personal { display: block; }
 #vuelos:checked ~ .bloque-informacion .panel-vuelos { display: block; }
 
-/* --- DETALLE DE VUELOS (ACORDEÓN) --- */
+/* --- detalle de vuelos (estilo acordeon) --- */
 .vuelo-header {
     display: flex;
     justify-content: space-between;
@@ -130,7 +130,7 @@ input[type="radio"] {
     border: 1px solid #eee;
     border-top: none;
 }
-/* Conector de Horarios */
+
 .horarios-conector {
     display: flex;
     align-items: center;
