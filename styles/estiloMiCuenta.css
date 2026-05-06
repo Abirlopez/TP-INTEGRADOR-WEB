@@ -1,0 +1,127 @@
+/* --- RESET Y GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(243, 241, 241);
+}
+
+/* --- HEADER --- */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #315762;
+    height: 3.5rem;
+    padding: 2rem;
+}
+.menu ul { display: flex; list-style: none; gap: 20px; }
+.menu a { color: white; text-decoration: none; }
+.iniciar-sesion {
+    display: flex;
+    background-color: #E9631A;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- DISEÑO DE COLUMNAS (GRID) --- */
+.titulo { padding: 2em 0 1em 2em; }
+
+.contenedor-principal {
+    padding: 0 2em;
+    display: grid;
+    /* Definimos dos columnas claras */
+    grid-template-columns: 300px 1fr; 
+    gap: 30px;
+    align-items: start;
+}
+
+/* Forzamos al aside a estar en la columna 1 y a la sección en la 2 */
+.detalle { 
+    grid-column: 1;
+    background-color: white;
+    border: 1px solid #c7c6c6;
+    border-radius: 0.8em;
+    padding: 1.5em;
+}
+
+.bloque-informacion {
+    grid-column: 2;
+    background-color: white;
+    border: 1px solid #c7c6c6;
+    border-radius: 0.8em;
+    padding: 2em;
+    min-height: 400px;
+}
+
+/* --- LÓGICA DE CONTROL --- */
+
+/* Escondemos los radios para que no ocupen espacio en el grid */
+input[type="radio"] {
+    display: none;
+}
+
+.linea-separadora {
+    height: 1px;
+    background-color: #eee;
+    margin: 10px 0 20px 0;
+}
+
+.barra-lateral {
+    display: block;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #333;
+}
+
+/* Cambiar color del botón seleccionado */
+#informacion:checked ~ .detalle label[for="informacion"],
+#vuelos:checked ~ .detalle label[for="vuelos"] {
+    background-color: #ff5a5f;
+    color: white;
+}
+
+/* Mostrar/Ocultar paneles */
+.panel-personal, .panel-vuelos { display: none; }
+
+#informacion:checked ~ .bloque-informacion .panel-personal { display: block; }
+#vuelos:checked ~ .bloque-informacion .panel-vuelos { display: block; }
+
+/* --- DETALLE DE VUELOS (ACORDEÓN) --- */
+.vuelo-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.precio { color: #ff5a5f; font-weight: bold; }
+
+.vuelo-detalle {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    background: #f9f9f9;
+    padding: 0 1.5em;
+}
+
+.boton-vuelo { display: none; }
+
+.boton-vuelo:checked ~ .vuelo-detalle {
+    max-height: 200px;
+    padding: 1.5em;
+    border: 1px solid #eee;
+    border-top: none;
+}

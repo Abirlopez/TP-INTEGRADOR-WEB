@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/checkout_estilo.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <section class="menu-izquierda">
+              <a href="index.html"><img class="logo"  src="..\images\logo.png" alt="logo" width= "45em" ></a>
+            </section>
+
+            <section class="menu-medio">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Vuelos</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Nosotros</a></li>
+            </ul>
+            </section>
+
+            <section class="menu-derecha">
+                <div class="iniciar-sesion">
+                    <a href="#">Iniciar sesión</a>
+                <img class="usuario"   src="..\images\usuario.png" alt="usuario" width="30">
+                </div>
+            </section>
+        </nav>
+    
+    </header>
+        <main class="contenedor-pago">
+            <div class="encabezado">
+                <h1>Checkout</h1>
+                <p>Completa tus datos y elige tu método de pago para finalizar tu compra.</p>
+            </div>
+
+            <div class="rejilla-superior">
+                <!-- Bloque 1: Datos -->
+                <section class="tarjeta">
+                    <div class="pasajero">
+                        <img src="../images/usuario.png">
+                        <h3>Datos del pasajero</h3>
+                    </div>
+                    <div class="campo">
+                        <label>Nombre completo</label>
+                        <input type="text" placeholder="Juan Pérez" required>
+                    </div>
+                    <div class="campo">
+                        <label>Documento de identidad</label>
+                        <div class="grupo-mixto">
+                            <select>
+                                <option>DNI</option>
+                                <option>PASAPORTE</option>
+                                <option>CUIL</option>
+                            </select>
+                            <input type="text" placeholder="12345678"required>
+                        </div>
+                    </div>
+                    <div class="campo">
+                        <label>Correo electrónico</label>
+                        <input type="email" placeholder="juanperez@gmail.com" required>
+                    </div>
+                    <div class="campo">
+                        <label>Teléfono</label>
+                        <input type="tel" placeholder="+54 11 2345 6789" required>
+                    </div>
+                </section>
+
+                <!-- Bloque 2: Pago -->
+                <section class="tarjeta">
+                    <h3>Método de pago</h3>
+                    <div class="metodo-item">
+                        <input type="radio" name="pago" id="tarjeta" checked>
+                        <label for="tarjeta" class="metodo-header">
+                            <span class="radio-custom"></span>
+                            <img class="icon-pago" src="../images/Tarjeta.svg">
+                            <span class="texto-metodo">Tarjeta de Crédito</span>
+                        </label>
+            
+                            <div class="datos tarjeta">
+                                <p>Paga de forma segura con tu tarjeta.</p><br>
+                                <p>Numero de tarjeta</p>
+                                <input type="text" placeholder="1234 5678 9012 3456"required><br>
+                                <p>Nombre en la tarjeta</p>
+                                <input type="text" placeholder="Juan Perez"required><br>
+                                <div class="row">
+                                    <div>
+                                    <p>Vencimiento</p>
+                                    <input type="text" placeholder="MM/AA" required>
+                                    </div>
+                                     <div>
+                                    <p>CVV</p>
+                                    <input type="text" placeholder="123" required>
+                                </div>
+                                </div>
+                        
+                            </div>
+                    </div>
+
+                        
+                    <div class="metodo-item">
+                        <input type="radio" name="pago" id="paypal">
+                        <label for="paypal" class="metodo-header">
+                            <span class="radio-custom"></span>
+                            <img class="icon-pago" src="../images/paypal.svg">
+                            <span class="texto-metodo">PayPal</span>
+                        </label>
+                            
+                            <div class="datos paypal">
+                                <p>Paga de forma rápida con tu cuenta Paypal</p><br>
+                                <label>Correo electrónico</label>
+                                <input type="email" placeholder="tuemail@paypal.com" required>
+                            </div>
+                    </div>
+
+                        
+                    <div class="metodo-item">
+                        <input type="radio" name="pago" id="transferencia">
+                        <label for="transferencia" class="metodo-header">
+                            <span class="radio-custom"></span>
+                            <img class="icon-pago" src="../images/Banco.svg">
+                            <span class="texto-metodo">Transferencia bancaria</span>
+                        </label>
+                            
+                            <div class="datos transferencia">
+                                <p>Realiza una transferencia desde tu banco</p><br>
+                                <p>Titular de la cuenta</p>
+                                <input type="text" placeholder="Juan Perez"required><br>
+                                <p>Referencia/Alias(opcional)</p>
+                                <input type="text" placeholder="Pago FlyNow"><br>
+
+                                <div class="info-bancaria">
+                                    <div class="dato-fila">
+                                        <span class="etiqueta">Banco:</span>
+                                        <span class="valor">Banco Nación</span>
+                                    </div>
+                                    <div class="dato-fila">
+                                        <span class="etiqueta">CBU:</span>
+                                        <span class="valor">01101234560123456789012</span>
+                                    </div>
+                                    <div class="dato-fila">
+                                        <span class="etiqueta">Alias:</span>
+                                        <span class="valor">FLYNOW.PAGOS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                          
+                    </div>
+                </section>
+
+                <!-- Bloque 3: Resumen de Vuelo -->
+                <section class="tarjeta">
+                     <div class="pasajero">
+                        <img src="../images/ticket-color.svg">
+                        <h3>Resumen de vuelo</h3>
+                    </div>
+                    
+                    <!-- Ida -->
+                    <section class="tramo-vuelo">
+                        <p class="itinerario"><strong>Ida:</strong> Buenos Aires (EZE) ➔ Madrid (MAD)</p>
+                        <div class="grafico-vuelo">
+                            <div class="info-salida">
+                                <span><img src="../images/calendario.svg"> 10/08/2026</span>
+                                <span><img src="../images/tiempo.svg"> 12:00 - 08:40 (+1)</span>
+                            </div>
+                        </div>
+                        <p class="detalle-escala">1 escala en Lima (LIM) — 11h 40m</p>
+                    </section>
+
+                    <div class="separador-puntos"></div>
+
+                    <!-- Vuelta -->
+                    <section class="tramo-vuelo">
+                        <p class="itinerario"><strong>Vuelta:</strong> Madrid (MAD) ➔ Buenos Aires (EZE)</p>
+                        <div class="grafico-vuelo">
+                            <div class="info-salida">
+                                <span><img src="../images/calendario.svg"> 20/08/2026</span>
+                                <span><img src="../images/tiempo.svg"> 18:30 - 06:40 (+1)</span>
+                            </div>
+                        </div>
+                        <p class="detalle-escala">1 escala en Lima (LIM) — 11h 10m</p>
+                    </section>
+                        <div class="separador-puntos"></div>
+
+                        <div class="fila-precio">
+                            <span>1 Adulto</span>
+                            <span>US$ 1.739</span>
+                        </div>
+                        <div class="fila-precio">
+                            <span>Impuestos y tasas</span>
+                            <span>US$  100</span>
+                        </div>
+                        <div class="separador-puntos"></div>
+                        <div class="total-pago">
+                            Total  <span class="monto">US$ 1.839</span>
+                        </div> 
+                        
+                        <div class="separador-puntos"></div>
+
+                        <div class="campo-cupon">
+                        <input class="cupon" type="text" placeholder="Ingrese tu cupón de descuento" required>
+                        <button class="boton-cupon">Aplicar</button>
+                    </div>
+
+                    </section>
+                </section>
+
+                <!-- Barra Inferior (Resumen) -->
+                <section class="resumen">
+                    <div class="total-pago">
+                        Total a pagar <span class="monto">US$ 1.000</span>
+                    </div>
+                    <button class="boton-accion">Realizar pago</button>
+                </section>
+
+                
+            </div>
+    </main>
+
+     <footer class="footer">
+        <div class="f-suscripcion">
+            <h2>¡No te pierdas de nada!</h2>
+            <p>Hey! Suscribite a nuestro newsletter para enterarte de todo antes que nadie. Que no se corte!</p>
+
+            <form action="/procesar-datos" method="POST">
+                <div class="divForm">
+                    <!-- <label for="mail">E-mail:</label> -->
+                    <input  placeholder="Ingresá tu mail" type="email" id="mail" name="mail" required="">
+                    <button id="Enviar" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="f-Menu">
+            <div class="f-section">
+                <h2 class="f-titulos">Nosotros</h2>
+                <ul>
+                    <li>Sobre FlyNow</li>
+                    <li>Preguntas frcuentes</li>
+                    <li>Terminos y condiciones</li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Mapa del sitio</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="pages/DetalleDeVuelo.html">Vuelos</a></li>
+                    <li><a href="pages/ofertas.html">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Redes</h2>
+                <ul class="f-redes">
+                    <li><a href="https://www.instagram.com"><img class="iconoRedes" src="images/redes/instagram.png"
+                                alt="instagram"></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/"><img class="iconoRedes" src="images/redes/facebook.png"
+                                alt="facebook"></a>
+                    </li>
+                    <li><a href="https://x.com/"><img class="iconoRedes" src="images/redes/x.png"
+                                alt="X ex Twitter"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <img class="f-logo" src="images/logo.png" alt="FlyNow">
+            </div>
+        </div>
+        <div class="f-Derechos">
+            <p>Copyright © 2010-2026 FlyNow S.A. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+</body> 
+</html>
