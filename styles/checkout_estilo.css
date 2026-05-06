@@ -258,6 +258,34 @@ margin-bottom: 5%;
     flex: 1; /* Hace que ambos ocupen el mismo espacio */
 }
 
+.info-bancaria {
+    background-color: #f0f7ff; 
+    border: 1px solid #d0e3ff; 
+    border-radius: 8px; 
+    padding: 15px;
+    margin-top: 15px; 
+}
+
+
+.dato-fila {
+    display: grid;
+    grid-template-columns: 80px 1fr; 
+    margin-bottom: 5px; 
+    font-family: sans-serif;
+}
+
+
+.info-bancaria .etiqueta {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+}
+
+
+.info-bancaria .valor {
+    color: #555;
+    font-size: 14px;
+}
 
 /* --- Barra Inferior --- */
 .resumen {
