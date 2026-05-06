@@ -40,6 +40,10 @@
   justify-content: center;
 }
 
+a{
+  text-decoration: none;
+}
+
 
 
 .menu-medio a {
