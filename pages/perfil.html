@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="../styles/registro.css">
+</head>
+<body>
+
+    <header class="encabezado"> 
+        <div class="logo">✈ FlyNow</div>
+        <nav>
+            <a href="#">Terminos y condiciones</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        <section class="form_perfil">
+
+            <h2>Mi Perfil</h2>
+
+            <h3>Datos Personales</h3>
+
+            <form>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Nombre" required>
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="nombre" placeholder="Nombre" required>
+
+                <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                <input type="date" id="fechaNacimiento" >
+
+                <label class="opcion"> Masculino
+                    <input type="radio" name="genero" value="M">
+                </label>
+
+                <label class="opcion"> Femenino
+                    <input type="radio" name="genero" value="F">
+                </label>
+
+                <button class="boton">Guardar</button>
+            </form>
+
+            <section>
+                <h3>telefonos</h3>
+                <p>Agregá tus teléfonos para que podamos contactarte en caso que ocurra algún cambio.</p>
+                <form>
+                    <label for="pais">Pais De Residencia</label>
+                    <input type="text" id="Pais" required>
+
+                    <label for="area">Area</label>
+                    <input type="tel" id="area" required>
+                   
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" id="telefono" required> 
+                </form> 
+            </section>
+            
+
+        </section>
+    </main>
+
+</body>
+</html>
