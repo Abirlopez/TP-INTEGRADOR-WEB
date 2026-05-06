@@ -31,11 +31,11 @@
                 </div>
             </section>
         </nav>
-
     </header>
+
     <main>
         <div class="titulo">
-            <a href="vuelo.html"> ← Volver a resultados</a>
+            <a  class="volver" href="resultados.html"> ← Volver a resultados</a>
             <h1>Detalle de Vuelo / Selecciona tu asiento</h1>
             <p>Revisa los detalles de tu viaje, elige tu asiento y continúa con tu compra.</p>
         </div>
@@ -45,7 +45,7 @@
                 <h1>Detalle de vuelo</h1>
                 <section class="tramo-vuelo">
                     <div class="destino">
-                        <img src="../images/avion.svg" class="icono-destino">
+                        <img class="chico" src="../images/avion.svg" class="icono-destino">
                         <p class="info">Ida: Buenos Aires (EZE) ➔ Madrid (MAD)</p>
                     </div>
 
@@ -76,11 +76,11 @@
                     </div>
 
                     <ul>
-                        <li><img src="../images/calendario.svg" class="icono-vuelo"> Jue. 20 Abril</li>
-                        <li><img src="../images/tiempo.svg" class="icono-vuelo"> Duración: 11h 40m</li>
-                        <li><img src="../images/avion.svg" class="icono-vuelo"> Sin escalas</li>
-                        <li><img src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
-                        <li><img src="../images/ticket.svg" class="icono-vuelo"> Economy</li>
+                        <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo"> Jue. 20 Abril</li>
+                        <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo"> Duración: 11h 40m</li>
+                        <li><img class="chico" src="../images/avion.svg" class="icono-vuelo"> Sin escalas</li>
+                        <li><img class="chico" src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
+                        <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo"> Economy</li>
                     </ul>
 
                     <div class="separador-puntos"></div>
@@ -118,11 +118,11 @@
                         </div>
 
                         <ul>
-                            <li><img src="../images/calendario.svg" class="icono-vuelo"> Sab. 30 Abril</li>
-                            <li><img src="../images/tiempo.svg" class="icono-vuelo"> Duración: 11h 10m</li>
-                            <li><img src="../images/avion.svg" class="icono-vuelo"> Sin escalas</li>
-                            <li><img src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
-                            <li><img src="../images/ticket.svg" class="icono-vuelo"> Economy</li>
+                            <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo"> Sab. 30 Abril</li>
+                            <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo"> Duración: 11h 10m</li>
+                            <li><img class="chico" src="../images/avion.svg" class="icono-vuelo"> Sin escalas</li>
+                            <li><img class="chico" src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
+                            <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo"> Economy</li>
                         </ul>
                         <hr>
                         <div class="precio">
@@ -135,7 +135,7 @@
                 <section id="vuelo-ida" class="seleccionar-asiento">
                     <div class="texto">
                         <h1>Selecciona tu asiento</h1>
-                        <h2>Ida</h2>
+                        <h2 class="ida">Ida</h2>
                     </div>
                     <div class="asiento">
                         <div class="cuadrado">
@@ -368,7 +368,7 @@
                 <section id="vuelo-vuelta" class="seleccionar-asiento">
                     <div class="texto">
                         <h1>Selecciona tu asiento</h1>
-                        <h2>Vuelta</h2>
+                        <h2 class="ida">Vuelta</h2>
                     </div>
                     <div class="asiento">
                         <div class="cuadrado">
@@ -635,13 +635,69 @@
                 </div>
 
                 <div class="continuar">
-                    <button class="boton-continuar">
-                        Continuar ➔
+                    <button class="boton-continuar"><a href="checkout.html"> 
+                        Continuar ➔</a>
                     </button>
                 </div>
             </section>
         </div>
     </main>
+     <footer class="footer">
+        <div class="f-suscripcion">
+            <h2>¡No te pierdas de nada!</h2>
+            <p>Hey! Suscribite a nuestro newsletter para enterarte de todo antes que nadie. Que no se corte!</p>
+
+            <form action="/procesar-datos" method="POST">
+                <div class="divForm">
+                    <!-- <label for="mail">E-mail:</label> -->
+                    <input placeholder="Ingresá tu mail" type="email" id="mail" name="mail" required="">
+                    <button id="Enviar" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="f-Menu">
+            <div class="f-section">
+                <h2 class="f-titulos">Nosotros</h2>
+                <ul>
+                    <li>Sobre FlyNow</li>
+                    <li>Preguntas frcuentes</li>
+                    <li>Terminos y condiciones</li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Mapa del sitio</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="pages/DetalleDeVuelo.html">Vuelos</a></li>
+                    <li><a href="pages/ofertas.html">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Redes</h2>
+                <ul class="f-redes">
+                    <li><a href="https://www.instagram.com"><img class="iconoRedes" src="../images/redes/instagram.png"
+                                alt="instagram"></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/"><img class="iconoRedes" src="../images/redes/facebook.png"
+                                alt="facebook"></a>
+                    </li>
+                    <li><a href="https://x.com/"><img class="iconoRedes" src="../images/redes/x.png"
+                                alt="X ex Twitter"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <img class="f-logo" src="../images/logo.png" alt="FlyNow">
+            </div>
+        </div>
+        <div class="f-Derechos">
+            <p>Copyright © 2010-2026 FlyNow S.A. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
 </body>
 
 </html>

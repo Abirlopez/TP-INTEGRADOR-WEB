@@ -68,7 +68,6 @@ body{
     max-width: 100%;
     margin: 0;
    background-color: rgb(243, 241, 241);
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .volver {
@@ -76,9 +75,7 @@ body{
     color: #e9631a;
 }
 
-p {
-    color: #323232;
-}
+
 /*todo el main*/
 .titulo{
     padding-left: 2em;
@@ -144,22 +141,22 @@ span{
 }
 
 .bloque-grafico{
-    flex-grow: 1; /* Ocupa todo el espacio restante */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Texto arriba, línea abajo */
-    padding: 0 0.6em;      /* Espacio con los textos de los extremos */
+    align-items: center; 
+    padding: 0 0.6em;      
 }
 
 .linea{
     display: flex;
-    align-items: center; /* Alinea círculos y línea */
+    align-items: center; 
     width: 100%;
     justify-content: center;
 }
 
 .linea-horizontal{
-    flex-grow: 1; /* La línea ocupa todo el ancho entre círculos */
+    flex-grow: 1; 
     height: 1px;
     background-color: #ddd;
 }
@@ -176,7 +173,7 @@ span{
     height: 8px;
     border: 1px solid #ccc;
     border-radius: 50%;
-    background-color: white; /* Relleno blanco */
+    background-color: white; 
 }
 
 .hora {
@@ -206,17 +203,17 @@ li{
     padding: 0;
 }
 
-img {
+.chico {
     width: 1em;
     height: auto;
 }
 
 .separador-puntos {
-    border: none;               /* Quitamos la línea sólida por defecto */
-    border-top: 2px dotted #ccc; /* Línea de 2px, punteada y color gris */
+    border: none;              
+    border-top: 2px dotted #ccc; 
     height: 0;
     width: 100%;
-    margin: 20px 0;             /* Espacio arriba y abajo para que no esté pegada */
+    margin: 20px 0;           
 }
 
 
@@ -249,7 +246,7 @@ img {
     justify-content: space-between;
     margin-bottom: 20px;
 }
-h2{
+.ida{
     color:#e9631a
 }
 
@@ -373,7 +370,7 @@ h2{
     border-radius: 0.8em;
     padding: 1em;
     display: flex;
-    justify-content: space-between; /* Alinea texto a la izq y botón a la der */
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -432,7 +429,90 @@ h2{
 }
 
 .monto-final {
-    color: #e9631a; /* Naranja FlyNow */
+    color: #e9631a; 
     font-weight: bold;
     font-size: 1.3em;
 }
+
+/* Empieza el FOOTER */
+.footer {
+  background-color: #315762;
+  /* #073B4C */
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 5em;
+  color: white;
+}
+
+.f-suscripcion {
+  text-align: center;
+
+  padding: 1em;
+}
+
+.divForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  padding-top: 1em;
+
+  /* display: grid;
+    grid-template-rows: 2fr 1fr; */
+}
+
+#mail {
+  /* width: 35em; */
+  padding: 1.2em 1.2em;
+  width: 35vw;
+    border-radius: 1em;
+}
+
+#Enviar {
+  padding: 1.2em 1.2em;
+  width: 15vw;
+  background-color: #FF6B00;
+  border-color: #977a7a33;
+  border-radius: 2em;
+  box-shadow: 0%;
+
+}
+
+.f-Menu {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  background-color: #315762;
+  /* #073B4C */
+}
+
+.f-section {
+  padding: 0.5em;
+}
+
+.f-section ul li {
+  list-style-type: none;
+}
+
+.iconoRedes {
+  width: 2em;
+  margin-right: 1em;
+}
+
+.f-logo {
+  width: 15em;
+}
+
+.f-redes {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-Derechos {
+  text-align: center;
+}
+
+/* FIN FOOTER */

@@ -522,3 +522,86 @@ input:checked + .slider {/* Color cuando está activo */
 input:checked + .slider:before {/* Movimiento del círculo al activar */
   transform: translateX(24px);
 }
+
+/* Empieza el FOOTER */
+.footer {
+  background-color: #315762;
+  /* #073B4C */
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 5em;
+  color: white;
+}
+
+.f-suscripcion {
+  text-align: center;
+
+  padding: 1em;
+}
+
+.divForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  padding-top: 1em;
+
+  /* display: grid;
+    grid-template-rows: 2fr 1fr; */
+}
+
+#mail {
+  /* width: 35em; */
+  padding: 1.2em 1.2em;
+  width: 35vw;
+    border-radius: 1em;
+}
+
+#Enviar {
+  padding: 1.2em 1.2em;
+  width: 15vw;
+  background-color: #FF6B00;
+  border-color: #977a7a33;
+  border-radius: 2em;
+  box-shadow: 0%;
+
+}
+
+.f-Menu {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  background-color: #315762;
+  /* #073B4C */
+}
+
+.f-section {
+  padding: 0.5em;
+}
+
+.f-section ul li {
+  list-style-type: none;
+}
+
+.iconoRedes {
+  width: 2em;
+  margin-right: 1em;
+}
+
+.f-logo {
+  width: 15em;
+}
+
+.f-redes {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-Derechos {
+  text-align: center;
+}
+
+/* FIN FOOTER */
