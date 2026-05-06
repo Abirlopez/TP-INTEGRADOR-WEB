@@ -19,6 +19,11 @@ body {
     height: 3.5rem;
     padding: 2rem;
 }
+
+.logo{
+    width: 9.8em;
+}
+
 .menu ul { display: flex; list-style: none; gap: 20px; }
 .menu a { color: white; text-decoration: none; }
 .iniciar-sesion {
@@ -86,7 +91,7 @@ input[type="radio"] {
 /* Cambiar color del botón seleccionado */
 #informacion:checked ~ .detalle label[for="informacion"],
 #vuelos:checked ~ .detalle label[for="vuelos"] {
-    background-color: #ff5a5f;
+    background-color: #E9631A;
     color: white;
 }
 
@@ -107,7 +112,7 @@ input[type="radio"] {
     margin-top: 1em;
 }
 
-.precio { color: #ff5a5f; font-weight: bold; }
+.precio { color: #E9631A; font-weight: bold; }
 
 .vuelo-detalle {
     max-height: 0;
@@ -124,4 +129,27 @@ input[type="radio"] {
     padding: 1.5em;
     border: 1px solid #eee;
     border-top: none;
+}
+/* Conector de Horarios */
+.horarios-conector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 8px 0;
+}
+
+.hora-bold { 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    color: #333; 
+}
+.conector-puntos {
+    width: 40px;
+    height: 1px;
+    background-color: #d1d1e9;
+}
+.info-secundaria {
+    font-size: 0.9rem;
+    padding-bottom:1em;
+    
 }
