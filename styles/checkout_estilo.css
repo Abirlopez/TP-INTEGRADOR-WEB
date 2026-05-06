@@ -1,0 +1,404 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
+}
+
+.menu{
+  position: relative;
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #315762;
+  width: 100%;
+  height: 3.5rem;
+  padding: 2rem;
+  margin: 0;
+}
+
+.menu .menu-izquierda{
+  display: flex;
+  align-items: center;
+  width: 45%;
+}
+
+.menu .menu-medio{
+  width: 30%;
+
+}
+
+.menu .menu-medio ul{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.menu .menu-derecha {
+  justify-content: flex-end;
+  display: flex;
+  width: 35%;
+  align-items: center;
+}
+
+.menu .menu-derecha .iniciar-sesion{
+  display: flex;
+  background-color: #E9631A;
+  border-radius: 20px;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.menu-medio a:hover {
+  border-bottom: 3px solid #E9631A ;               
+}
+
+
+body{
+    max-width: 100%;
+    margin: 0;
+   background-color: rgb(243, 241, 241);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.volver {
+    text-decoration: none;
+    color: #e9631a;
+}
+
+
+
+.titulo{
+    padding-left: 2em;
+    padding-top: 2em;
+}
+
+/* --- Estilos Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+
+/* --- Rejilla y Contenedores --- */
+.contenedor-pago {
+    width: 100%;
+    padding-left: 1.3em;
+    padding-top: 1em;
+}
+
+.rejilla-superior {
+    display: grid;
+    grid-template-columns: 25% 45% 25%; 
+    gap: 1.5em;
+    margin-bottom: 2em;
+    padding-top: 1em;
+}
+
+.tarjeta {
+    background: #ffffff;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    border: 1px solid #ddd;
+}
+
+.tarjeta h3 {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.pasajero{
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    margin-bottom: 1em;
+}
+
+.pasajero img {
+    width: 2em;        
+    height: auto;       
+    display: block;    
+}
+
+/* --- Formulario --- */
+.campo { margin-bottom: 1em; }
+label { display: block; font-size: 0.85em; margin-bottom: 0.4em; color: #666; }
+input, select { 
+    width: 100%; 
+    padding: 0.7em; 
+    border: 1px solid #ccc; 
+    border-radius: 0.3em; 
+}
+
+/*tipo de documento*/
+.grupo-mixto { 
+    display: flex; 
+    gap: 0.5em; }
+
+
+.grafico-vuelo {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.detalle-escala{
+    font-size: 0.9em;
+}
+
+.info-salida{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.info-salida img {
+    width: 1em;        
+    height: auto;       
+  
+}
+
+.separador-puntos {
+    border-top: 1px dotted #ccc;
+    margin: 1em 0;
+}
+
+/* --- Contenedor de pago --- */
+.icon-pago {
+    width: 40px;
+    margin: 0 15px;
+}
+
+.metodo-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee; 
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {/*Se encarga de ocultar radio original y colocar el naranja */
+    display: none;
+}
+
+.radio-custom {/*Es el circulo del input */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+
+input[type="radio"]:checked + .metodo-header {/* cambia el estilo cuando está seleccionado  */
+    border-color: #ff5a5f;
+    background-color: #fff9f9;
+}
+
+input[type="radio"]:checked + .metodo-header .radio-custom {/*cambia tambien el circulo */
+    border-color: #ff5a5f;
+}
+
+input[type="radio"]:checked + .metodo-header .radio-custom::after { /* es el punto del input */
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #ff5a5f;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.datos {/* datos que se despliegan */
+    display: none;
+    padding: 20px;
+    border: 1px solid #ff5a5f;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    background: white;
+}
+
+#tarjeta:checked ~ .datos.tarjeta,
+#paypal:checked ~ .datos.paypal,
+#transferencia:checked ~ .datos.transferencia {
+    display: block;
+}
+.metodo-item{
+margin-bottom: 5%;
+}
+.row {
+    display: flex;
+    gap: 20px;
+}
+.row div {
+    flex: 1; /* Hace que ambos ocupen el mismo espacio */
+}
+
+
+/* --- Barra Inferior --- */
+.resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / 4; 
+    background: #fff;
+    padding: 1.2em 2em;
+    border-radius: 0.5em;
+    border: 1px solid #ddd;
+}
+
+.fila-precio{
+   display: flex;
+   justify-content: space-between;
+   font-size: 0.9em;
+    color: #64748b;
+    margin-bottom: 0.6em;
+}
+
+.campo-cupon { margin-bottom: 1em; }
+.cupon{ 
+    width: 63%; 
+    padding: 0.7em; 
+    border: 1px solid #ccc; 
+    border-radius: 0.3em; 
+}
+
+.boton-cupon{
+    width: 30%;
+    padding: 0.7em; 
+    border: 1px solid #ccc; 
+    border-radius: 0.3em;
+    background-color: #E9631A;
+}
+
+.total-pago{
+     font-weight: bold;
+     font-size: 1.4em;
+}
+
+
+ .monto {
+    color: #e9631a;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-left: 5em;
+
+}
+
+.boton-accion {
+    background-color: #e9631a;
+    color: white;
+    border: none;
+    padding: 1em 2.5em;
+    border-radius: 0.4em;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Empieza el FOOTER */
+.footer {
+  background-color: #315762;
+  /* #073B4C */
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 5em;
+  color: white;
+}
+
+.f-suscripcion {
+  text-align: center;
+
+  padding: 1em;
+}
+
+.divForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+  padding-top: 1em;
+
+  /* display: grid;
+    grid-template-rows: 2fr 1fr; */
+}
+
+#mail {
+  /* width: 35em; */
+  padding: 1.2em 1.2em;
+  width: 35vw;
+    border-radius: 1em;
+}
+
+#Enviar {
+  padding: 1.2em 1.2em;
+  width: 15vw;
+  background-color: #FF6B00;
+  border-color: #977a7a33;
+  border-radius: 2em;
+  box-shadow: 0%;
+
+}
+
+.f-Menu {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+  background-color: #315762;
+  /* #073B4C */
+}
+
+.f-section {
+  padding: 0.5em;
+}
+
+.f-section ul li {
+  list-style-type: none;
+}
+
+.iconoRedes {
+  width: 2em;
+  margin-right: 1em;
+}
+
+.f-logo {
+  width: 15em;
+}
+
+.f-redes {
+  display: flex;
+  flex-direction: row;
+}
+
+.f-Derechos {
+  text-align: center;
+}
+
+/* FIN FOOTER */

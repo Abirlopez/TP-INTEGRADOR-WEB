@@ -5,10 +5,9 @@
     box-sizing: border-box;
 }
 
-.menu{
+.menu{/* contenedor principal del menu */
   position: relative;
   display: flex;
-  margin: 1rem;
   align-items: center;
   justify-content: space-between;
   background-color: #315762;
@@ -49,7 +48,7 @@ a{
   align-items: center;
 }
 
-.menu .menu-derecha .iniciar-sesion{
+.menu .menu-derecha .iniciar-sesion{/* boton de inicio de sesion */
   display: flex;
   background-color: #E9631A;
   border-radius: 20px;
@@ -59,7 +58,7 @@ a{
   font-size: 0.9rem;
 }
 
-.menu-medio a:hover {
+.menu-medio a:hover {/*Efecto Hover en el menú central */
   border-bottom: 3px solid #E9631A ;               
 }
 
@@ -91,8 +90,8 @@ body{
     gap: 20px;
 }
 
-/*todo el aside*/
-.detalle { 
+
+.detalle { /* detalle de vuelo (parte izquierda)*/
     height: auto;
     grid-row: 1; 
     grid-column: 1/2;
@@ -292,13 +291,11 @@ li{
     display: block;
     margin: 0 auto;
 }
-
+/* Lógica de colores por estado del asiento */
 .disponible { background-color: #315762; cursor: pointer; }
 .ocupado { background-color: #E0E0E0; }
 .seleccionado { background-color: #e9631a; }
 
-.check-asiento { display: none; }
-.check-asiento:checked + .disponible { background-color: #e9631a; }
 
 .pasillo { width: 30px; }
 .num-fila { color: #888; text-align: center; }
@@ -308,24 +305,26 @@ li{
     height: 300px;
     background-color: #eee;
 }
-/* LÓGICA DE INTERCAMBIO (Sin JavaScript) */
+/* logica de intercambio  */
 .seleccionar-asiento {
     display: none; /* Oculto por defecto */
 }
 
-/* Mostramos Ida al cargar o cuando se clickea su flecha */
+.check-asiento { display: none; }/*  El checkbox está oculto*/
+.check-asiento:checked + .disponible { background-color: #e9631a; }/* Cuando seleccionas un asiento disponible cambia de color*/
+
 #vuelo-ida:not(:target), 
-#vuelo-ida:target {
+#vuelo-ida:target { /* Mostramos Ida al cargar o cuando se clickea su flecha */
     display: flex;
 }
 
-/* Si Vuelta es el objetivo, ocultamos Ida y mostramos Vuelta */
-#vuelo-vuelta:target {
+
+#vuelo-vuelta:target { /* Si Vuelta es el objetivo, se oculta Ida y muestra Vuelta */
     display: flex;
 }
 
 #vuelo-vuelta:target ~ #vuelo-ida,
-#vuelo-ida:has(~ #vuelo-vuelta:target) {
+#vuelo-ida:has(~ #vuelo-vuelta:target) {/* cuando se cambia a vuelo vuelta, elvuelo ida se oculta*/
     display: none;
 }
 
@@ -339,7 +338,7 @@ li{
     transition: 0.2s; 
 }
 .flecha:hover { 
-    transform: scale(1.1); 
+    transform: scale(1.1); /* Efecto de crecimiento suave al pasar el mouse */
 }
 
 .informacion-asiento {
