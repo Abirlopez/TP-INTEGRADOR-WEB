@@ -5,10 +5,9 @@
     box-sizing: border-box;
 }
 
-.menu{
+.menu{/* contenedor principal del menu */
   position: relative;
   display: flex;
-  margin: 1rem;
   align-items: center;
   justify-content: space-between;
   background-color: #315762;
@@ -49,7 +48,7 @@ a{
   align-items: center;
 }
 
-.menu .menu-derecha .iniciar-sesion{
+.menu .menu-derecha .iniciar-sesion{/* boton de inicio de sesion */
   display: flex;
   background-color: #E9631A;
   border-radius: 20px;
@@ -59,7 +58,7 @@ a{
   font-size: 0.9rem;
 }
 
-.menu-medio a:hover {
+.menu-medio a:hover {/*Efecto Hover en el menú central */
   border-bottom: 3px solid #E9631A ;               
 }
 
@@ -79,7 +78,7 @@ body{
 p {
     color: #323232;
 }
-/*todo el main*/
+
 .titulo{
     padding-left: 2em;
     padding-top: 2em;
@@ -94,8 +93,8 @@ p {
     gap: 20px;
 }
 
-/*todo el aside*/
-.detalle { 
+
+.detalle { /* detalle de vuelo (parte izquierda)*/
     height: auto;
     grid-row: 1; 
     grid-column: 1/2;
@@ -144,22 +143,22 @@ span{
 }
 
 .bloque-grafico{
-    flex-grow: 1; /* Ocupa todo el espacio restante */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Texto arriba, línea abajo */
-    padding: 0 0.6em;      /* Espacio con los textos de los extremos */
+    align-items: center; 
+    padding: 0 0.6em;     
 }
 
 .linea{
     display: flex;
-    align-items: center; /* Alinea círculos y línea */
+    align-items: center; 
     width: 100%;
     justify-content: center;
 }
 
 .linea-horizontal{
-    flex-grow: 1; /* La línea ocupa todo el ancho entre círculos */
+    flex-grow: 1; 
     height: 1px;
     background-color: #ddd;
 }
@@ -176,7 +175,7 @@ span{
     height: 8px;
     border: 1px solid #ccc;
     border-radius: 50%;
-    background-color: white; /* Relleno blanco */
+    background-color: white; 
 }
 
 .hora {
@@ -212,11 +211,11 @@ img {
 }
 
 .separador-puntos {
-    border: none;               /* Quitamos la línea sólida por defecto */
-    border-top: 2px dotted #ccc; /* Línea de 2px, punteada y color gris */
+    border: none;               
+    border-top: 2px dotted #ccc; 
     height: 0;
     width: 100%;
-    margin: 20px 0;             /* Espacio arriba y abajo para que no esté pegada */
+    margin: 20px 0;             
 }
 
 
@@ -295,13 +294,11 @@ h2{
     display: block;
     margin: 0 auto;
 }
-
+/* Lógica de colores por estado del asiento */
 .disponible { background-color: #315762; cursor: pointer; }
 .ocupado { background-color: #E0E0E0; }
 .seleccionado { background-color: #e9631a; }
 
-.check-asiento { display: none; }
-.check-asiento:checked + .disponible { background-color: #e9631a; }
 
 .pasillo { width: 30px; }
 .num-fila { color: #888; text-align: center; }
@@ -311,24 +308,26 @@ h2{
     height: 300px;
     background-color: #eee;
 }
-/* LÓGICA DE INTERCAMBIO (Sin JavaScript) */
+/* logica de intercambio  */
 .seleccionar-asiento {
     display: none; /* Oculto por defecto */
 }
 
-/* Mostramos Ida al cargar o cuando se clickea su flecha */
+.check-asiento { display: none; }/*  El checkbox está oculto*/
+.check-asiento:checked + .disponible { background-color: #e9631a; }/* Cuando seleccionas un asiento disponible cambia de color*/
+
 #vuelo-ida:not(:target), 
-#vuelo-ida:target {
+#vuelo-ida:target { /* Mostramos Ida al cargar o cuando se clickea su flecha */
     display: flex;
 }
 
-/* Si Vuelta es el objetivo, ocultamos Ida y mostramos Vuelta */
-#vuelo-vuelta:target {
+
+#vuelo-vuelta:target { /* Si Vuelta es el objetivo, se oculta Ida y muestra Vuelta */
     display: flex;
 }
 
 #vuelo-vuelta:target ~ #vuelo-ida,
-#vuelo-ida:has(~ #vuelo-vuelta:target) {
+#vuelo-ida:has(~ #vuelo-vuelta:target) {/* cuando se cambia a vuelo vuelta, elvuelo ida se oculta*/
     display: none;
 }
 
@@ -342,7 +341,7 @@ h2{
     transition: 0.2s; 
 }
 .flecha:hover { 
-    transform: scale(1.1); 
+    transform: scale(1.1); /* Efecto de crecimiento suave al pasar el mouse */
 }
 
 .informacion-asiento {
