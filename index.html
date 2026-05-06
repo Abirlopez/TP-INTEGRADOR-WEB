@@ -8,6 +8,159 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <title>FlyNow!</title>
+<<<<<<< HEAD
+=======
+</head>
+<body>
+<header>
+    <nav class="menu">
+        <section class="menu-izquierda">
+          <a href="index.html"><img class="logo"  src="images\logo.png" alt="logo" height="35"></a>
+        </section>
+
+        <section class="menu-medio">
+        <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="#">Vuelos</a></li>
+            <li><a href="./pages/ofertas.html">Ofertas</a></li>
+            <li><a href="#">Nosotros</a></li>
+        </ul>
+        </section>
+
+        <section class="menu-derecha">
+            <div class="iniciar-sesion">
+                <a href=".//pages/InicioSesion.html">Iniciar sesión</a>
+            <img class="usuario"   src="images\usuario.png" alt="usuario" width="30">
+            </div>
+        </section>
+    </nav>
+</header>
+<main>
+    <section class="main-texto">
+        <p class="parrafo-1">Tu próximo destino</p>
+        <p class="parrafo-2">te está esperando</p>
+        <p class="parrafo-3">Buscá vuelos rápidos y al mejor precio.</p>
+    </section>
+
+    <section class="busqueda">
+        <form action="./index.html" method="post">
+
+        <div class="opcion-1">
+      <label><input type="radio" name="tipo"> Ida y vuelta</label>
+      </div>
+      <div class="opcion-2">
+      <label><input type="radio" name="tipo"> Solo ida</label>
+      </div>
+
+        <div class="opcion-3">
+            <label for="origen">Origen</label>
+      <input type="text" placeholder="Origen" name="origen" required>
+       </div>
+
+       <div class="opcion-4">
+       <label for="destino">Destino</label>
+        <input type="text" placeholder="Destino" name="destino" required>
+        </div>
+        
+        <div class="opcion-5">
+            <label for="fecha-ida">Fecha ida</label>
+      <input type="date" name="fecha-ida"  required>
+        </div>
+
+        <div class="opcion-6">
+            <label for="fecha-vuelta">Fecha vuelta</label>
+      <input type="date" name="fecha-vuelta">
+        </div>
+
+         <div class="opcion-7">
+            <label for="pasajeros">Pasajeros</label>
+      <input type="number" name="pasajeros" placeholder="Cantidad de pasajeros" min="1" required>
+        </div>
+        <div class="opcion-8">
+            <label for="clase">Clase</label>
+      <select name="clase">
+    <option value="Economica">Economica</option>
+    <option value="Premium economy">Premium economy</option>
+    <option value="Primera clase">Primera clase</option>
+    <option value="Premium business">Premium business</option>
+      </select>
+        </div>
+
+
+       <div class="boton">
+    <button type="submit" class="btn-buscar"><a href="pages/resultados.html"> Buscar vuelos</a></button>
+    </div>
+    </form>
+    </div>
+
+    </section>
+</main>
+
+<section class="ofertas">
+    <div class="ofertas-texto">
+         <span class="parte-izquierda">Ofertas destacadas</span>
+         <div class="parte-derecha">
+             <a href="pages\ofertas.html">Ver todas las ofertas</a>
+             <img src="images\icono-flecha.png" alt="logo-flecha">
+         </div>
+    </div>
+
+    <div  class="contenedor-ofertas">
+        <div class="tarjeta">
+            <img src="images\buenosaires.png" alt="foto-buenos-aires">
+            <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Buenos Aires</h3>
+               <p>Desde</p>
+               <span class="precio">US$65</span>
+            </div>
+
+        </div>
+        <div class="tarjeta">
+            <img src="images\bariloche.png" alt="foto-bariloche">
+             <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Bariloche</h3>
+               <p>Desde</p>
+               <span class="precio">US$265</span>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="images\rio.png" alt="foto-rio-de-janeiro">
+             <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Rio de Janeiro</h3>
+               <p>Desde</p>
+               <span class="precio">US$200</span>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="images\madrid.png" alt="foto-madrid">
+             <div class="info">
+               <span class="promo">PROMO</span>
+               <h3>Madrid</h3>
+               <p>Desde</p>
+               <span class="precio">US$1500</span>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+>>>>>>> 95a044783cafb37ff91c4819faf7701288e9ce69
     
 </head>
 

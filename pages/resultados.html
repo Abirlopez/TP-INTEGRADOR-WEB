@@ -10,12 +10,12 @@
     <header>
         <nav class="menu">
         <section class="menu-izquierda">
-          <a href="index.html"><img class="logo"  src="..\images\logo.png" alt="logo" height="35"></a>
+          <a href="..\index.html"><img class="logo"  src="..\images\logo.png" alt="logo" height="35"></a>
         </section>
 
         <section class="menu-medio">
         <ul>
-            <li><a href="#">Inicio</a></li>
+            <li><a href="..\index.html">Inicio</a></li>
             <li><a href="#">Vuelos</a></li>
             <li><a href="#">Ofertas</a></li>
             <li><a href="#">Nosotros</a></li>
@@ -86,7 +86,9 @@
                     <button class="buscar">Buscar</button>
                     </section>
                     <section class="filtros"><!-- Comienzan los filtros -->
-                    <h2>Escalas</h2><!-- Contenedor de filtro de escala -->
+                    <!-- Contenedor de filtro de escala -->
+                    <details open>
+                    <summary>Escalas <span class="flecha"></span></summary> 
                     <input type="checkbox" id="todas-escalas" name="todas-escalas" value="todas-escalas">
                     <label for="todas-escalas"> Todas las escalas</label><br>
                     <input type="checkbox" id="directo" name="directo" value="directo">
@@ -95,10 +97,13 @@
                     <label for="1escala"> 1 escala</label><br>
                     <input type="checkbox" id="2escala" name="2escala" value="2escala">
                     <label for="2escala"> 2 o más escalas</label>
-                    
+                    </details>
+
                     <div class="linea-separadora"></div>
                     
-                    <h2>Equipaje</h2> <!-- Contenedor de filtro de equipaje -->
+                    <!-- Contenedor de filtro de equipaje -->
+                    <details open>
+                    <summary>Equipaje <span class="flecha"></span></summary> 
                     <input type="checkbox" id="todas-opciones" name="todas-opciones" value="todas-opciones">
                     <label for="todas-opciones"> Todas las opciones</label><br>
                     <input type="checkbox" id="personal" name="personal" value="personal">
@@ -107,7 +112,8 @@
                     <label for="mano"> Equipaje de mano</label><br>
                     <input type="checkbox" id="bodega" name="bodega" value="bodega">
                     <label for="bodega"> Equipaje de bodega</label>
-                    
+                    </details>
+
                     <div class="linea-separadora"></div>
                     
                     <h2>Precio</h2> <!-- Contenedor de filtro de precio -->
@@ -118,7 +124,9 @@
                     </div>
                     <div class="linea-separadora"></div>
                     
-                    <h2>Aerolíneas</h2><!-- Contenedor de filtro de aerolineas -->
+                    <!-- Contenedor de filtro de aerolineas -->
+                    <details open>
+                    <summary>Aerolineas <span class="flecha"></span></summary>
                     <input type="checkbox" id="todas-aerolineas" name="todas-aerolineas" value="todas-aerolineas">
                     <label for="todas-aerolineas"> Todas las aerolíneas</label><br>
                     <input type="checkbox" id="argentinas" name="argentinas" value="argentinas">
@@ -131,11 +139,37 @@
                     <label for="latam"> Latam</label><br>
                     <input type="checkbox" id="lufthansa" name="lufthansa" value="lufthansa">
                     <label for="lufthansa"> Lufthansa</label>
+                    </details>
+
+                    <div class="linea-separadora"></div>
+                    <!-- Contenedor de filtro de politica -->
+                    <div class="contenedor-politica">
+                        <h2>Politicas</h2>
+                        <div class="politica-item">
+                        <div class="politica-texto">
+                        <p class="titulo-opcion">Permite cambios sin cargo</p>
+                        <p class="subtitulo-opcion">Puede aplicarse diferencia de tarifa</p><br>
+                        </div>
+                        <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                        </label>
+                        </div>
+                        <div class="politica-item">
+                        <div class="politica-texto">
+                        <p class="titulo-opcion">Permite reembolso</p>
+                        <p class="subtitulo-opcion">Puede tener cargo y/o penalidad</p>
+                        </div>
+                        <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                        </label>
+                        </div>
+                        </div>
+                    </div>
                     </section>
-
-                </aside>
-
-           
+                    
+                </aside>         
 
 
 
@@ -201,7 +235,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 1.739</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
                 
@@ -265,7 +299,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 2.036</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
 
@@ -329,7 +363,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 2.286</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
                     
@@ -394,7 +428,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 3.303</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
 
@@ -459,11 +493,11 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 1.667</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
 
-<div class="tarjeta-vuelo">
+                    <div class="tarjeta-vuelo">
                         <div class="informacion">
 
                             <div class="fila">
@@ -523,12 +557,12 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 1.973</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
                     
 
-<div class="tarjeta-vuelo">
+                    <div class="tarjeta-vuelo">
                         <div class="informacion">
 
                             <div class="fila">
@@ -588,10 +622,10 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 2.009</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
-<div class="tarjeta-vuelo">
+                    <div class="tarjeta-vuelo">
                         <div class="informacion">
 
                             <div class="fila">
@@ -651,11 +685,11 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 1.982</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
                     
-<div class="tarjeta-vuelo">
+                    <div class="tarjeta-vuelo">
                         <div class="informacion">
 
                             <div class="fila">
@@ -715,7 +749,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 4.077</div>
-                            <button class="oferta">Ver oferta</button>
+                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
                         </div>
                     </div>
 

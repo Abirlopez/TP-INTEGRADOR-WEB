@@ -237,13 +237,13 @@ select:focus {
   position: absolute;
   color: white;
   z-index: 2;
-  top: 25px;
-  left: 25px;
+  top: 1.8rem;
+  left: 1.8rem;
   text-align: left;
 }
 
 .promo {
-  top: 20px;
+  top: 1.5rem;
   background: #E9631A;
   padding: 4px 8px;
   border-radius: 6px;
