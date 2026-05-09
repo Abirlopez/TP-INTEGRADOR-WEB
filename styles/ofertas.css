@@ -40,6 +40,10 @@
   justify-content: center;
 }
 
+a{
+  text-decoration: none;
+}
+
 
 
 .menu-medio a {
@@ -178,6 +182,10 @@ select {
   gap: 1em;
   padding: 1em 5em;
   color: white;
+}
+
+.footer a{
+  color: #FAFAFA;
 }
 
 .f-suscripcion {
