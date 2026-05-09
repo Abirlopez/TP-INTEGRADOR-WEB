@@ -18,19 +18,9 @@
   margin: 0;
 }
 
-.menu-izquierda, .menu-medio, .menu-derecha{
-  flex: 1;
-}
 .menu .menu-izquierda {
   display: flex;
   align-items: center;
-  width: 35%;
-}
-
-/*nav --> opciones */
-.menu .menu-medio {
-  width: 30%;
-
 }
 
 .menu .menu-medio ul {
@@ -44,8 +34,6 @@ a{
   text-decoration: none;
 }
 
-
-
 .menu-medio a {
   display: inline-block;
   text-decoration: none;
@@ -58,13 +46,10 @@ a{
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/*hasta aca 
-*/
 
 .menu .menu-derecha {
   justify-content: flex-end;
   display: flex;
-  width: 35%;
   align-items: center;
 }
 .iniciar-sesion {
@@ -82,7 +67,7 @@ a{
   color: white;
   text-decoration: none;
   font-weight: bold;
-}}
+}
 
 body{
     background-color: #F5F5F5;
