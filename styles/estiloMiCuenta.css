@@ -7,6 +7,7 @@
 main{
   height: 100%;
 }
+
 .menu {
   position: relative;
   display: flex;
@@ -37,12 +38,17 @@ main{
   width: 30%;
 
 } */
+}
 
 .menu .menu-medio ul {
   display: flex;
   list-style-type: none;
   gap: 3rem;
   justify-content: center;
+}
+
+a{
+  text-decoration: none;
 }
 
 
