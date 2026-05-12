@@ -18,18 +18,9 @@
   margin: 0;
 }
 
-.menu-izquierda, .menu-medio, .menu-derecha{
-  flex: 1;
-}
 .menu .menu-izquierda {
   display: flex;
   align-items: center;
-  width: 35%;
-}
-
-/*nav --> opciones */
-.menu .menu-medio {
-  width: 30%;
 
 }
 
@@ -63,7 +54,6 @@ a{
 .menu .menu-derecha {
   justify-content: flex-end;
   display: flex;
-  width: 35%;
   align-items: center;
 }
 .iniciar-sesion {

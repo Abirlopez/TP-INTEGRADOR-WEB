@@ -4,9 +4,6 @@
   font-family: Poppins, sans-serif;
   box-sizing: border-box;
 }
-main{
-  height: 100%;
-}
 
 .menu {
   position: relative;
@@ -19,25 +16,12 @@ main{
   height: 3.5rem;
   padding: 2rem;
   margin: 0;
-      width: 100%;
 }
 
-.menu-izquierda, .menu-medio, .menu-derecha{
-  flex: 1;
-}
-/* Oculto para acceder al meno
 .menu .menu-izquierda {
   display: flex;
   align-items: center;
-  width: 35%;
-} */
 
-/*nav --> opciones */
-/*  limita el menu
-.menu .menu-medio {
-  width: 30%;
-
-} */
 }
 
 .menu .menu-medio ul {
@@ -70,7 +54,6 @@ a{
 .menu .menu-derecha {
   justify-content: flex-end;
   display: flex;
-  /* swidth: 35%; */
   align-items: center;
 }
 .iniciar-sesion {
