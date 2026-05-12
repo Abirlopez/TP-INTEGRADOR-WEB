@@ -8,7 +8,6 @@
 .menu{
   position: relative;
   display: flex;
-  margin: 1rem;
   align-items: center;
   justify-content: space-between;
   background-color: #315762;
@@ -87,19 +86,29 @@ body{
 }
 
 
-.contenedor-principal{
-    padding: 2em;
+.contenedor-principal {
     display: grid;
-    grid-template-columns: 35% 60%; /* Columna izquierda más chica que la derecha */
-    grid-template-rows: auto auto;
-    gap: 20px;
+    grid-template-columns: 350px 1fr; 
+    gap: 25px;
+    max-width: 1300px; 
+    margin: 10px auto;
+    align-items: start;
+    padding: 0 20px;
+}
+.vuelo-columna{
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
 }
 
-/*todo el aside*/
+
+/aside*/
 .detalle { 
     height: auto;
     grid-row: 1; 
-    grid-column: 1/2;
+    grid-column: 1;
     background-color: white;
     border: 0.05em solid rgb(199, 198, 198);
     border-radius: 0.8em;
@@ -108,14 +117,6 @@ body{
 }
 
 
-/*ida*/
-.destino {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    margin-bottom: 1.6em;
-    justify-content: center;
-}
 
 .grafico-vuelo {
     display: flex;
@@ -145,22 +146,22 @@ span{
 }
 
 .bloque-grafico{
-    flex-grow: 1; /* Ocupa todo el espacio restante */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Texto arriba, línea abajo */
-    padding: 0 0.6em;      /* Espacio con los textos de los extremos */
+    align-items: center; 
+    padding: 0 0.6em;      
 }
 
 .linea{
     display: flex;
-    align-items: center; /* Alinea círculos y línea */
+    align-items: center; 
     width: 100%;
     justify-content: center;
 }
 
 .linea-horizontal{
-    flex-grow: 1; /* La línea ocupa todo el ancho entre círculos */
+    flex-grow: 1; 
     height: 1px;
     background-color: #ddd;
 }
@@ -177,7 +178,7 @@ span{
     height: 8px;
     border: 1px solid #ccc;
     border-radius: 50%;
-    background-color: white; /* Relleno blanco */
+    background-color: white; 
 }
 
 .hora {
@@ -213,35 +214,33 @@ li{
 }
 
 .separador-puntos {
-    border: none;               /* Quitamos la línea sólida por defecto */
-    border-top: 2px dotted #ccc; /* Línea de 2px, punteada y color gris */
+    border: none;               
+    border-top: 2px dotted #ccc; 
     height: 0;
     width: 100%;
-    margin: 20px 0;             /* Espacio arriba y abajo para que no esté pegada */
+    margin: 20px 0;             
 }
 
 
 .asientos {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    height: auto;
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
     background-color: white;
-    border: 0.05em solid  rgb(199, 198, 198);
-    border-radius: 0.8em;
-    padding: 0.9em;
-    justify-content: center;
-    align-items: center;
-    margin-left: 7%;
-    }
+    padding: 25px;
+    border-radius: 15px;
+}
 
-
+.seccion-asientos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+}
 .seleccionar-asiento {
-    flex-direction: column;
-    align-items: center;
-    background: white;
-    width: 100%;
-    max-width: 650px;
-    border-radius: 10px;
+    flex: 1;                   
+    min-width: 300px;          
+    max-width: 450px;
 }
 
 .texto {
@@ -255,32 +254,56 @@ li{
 }
 
 
+
 .naranja { color: #e9631a; }
 
 .asiento {
     display: flex;
     gap: 20px;
-    margin-bottom: 20px;
+    
 }
-
+.mapas-flex {
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px; 
+    
+    
+}
+.vuelo-columna {
+    text-align: center;
+}
+.vuelo-titulo {
+    color: #E9631A; 
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
 .cuadrado {
     display: flex;
     align-items: center;
     gap: 8px;
 }
+.cuadrado-asiento {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;             
+    margin-top: 30px;
+    margin-left: 20px;
+}
 
 .contenedor-asientos-navegacion {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    width: 100%;
+    flex-direction: row; 
+    justify-content: flex-start;
+    gap: 40px; 
+   
 }
 
 /* TABLA Y ASIENTOS */
 .mapa-asientos {
+    width: 100%;
     border-collapse: separate;
-    border-spacing: 10px;
+    border-spacing: 5px;      
 }
 
 .mapa-asientos td {
@@ -309,45 +332,15 @@ li{
 
 .divisor-vertical {
     width: 2px;
-    height: 300px;
+    height: 500px;
     background-color: #eee;
 }
-/* LÓGICA DE INTERCAMBIO (Sin JavaScript) */
+
 .seleccionar-asiento {
-    display: none; /* Oculto por defecto */
-}
-
-/* Mostramos Ida al cargar o cuando se clickea su flecha */
-#vuelo-ida:not(:target), 
-#vuelo-ida:target {
-    display: flex;
-}
-
-/* Si Vuelta es el objetivo, ocultamos Ida y mostramos Vuelta */
-#vuelo-vuelta:target {
-    display: flex;
-}
-
-#vuelo-vuelta:target ~ #vuelo-ida,
-#vuelo-ida:has(~ #vuelo-vuelta:target) {
-    display: none;
-}
-
-
-.flecha, .espaciador-flecha {
-    width: 20px;
-}
-
-.flecha { 
-    cursor: pointer; 
-    transition: 0.2s; 
-}
-.flecha:hover { 
-    transform: scale(1.1); 
+    display: none; 
 }
 
 .informacion-asiento {
-    margin-top: 30px;
     border: 1px solid #ddd;
     border-radius: 8px;
     display: flex;
@@ -374,7 +367,7 @@ li{
     border-radius: 0.8em;
     padding: 1em;
     display: flex;
-    justify-content: space-between; /* Alinea texto a la izq y botón a la der */
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -433,7 +426,7 @@ li{
 }
 
 .monto-final {
-    color: #e9631a; /* Naranja FlyNow */
+    color: #e9631a; 
     font-weight: bold;
     font-size: 1.3em;
 }
@@ -441,10 +434,6 @@ li{
 /* Empieza el FOOTER */
 .footer {
   background-color: #315762;
-  /* #073B4C */
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr; */
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -465,12 +454,11 @@ li{
   gap: 1em;
   padding-top: 1em;
 
-  /* display: grid;
-    grid-template-rows: 2fr 1fr; */
+ 
 }
 
 #mail {
-  /* width: 35em; */
+  
   padding: 1.2em 1.2em;
   width: 35vw;
     border-radius: 1em;
@@ -490,7 +478,7 @@ li{
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 1fr;
   background-color: #315762;
-  /* #073B4C */
+ 
 }
 
 .f-section {

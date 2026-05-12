@@ -74,18 +74,18 @@
                     </div>
                     
                 <ul>
-                    <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo">   Jue. 20 Abril</li>
-                    <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo">  Duración: 11h 40m</li>
-                    <li><img class="chico" src="../images/avion.svg" class="icono-vuelo">  Sin escalas</li>
-                    <li><img class="chico"  src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
-                    <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo">  Economy</li>
+                    <li><img class="chico icono-vuelo" src="../images/calendario.svg" >   Jue. 20 Abril</li>
+                    <li><img class="chico icono-vuelo" src="../images/tiempo.svg" >  Duración: 11h 40m</li>
+                    <li><img class="chico icono-vuelo" src="../images/avion.svg" >  Sin escalas</li>
+                    <li><img class="chico icono-vuelo"  src="../images/AeroArgentinas.jpg" > Aerolineas Argentinas</li>
+                    <li><img class="chico icono-vuelo" src="../images/ticket.svg" >  Economy</li>
                 </ul>
                 
                 <div class="separador-puntos"></div>
 
                 <section class="tramo-vuelo">
                     <div class="destino">
-                        <img class="chico" src="../images/avion.svg" class="icono-destino-vuelta">
+                        <img class="chico icono-destino-vuelta" src="../images/avion.svg" >
                         <p class="info">Vuelta: Madrid (MAD) ➔ Buenos Aires (EZE) </p>
                     </div>
                 
@@ -116,11 +116,11 @@
                     </div>
                     
                 <ul>
-                    <li><img class="chico" src="../images/calendario.svg" class="icono-vuelo">   Sab. 30 Abril</li>
-                    <li><img class="chico" src="../images/tiempo.svg" class="icono-vuelo">  Duración: 11h 10m</li>
-                    <li><img class="chico" src="../images/avion.svg" class="icono-vuelo">  Sin escalas</li>
-                    <li><img class="chico" src="../images/AeroArgentinas.jpg" class="icono-vuelo"> Aerolineas Argentinas</li>
-                    <li><img class="chico" src="../images/ticket.svg" class="icono-vuelo">  Economy</li>
+                    <li><img class="chico icono-vuelo" src="../images/calendario.svg" >   Sab. 30 Abril</li>
+                    <li><img class="chico icono-vuelo" src="../images/tiempo.svg" >  Duración: 11h 10m</li>
+                    <li><img class="chico icono-vuelo" src="../images/avion.svg" >  Sin escalas</li>
+                    <li><img class="chico icono-vuelo" src="../images/AeroArgentinas.jpg" > Aerolineas Argentinas</li>
+                    <li><img class="chico icono-vuelo" src="../images/ticket.svg" >  Economy</li>
                 </ul>
                 <hr>
                 <div class="precio">
@@ -130,264 +130,29 @@
             </aside>
 
         <section class="asientos">
-    <section id="vuelo-ida" class="seleccionar-asiento">
-        <div class="texto">
-        <h1>Selecciona tu asiento</h1>
-        <h2 class="ida">Ida</h2>
-        </div>
-        <div class="asiento">
-            <div class="cuadrado">
-                <span class="cuadrito disponible"></span>
-                <p>Disponible</p>
+            <div class="texto-asiento">
+              <h1>Selecciona tu asiento</h1>
+                <div class="cuadrado-asiento">
+                <div class="cuadrado">
+                    <span class="cuadrito disponible"></span>
+                    <p>Disponible</p>
+                </div>
+                <div class="cuadrado">
+                    <span class="cuadrito ocupado"></span>
+                    <p>Ocupado</p>
+                </div>
+                <div class="cuadrado">
+                    <span class="cuadrito seleccionado"></span>
+                    <p>Seleccionado</p>
+                </div>
+                </div>
             </div>
-            <div class="cuadrado">
-                <span class="cuadrito ocupado"></span>
-                <p>Ocupado</p>
-            </div>
-            <div class="cuadrado">
-                <span class="cuadrito seleccionado"></span>
-                <p>Seleccionado</p>
-            </div>
-        </div>
-
-        <div class="contenedor-asientos-navegacion">
-        <table class="mapa-asientos">
-            <thead>
-                <tr>
-                <th></th> 
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-                <th class="pasillo"></th> 
-                <th>D</th>
-                <th>E</th>
-                <th>F</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td class="num-fila">1</td>
-                <td>
-                <input type="checkbox" id="ida-1A" class="check-asiento">
-                <label for="ida-1A" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td>
-                <input type="checkbox" id="ida-1D" class="check-asiento">
-                <label for="ida-1D" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                </tr>
-                <tr>
-                <td class="num-fila">2</td>
-                <td class="ocupado"></td>
-                <td>
-                <input type="checkbox" id="ida-2B" class="check-asiento">
-                <label for="ida-2B" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td>
-                <input type="checkbox" id="ida-2D" class="check-asiento">
-                <label for="ida-2D" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-2E" class="check-asiento">
-                <label for="ida-2E" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                </tr>
-                <tr>
-                <td class="num-fila">3</td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td>
-                <input type="checkbox" id="ida-3D" class="check-asiento">
-                <label for="ida-3D" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-3E" class="check-asiento">
-                <label for="ida-3E" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                </tr>
-                <tr>
-                <td class="num-fila">4</td>
-                <td>
-                <input type="checkbox" id="ida-4A" class="check-asiento">
-                <label for="ida-4A" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-4B" class="check-asiento">
-                <label for="ida-4B" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                </tr>
-                <tr>
-                <td class="num-fila">5</td>
-                <td>
-                <input type="checkbox" id="ida-5A" class="check-asiento">
-                <label for="ida-5A" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td>
-                <input type="checkbox" id="ida-5D" class="check-asiento">
-                <label for="ida-5D" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-5E" class="check-asiento">
-                <label for="ida-5E" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-5F" class="check-asiento">
-                <label for="ida-5F" class="disponible"></label>
-                </td>
-                </tr>
-                <tr>
-                <td class="num-fila">6</td>
-                <td class="ocupado"></td>
-                <td>
-                <input type="checkbox" id="ida-6A" class="check-asiento">
-                <label for="ida-6A" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td>
-                <input type="checkbox" id="ida-6D" class="check-asiento">
-                <label for="ida-6D" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-6E" class="check-asiento">
-                <label for="ida-6E" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-6F" class="check-asiento">
-                <label for="ida-6F" class="disponible"></label>
-                </td>
-                </tr>
-                <tr>
-                <td class="num-fila">7</td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                <td class="ocupado"></td>
-                </tr>
-                <tr>
-                <td class="num-fila">8</td>
-                <td class="ocupado"></td>
-                <td>
-                <input type="checkbox" id="ida-8B" class="check-asiento">
-                <label for="ida-8B" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td>
-                <input type="checkbox" id="ida-8D" class="check-asiento">
-                <label for="ida-8D" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-8E" class="check-asiento">
-                <label for="ida-8E" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                </tr>
-                <tr>
-                <td class="num-fila">9</td>
-                <td>
-                <input type="checkbox" id="ida-9A" class="check-asiento">
-                <label for="ida-9A" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-9B" class="check-asiento">
-                <label for="ida-9B" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-9C" class="check-asiento">
-                <label for="ida-9C" class="disponible"></label>
-                </td>
-                <td class="pasillo"></td>
-                <td class="ocupado"></td>
-                <td>
-                <input type="checkbox" id="ida-9E" class="check-asiento">
-                <label for="ida-9E" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-9F" class="check-asiento">
-                <label for="ida-9F" class="disponible"></label>
-                </td>
-                </tr><tr>
-                <td class="num-fila">10</td>
-                <td class="ocupado"></td>
-                <td>
-                <input type="checkbox" id="ida-10B" class="check-asiento">
-                <label for="ida-10B" class="disponible"></label>
-                </td>
-                <td class="ocupado"></td>
-                <td class="pasillo"></td>
-                <td class="ocupado"></td>
-                <td>
-                <input type="checkbox" id="ida-10E" class="check-asiento">
-                <label for="ida-10E" class="disponible"></label>
-                </td>
-                <td>
-                <input type="checkbox" id="ida-10F" class="check-asiento">
-                <label for="ida-10F" class="disponible"></label>
-                </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="divisor-vertical"></div>
-            <a href="#vuelo-vuelta">
-            <img class="flecha derecha" src="../images/flecha derecha.svg" alt="Siguiente">
-            </a>
-        </div>
-
-        <div class="informacion-asiento">
-            <img class="logo-informacion" src="../images/informacion.svg">
-            <p>Los asientos con color gris no están disponibles. Selecciona tu asiento para continuar. </p>
-        </div>
-    </section>
-
-    <section id="vuelo-vuelta" class="seleccionar-asiento">
-        <div class="texto">
-        <h1>Selecciona tu asiento</h1>
-        <h2 class="ida" >Vuelta</h2>
-        </div>
-        <div class="asiento">
-            <div class="cuadrado">
-                <span class="cuadrito disponible"></span>
-                <p>Disponible</p>
-            </div>
-            <div class="cuadrado">
-                <span class="cuadrito ocupado"></span>
-                <p>Ocupado</p>
-            </div>
-            <div class="cuadrado">
-                <span class="cuadrito seleccionado"></span>
-                <p>Seleccionado</p>
-            </div>
-        </div>
-        
-        <div  class="contenedor-asientos-navegacion"> 
-        <a href="#vuelo-ida">
-        <img class="flecha izquierda" src="../images/flecha izquierda.svg" alt="Anterior">
-        </a>
-             <div class="divisor-vertical"></div>
-            <table class="mapa-asientos">
+            
+                
+                <div class="mapas-flex">
+                <div class="vuelo-columna">
+                <h3 class="vuelo-titulo">Ida</h3>
+                 <table class="mapa-asientos">
                 <thead>
                     <tr>
                     <th></th> 
@@ -403,120 +168,114 @@
                 <tbody>
                     <tr>
                     <td class="num-fila">1</td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-1A" class="check-asiento">
+                    <label for="ida-1A" class="disponible"></label>
+                    </td>
                     <td class="ocupado"></td>
-                    <td>
-                    <input type="checkbox" id="vuelta-1B" class="check-asiento">
-                    <label for="vuelta-1B" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-1C" class="check-asiento">
-                    <label for="vuelta-1C" class="disponible"></label>
-                    </td>
+                    <td class="ocupado"></td>
                     <td class="pasillo"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-1D" class="check-asiento">
-                    <label for="vuelta-1D" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-1D" class="check-asiento">
+                    <label for="ida-1D" class="disponible"></label>
                     </td>
                     <td class="ocupado"></td>
                     <td class="ocupado"></td>
                     </tr>
                     <tr>
                     <td class="num-fila">2</td>
+                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-2A" class="check-asiento">
-                    <label for="vuelta-2A" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-2B" class="check-asiento">
+                    <label for="ida-2B" class="disponible"></label>
                     </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-2B" class="check-asiento">
-                    <label for="vuelta-2B" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-2C" class="check-asiento">
-                    <label for="vuelta-2C" class="disponible"></label>
-                    </td>
+                    <td class="ocupado"></td>
                     <td class="pasillo"></td>
-                    <td class="ocupado"></td>
-                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-2F" class="check-asiento">
-                    <label for="vuelta-2F" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-2D" class="check-asiento">
+                    <label for="ida-2D" class="disponible"></label>
                     </td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-2E" class="check-asiento">
+                    <label for="ida-2E" class="disponible"></label>
+                    </td>
+                    <td class="ocupado"></td>
                     </tr>
                     <tr>
                     <td class="num-fila">3</td>
-                    <td>
-                    <input type="checkbox" id="vuelta-3A" class="check-asiento">
-                    <label for="vuelta-3A" class="disponible"></label>
-                    </td>
+                    <td class="ocupado"></td>
                     <td class="ocupado"></td>
                     <td class="ocupado"></td>
                     <td class="pasillo"></td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-3D" class="check-asiento">
+                    <label for="ida-3D" class="disponible"></label>
+                    </td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-3E" class="check-asiento">
+                    <label for="ida-3E" class="disponible"></label>
+                    </td>
                     <td class="ocupado"></td>
-                    <td>
-                    <input type="checkbox" id="vuelta-3E" class="check-asiento">
-                    <label for="vuelta-3E" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-3F" class="check-asiento">
-                    <label for="vuelta-3F" class="disponible"></label>
-                    </td>
                     </tr>
                     <tr>
                     <td class="num-fila">4</td>
-                    <td class="ocupado"></td>
-                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-4C" class="check-asiento">
-                    <label for="vuelta-4C" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-4A" class="check-asiento">
+                    <label for="ida-4A" class="disponible"></label>
                     </td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-4B" class="check-asiento">
+                    <label for="ida-4B" class="disponible"></label>
+                    </td>
+                    <td class="ocupado"></td>
                     <td class="pasillo"></td>
-                    <td>
-                    <input type="checkbox" id="vuelta-4D" class="check-asiento">
-                    <label for="vuelta-4D" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-4E" class="check-asiento">
-                    <label for="vuelta-4E" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-4F" class="check-asiento">
-                    <label for="vuelta-4F" class="disponible"></label>
-                    </td>
+                    <td class="ocupado"></td>
+                    <td class="ocupado"></td>
+                    <td class="ocupado"></td>
                     </tr>
                     <tr>
                     <td class="num-fila">5</td>
-                    <td class="ocupado"></td>
-                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-5C" class="check-asiento">
-                    <label for="vuelta-5C" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-5A" class="check-asiento">
+                    <label for="ida-5A" class="disponible"></label>
                     </td>
+                    <td class="ocupado"></td>
+                    <td class="ocupado"></td>
                     <td class="pasillo"></td>
-                    <td class="ocupado"></td>
-                    <td class="ocupado"></td>
-                    <td class="ocupado"></td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-5D" class="check-asiento">
+                    <label for="ida-5D" class="disponible"></label>
+                    </td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-5E" class="check-asiento">
+                    <label for="ida-5E" class="disponible"></label>
+                    </td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-5F" class="check-asiento">
+                    <label for="ida-5F" class="disponible"></label>
+                    </td>
                     </tr>
                     <tr>
                     <td class="num-fila">6</td>
+                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-6A" class="check-asiento">
-                    <label for="vuelta-6A" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-6A" class="check-asiento">
+                    <label for="ida-6A" class="disponible"></label>
                     </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-6B" class="check-asiento">
-                    <label for="vuelta-6B" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-6C" class="check-asiento">
-                    <label for="vuelta-6C" class="disponible"></label>
-                    </td>
+                    <td class="ocupado"></td>
                     <td class="pasillo"></td>
-                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-6E" class="check-asiento">
-                    <label for="vuelta-6E" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-6D" class="check-asiento">
+                    <label for="ida-6D" class="disponible"></label>
                     </td>
-                    <td class="ocupado"></td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-6E" class="check-asiento">
+                    <label for="ida-6E" class="disponible"></label>
+                    </td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-6F" class="check-asiento">
+                    <label for="ida-6F" class="disponible"></label>
+                    </td>
                     </tr>
                     <tr>
                     <td class="num-fila">7</td>
@@ -524,87 +283,294 @@
                     <td class="ocupado"></td>
                     <td class="ocupado"></td>
                     <td class="pasillo"></td>
-                    <td>
-                    <input type="checkbox" id="vuelta-7D" class="check-asiento">
-                    <label for="vuelta-7D" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-7E" class="check-asiento">
-                    <label for="vuelta-7E" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-7F" class="check-asiento">
-                    <label for="vuelta-7F" class="disponible"></label>
-                    </td>
+                    <td class="ocupado"></td>
+                    <td class="ocupado"></td>
+                    <td class="ocupado"></td>
                     </tr>
                     <tr>
                     <td class="num-fila">8</td>
                     <td class="ocupado"></td>
-                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-8C" class="check-asiento">
-                    <label for="vuelta-8C" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-8B" class="check-asiento">
+                    <label for="ida-8B" class="disponible"></label>
                     </td>
+                    <td class="ocupado"></td>
                     <td class="pasillo"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-8D" class="check-asiento">
-                    <label for="vuelta-8D" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-8D" class="check-asiento">
+                    <label for="ida-8D" class="disponible"></label>
                     </td>
-                    <td class="ocupado"></td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-8E" class="check-asiento">
+                    <label for="ida-8E" class="disponible"></label>
+                    </td>
                     <td class="ocupado"></td>
                     </tr>
                     <tr>
                     <td class="num-fila">9</td>
                     <td>
-                    <input type="checkbox" id="vuelta-9A" class="check-asiento">
-                    <label for="vuelta-9A" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-9A" class="check-asiento">
+                    <label for="ida-9A" class="disponible"></label>
                     </td>
                     <td>
-                    <input type="checkbox" id="vuelta-9B" class="check-asiento">
-                    <label for="vuelta-9B" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-9B" class="check-asiento">
+                    <label for="ida-9B" class="disponible"></label>
                     </td>
-                    <td class="ocupado"></td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-9C" class="check-asiento">
+                    <label for="ida-9C" class="disponible"></label>
+                    </td>
                     <td class="pasillo"></td>
-                    <td>
-                    <input type="checkbox" id="vuelta-9D" class="check-asiento">
-                    <label for="vuelta-9D" class="disponible"></label>
-                    </td>
-                    <td>
-                    <input type="checkbox" id="vuelta-9E" class="check-asiento">
-                    <label for="vuelta-9E" class="disponible"></label>
-                    </td>
                     <td class="ocupado"></td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-9E" class="check-asiento">
+                    <label for="ida-9E" class="disponible"></label>
+                    </td>
+                    <td>
+                    <input type="radio" name="asiento-ida" id="ida-9F" class="check-asiento">
+                    <label for="ida-9F" class="disponible"></label>
+                    </td>
                     </tr><tr>
                     <td class="num-fila">10</td>
                     <td class="ocupado"></td>
-                    <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-10C" class="check-asiento">
-                    <label for="vuelta-10C" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-10B" class="check-asiento">
+                    <label for="ida-10B" class="disponible"></label>
                     </td>
+                    <td class="ocupado"></td>
                     <td class="pasillo"></td>
                     <td class="ocupado"></td>
                     <td>
-                    <input type="checkbox" id="vuelta-10E" class="check-asiento">
-                    <label for="vuelta-10E" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-10E" class="check-asiento">
+                    <label for="ida-10E" class="disponible"></label>
                     </td>
                     <td>
-                    <input type="checkbox" id="vuelta-10F" class="check-asiento">
-                    <label for="vuelta-10F" class="disponible"></label>
+                    <input type="radio" name="asiento-ida" id="ida-10F" class="check-asiento">
+                    <label for="ida-10F" class="disponible"></label>
                     </td>
                     </tr>
                 </tbody>
             </table>
-                 
-                 <div class="espaciador-flecha"></div>
-        </div>
-        
+    </div>
 
-        <div class="informacion-asiento">
-            <img class="img-informacion" src="../images/informacion.svg">
-            <p>Los asientos con color gris no están disponibles. Selecciona tu asiento para continuar. </p>
+    <div class="divisor-vertical"></div>
+
+    <div class="vuelo-columna">
+        <h3 class="vuelo-titulo">Vuelta</h3>
+        <table class="mapa-asientos">
+                    <thead>
+                        <tr>
+                        <th></th> 
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th class="pasillo"></th> 
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td class="num-fila">1</td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-1B" class="check-asiento">
+                        <label for="vuelta-1B" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-1C" class="check-asiento">
+                        <label for="vuelta-1C" class="disponible"></label>
+                        </td>
+                        <td class="pasillo"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-1D" class="check-asiento">
+                        <label for="vuelta-1D" class="disponible"></label>
+                        </td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">2</td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-2A" class="check-asiento">
+                        <label for="vuelta-2A" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-2B" class="check-asiento">
+                        <label for="vuelta-2B" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-2C" class="check-asiento">
+                        <label for="vuelta-2C" class="disponible"></label>
+                        </td>
+                        <td class="pasillo"></td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-2F" class="check-asiento">
+                        <label for="vuelta-2F" class="disponible"></label>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">3</td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-3A" class="check-asiento">
+                        <label for="vuelta-3A" class="disponible"></label>
+                        </td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td class="pasillo"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-3E" class="check-asiento">
+                        <label for="vuelta-3E" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-3F" class="check-asiento">
+                        <label for="vuelta-3F" class="disponible"></label>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">4</td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-4C" class="check-asiento">
+                        <label for="vuelta-4C" class="disponible"></label>
+                        </td>
+                        <td class="pasillo"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-4D" class="check-asiento">
+                        <label for="vuelta-4D" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-4E" class="check-asiento">
+                        <label for="vuelta-4E" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-4F" class="check-asiento">
+                        <label for="vuelta-4F" class="disponible"></label>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">5</td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-5C" class="check-asiento">
+                        <label for="vuelta-5C" class="disponible"></label>
+                        </td>
+                        <td class="pasillo"></td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">6</td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-6A" class="check-asiento">
+                        <label for="vuelta-6A" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-6B" class="check-asiento">
+                        <label for="vuelta-6B" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-6C" class="check-asiento">
+                        <label for="vuelta-6C" class="disponible"></label>
+                        </td>
+                        <td class="pasillo"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-6E" class="check-asiento">
+                        <label for="vuelta-6E" class="disponible"></label>
+                        </td>
+                        <td class="ocupado"></td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">7</td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td class="pasillo"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-7D" class="check-asiento">
+                        <label for="vuelta-7D" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-7E" class="check-asiento">
+                        <label for="vuelta-7E" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-7F" class="check-asiento">
+                        <label for="vuelta-7F" class="disponible"></label>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">8</td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-8C" class="check-asiento">
+                        <label for="vuelta-8C" class="disponible"></label>
+                        </td>
+                        <td class="pasillo"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-8D" class="check-asiento">
+                        <label for="vuelta-8D" class="disponible"></label>
+                        </td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        </tr>
+                        <tr>
+                        <td class="num-fila">9</td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-9A" class="check-asiento">
+                        <label for="vuelta-9A" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-9B" class="check-asiento">
+                        <label for="vuelta-9B" class="disponible"></label>
+                        </td>
+                        <td class="ocupado"></td>
+                        <td class="pasillo"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-9D" class="check-asiento">
+                        <label for="vuelta-9D" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-9E" class="check-asiento">
+                        <label for="vuelta-9E" class="disponible"></label>
+                        </td>
+                        <td class="ocupado"></td>
+                        </tr><tr>
+                        <td class="num-fila">10</td>
+                        <td class="ocupado"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-10C" class="check-asiento">
+                        <label for="vuelta-10C" class="disponible"></label>
+                        </td>
+                        <td class="pasillo"></td>
+                        <td class="ocupado"></td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-10E" class="check-asiento">
+                        <label for="vuelta-10E" class="disponible"></label>
+                        </td>
+                        <td>
+                        <input type="radio" name="asiento-vuelta" id="vuelta-10F" class="check-asiento">
+                        <label for="vuelta-10F" class="disponible"></label>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        </section>
+            <div class="informacion-asiento">
+                <img class="logo-informacion" src="../images/informacion.svg">
+                <p>Los asientos con color gris no están disponibles. Selecciona tu asiento para continuar. </p>
+            </div>
     </section>
 
         <section class="resumen">
