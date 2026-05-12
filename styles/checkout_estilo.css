@@ -1,11 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Poppins, sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
 }
 
-.menu{
+.menu {
   position: relative;
   display: flex;
   margin: 1rem;
@@ -18,54 +18,36 @@
   margin: 0;
 }
 
-.menu .menu-izquierda{
-  display: flex;
+.menu .menu-izquierda {
   align-items: center;
-  width: 45%;
-}
-
-.logo{
-    width: 9.8em;
-}
-
-.menu .menu-medio{
-  width: 30%;
 
 }
 
-.menu .menu-medio ul{
+.menu .menu-medio ul {
   display: flex;
-  justify-content: space-between;
   list-style-type: none;
+  gap: 3rem;
+  justify-content: center;
 }
 
 a{
   text-decoration: none;
-  padding: 0;
-  margin: 0;
+}
+
+
+
+.menu-medio a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1rem;
   color: white;
-}
-
-.menu .menu-derecha {
-  justify-content: flex-end;
-  display: flex;
-  width: 35%;
-  align-items: center;
-}
-
-.menu .menu-derecha .iniciar-sesion{
-  display: flex;
-  background-color: #E9631A;
-  border-radius: 20px;
-  padding: 0.4rem 1rem 0.4rem 1rem;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 .menu-medio a:hover {
-  border-bottom: 3px solid #E9631A ;               
+  background-color: rgba(255, 255, 255, 0.2);
 }
+
 
 
 body{
@@ -246,9 +228,10 @@ input[type="radio"]:checked + .metodo-header .radio-custom::after { /* es el pun
     background: white;
 }
 
-#tarjeta:checked ~ .datos.tarjeta,
-#paypal:checked ~ .datos.paypal,
-#transferencia:checked ~ .datos.transferencia {
+/* Asegurate de que esto esté tal cual */
+#pago_tarjeta:checked ~ .datos.tarjeta,
+#pago_paypal:checked ~ .datos.paypal,
+#pago_transferencia:checked ~ .datos.transferencia {
     display: block;
 }
 .metodo-item{
