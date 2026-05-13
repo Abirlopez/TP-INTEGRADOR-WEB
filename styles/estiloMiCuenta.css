@@ -49,62 +49,46 @@ a{
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/*hasta aca 
-*/
+
 .menu .menu-derecha {
   justify-content: flex-end;
   display: flex;
   align-items: center;
+  gap:0.4rem;
 }
+
 .iniciar-sesion {
-  display: flex;
-  background-color: #E9631A;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-
+  position: relative;
 }
 
-.iniciar-sesion a{
+.iniciar-sesion summary{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #E9631A;
   color: white;
-  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 1.20rem;
   font-weight: bold;
 }
 
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #315762;
-    height: 3.5rem;
-    padding: 2rem;
+.iniciar-sesion summary::after {
+  content: "▼";
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
 }
 
-.logo{
-    width: 9.8em;
+.iniciar-sesion a{
+  position: absolute;
+  background-color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  top: 100%;
+  white-space: nowrap; 
+  color: black;
 }
 
-.menu ul { 
-    display: flex; 
-    list-style: none; 
-    gap: 20px; 
-}
-
-.menu a { 
-    color: white; 
-    text-decoration: none; 
-}
-
-.iniciar-sesion {
-    display: flex;
-    background-color: #E9631A;
-    border-radius: 20px;
-    padding: 0.4rem 1rem;
-    align-items: center;
-    gap: 0.5rem;
-}
 
 h1 {
     text-align: center;

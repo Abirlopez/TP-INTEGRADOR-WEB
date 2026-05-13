@@ -22,16 +22,15 @@ body {
     background-color: #315762;
 }
 
-.logo{
-    font-weight: bold;
-}
-
-nav a{
+nav a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
 }
 
+.logo {
+    font-weight: bold;
+}
 .contenedor{
     min-height: 90vh;
     display: flex;

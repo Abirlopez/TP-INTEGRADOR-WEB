@@ -19,6 +19,7 @@
 }
 
 .menu .menu-izquierda {
+  display: flex;
   align-items: center;
 
 }
@@ -32,7 +33,6 @@
 
 a{
   text-decoration: none;
-  color: white;
 }
 
 
@@ -49,29 +49,46 @@ a{
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/*hasta aca 
-*/
+
 .menu .menu-derecha {
   justify-content: flex-end;
   display: flex;
   align-items: center;
+  gap:0.4rem;
 }
-.iniciar-sesion {
-  display: flex;
-  background-color: #E9631A;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
 
+.iniciar-sesion {
+  position: relative;
+}
+
+.iniciar-sesion summary{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #E9631A;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 1.20rem;
+  font-weight: bold;
+}
+
+.iniciar-sesion summary::after {
+  content: "▼";
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
 }
 
 .iniciar-sesion a{
-  color: white;
+  position: absolute;
+  background-color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
   text-decoration: none;
-  font-weight: bold;
+  top: 100%;
+  white-space: nowrap; 
+  color: black;
 }
+
 
 body{
     max-width: 100%;
@@ -360,7 +377,6 @@ margin-bottom: 5%;
     cursor: pointer;
 }
 
-/* Empieza el FOOTER */
 .footer {
   background-color: #315762;
   /* #073B4C */
@@ -387,15 +403,13 @@ margin-bottom: 5%;
   gap: 1em;
   padding-top: 1em;
 
-  /* display: grid;
-    grid-template-rows: 2fr 1fr; */
+ 
 }
 
 #mail {
   /* width: 35em; */
   padding: 1.2em 1.2em;
   width: 35vw;
-    border-radius: 1em;
 }
 
 #Enviar {
@@ -423,6 +437,13 @@ margin-bottom: 5%;
   list-style-type: none;
 }
 
+
+.f-section a{
+    color: white;
+    text-decoration: none;
+}
+
+
 .iconoRedes {
   width: 2em;
   margin-right: 1em;
@@ -440,5 +461,3 @@ margin-bottom: 5%;
 .f-Derechos {
   text-align: center;
 }
-
-/* FIN FOOTER */

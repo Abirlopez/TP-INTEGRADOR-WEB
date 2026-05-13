@@ -35,6 +35,8 @@ a{
   text-decoration: none;
 }
 
+
+
 .menu-medio a {
   display: inline-block;
   text-decoration: none;
@@ -52,22 +54,39 @@ a{
   justify-content: flex-end;
   display: flex;
   align-items: center;
+  gap:0.4rem;
 }
-.iniciar-sesion {
-  display: flex;
-  background-color: #E9631A;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
 
+.iniciar-sesion {
+  position: relative;
+}
+
+.iniciar-sesion summary{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #E9631A;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 1.20rem;
+  font-weight: bold;
+}
+
+.iniciar-sesion summary::after {
+  content: "▼";
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
 }
 
 .iniciar-sesion a{
-  color: white;
+  position: absolute;
+  background-color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
   text-decoration: none;
-  font-weight: bold;
+  top: 100%;
+  white-space: nowrap; 
+  color: black;
 }
 
 body{

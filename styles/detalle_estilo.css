@@ -33,7 +33,6 @@
 
 a{
   text-decoration: none;
-  color: white;
 }
 
 
@@ -50,28 +49,44 @@ a{
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/*hasta aca 
-*/
+
 .menu .menu-derecha {
   justify-content: flex-end;
   display: flex;
   align-items: center;
+  gap:0.4rem;
 }
-.iniciar-sesion {
-  display: flex;
-  background-color: #E9631A;
-  border-radius: 20px;
-  padding: 0.4rem 1rem;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
 
+.iniciar-sesion {
+  position: relative;
+}
+
+.iniciar-sesion summary{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #E9631A;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 1.20rem;
+  font-weight: bold;
+}
+
+.iniciar-sesion summary::after {
+  content: "▼";
+  font-size: 0.7rem;
+  margin-left: 0.3rem;
 }
 
 .iniciar-sesion a{
-  color: white;
+  position: absolute;
+  background-color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
   text-decoration: none;
-  font-weight: bold;
+  top: 100%;
+  white-space: nowrap; 
+  color: black;
 }
 
 
@@ -445,9 +460,10 @@ li{
     font-size: 1.3em;
 }
 
-/* Empieza el FOOTER */
+
 .footer {
   background-color: #315762;
+ 
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -472,10 +488,9 @@ li{
 }
 
 #mail {
-  
+  /* width: 35em; */
   padding: 1.2em 1.2em;
   width: 35vw;
-    border-radius: 1em;
 }
 
 #Enviar {
@@ -492,7 +507,7 @@ li{
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 1fr;
   background-color: #315762;
- 
+  /* #073B4C */
 }
 
 .f-section {
@@ -502,6 +517,13 @@ li{
 .f-section ul li {
   list-style-type: none;
 }
+
+
+.f-section a{
+    color: white;
+    text-decoration: none;
+}
+
 
 .iconoRedes {
   width: 2em;
@@ -520,5 +542,3 @@ li{
 .f-Derechos {
   text-align: center;
 }
-
-/* FIN FOOTER */
