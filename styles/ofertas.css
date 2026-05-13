@@ -115,7 +115,6 @@ select {
 .contenedor-ofertas{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr ;
   grid-template-rows: 1fr 1fr 1fr ;
   align-content: center;
   gap: 3rem;
@@ -160,14 +159,8 @@ select {
   font-size: 18px;
 }
 
-/* GONZA */
-/* Empieza el FOOTER */
 .footer {
   background-color: #315762;
-  /* #073B4C */
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr; */
   display: flex;
   flex-direction: column;
   gap: 1em;
