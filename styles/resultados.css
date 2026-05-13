@@ -131,7 +131,7 @@ main{
 }
 
 
-.aeroargentina {/*medida de la imagen*/
+.aeroargentina {
     width: 4em;
     height: auto;
 }
@@ -139,9 +139,9 @@ main{
 
 .informacion{/*contiene el vuelo, ida y vuelta*/
     display: flex;
-    flex-direction: column; /* Apila Ida arriba de Vuelta */
+    flex-direction: column; 
     padding: 1em;
-    gap: 1em; /* Espacio entre Ida y Vuelta */
+    gap: 1em;
 }
 
 
@@ -569,7 +569,6 @@ input:checked + .slider:before {/* Movimiento del círculo al activar */
   /* width: 35em; */
   padding: 1.2em 1.2em;
   width: 35vw;
-    border-radius: 1em;
 }
 
 #Enviar {
@@ -596,6 +595,13 @@ input:checked + .slider:before {/* Movimiento del círculo al activar */
 .f-section ul li {
   list-style-type: none;
 }
+
+
+.f-section a{
+    color: white;
+    text-decoration: none;
+}
+
 
 .iconoRedes {
   width: 2em;

@@ -7,28 +7,30 @@
     <title>Ofertas</title>
 </head>
 <body>
-    <header>
+     <header>
         <nav class="menu">
-        <section class="menu-izquierda">
-          <a href="..\index.html"><img class="logo"  src="..\images\logo.png" alt="logo" height="35"></a>
-        </section>
+            <section class="menu-izquierda">
+                <a href="../index.html"><img class="logo" src="../images/logo.png" alt="logo" height="35"></a>
+            </section>
 
-        <section class="menu-medio">
-        <ul>
-            <li><a href="..\index.html">Inicio</a></li>
-            <li><a href="#">Vuelos</a></li>
-            <li><a href="./ofertas.html">Ofertas</a></li>
-            <li><a href="#">Nosotros</a></li>
-        </ul>
-        </section>
+            <section class="menu-medio">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="vuelos.html">Vuelos</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="contacto.html">Nosotros</a></li>
+                    <li><a href="MiCuenta.html">Reservas</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
+                </ul>
+            </section>
 
-        <section class="menu-derecha">
-            <div class="iniciar-sesion">
-                <a href="#">Iniciar sesión</a>
-            <img class="usuario"   src="..\images\usuario.png" alt="usuario" width="30">
-            </div>
-        </section>
-    </nav>
+            <section class="menu-derecha">
+                <div class="iniciar-sesion">
+                    <a href="../pages/InicioSesion.html">¡Hola!</a>
+                    <img class="usuario" src="../images\usuario.png" alt="usuario" width="30">
+                </div>
+            </section>
+        </nav>
     </header>
     <main>
                 <aside >
@@ -231,7 +233,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 280</div>
-                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
+                            <a href="DetalleDeVuelo.html" class="boton-accion">Comprar</a>
                         </div>
                     </div>
 
@@ -295,7 +297,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 267</div>
-                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
+                             <a href="DetalleDeVuelo.html" class="boton-accion">Comprar</a>
                         </div>
                     </div>
 
@@ -359,7 +361,7 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 300</div>
-                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
+                             <a href="DetalleDeVuelo.html" class="boton-accion">Comprar</a>
                         </div>
                     </div>
                     
@@ -424,16 +426,67 @@
                         <div class="precio">
                             <span class="desde">desde</span>
                             <div class="monto">US$ 297</div>
-                            <button class="oferta"><a href="DetalleDeVuelo.html">Compra</a></button>
+                             <a href="DetalleDeVuelo.html" class="boton-accion">Comprar</a>
                         </div>
                     </div>
 
                  </article>
             </section>     
     </main>
-    <footer>
-        
-       
+    <footer class="footer">
+        <div class="f-suscripcion">
+            <h2>¡No te pierdas de nada!</h2>
+            <p>Hey! Suscribite a nuestro newsletter para enterarte de todo antes que nadie. Que no se corte!</p>
+
+            <form action="/procesar-datos" method="POST">
+                <div class="divForm">
+                    <!-- <label for="mail">E-mail:</label> -->
+                    <input placeholder="Ingresá tu mail" type="email" id="mail" name="mail" required="">
+                    <button id="Enviar" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="f-Menu">
+            <div class="f-section">
+                <h2 class="f-titulos">Nosotros</h2>
+                <ul>
+                    <li>Sobre FlyNow</li>
+                    <li>Preguntas frcuentes</li>
+                    <li>Terminos y condiciones</li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Mapa del sitio</h2>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Vuelos</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <h2 class="f-titulos">Redes</h2>
+                <ul class="f-redes">
+                    <li><a href="https://www.instagram.com"><img class="iconoRedes" src="../images/redes/instagram.png"
+                                alt="instagram"></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/"><img class="iconoRedes" src="../images/redes/facebook.png"
+                                alt="facebook"></a>
+                    </li>
+                    <li><a href="https://x.com/"><img class="iconoRedes" src="../images/redes/x.png"
+                                alt="X ex Twitter"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="f-section">
+                <img class="f-logo" src="../images/logo.png" alt="FlyNow">
+            </div>
+        </div>
+        <div class="f-Derechos">
+            <p>Copyright © 2010-2026 FlyNow S.A. Todos los derechos reservados.</p>
+        </div>
+
     </footer>
     
 </body>
