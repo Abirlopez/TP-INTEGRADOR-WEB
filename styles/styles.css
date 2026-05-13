@@ -558,3 +558,21 @@ textarea {
   color: #FF6B00;
 }
 
+/* CSS CONDICIONES */
+.condiciones{
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+.condcionesH1{
+  text-align: center;
+}
+.textoCondiciones{
+  display: grid;
+  gap: 0.5em;
+  width: 80%;
+  padding: 2em;
+}
+.textoCondiciones ul{
+  padding-left: 2em;
+}
