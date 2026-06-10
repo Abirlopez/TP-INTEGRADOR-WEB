@@ -269,9 +269,9 @@ input[type="radio"]:checked + .metodo-header .radio-custom::after { /* es el pun
 }
 
 /* Asegurate de que esto esté tal cual */
-#pago_tarjeta:checked ~ .datos.tarjeta,
-#pago_paypal:checked ~ .datos.paypal,
-#pago_transferencia:checked ~ .datos.transferencia {
+#car_payment:checked ~ .datos.tarjeta,
+#paypal_payment:checked ~ .datos.paypal,
+#payment_transfer:checked ~ .datos.transferencia {
     display: block;
 }
 .metodo-item{
@@ -412,7 +412,7 @@ margin-bottom: 5%;
   width: 35vw;
 }
 
-#Enviar {
+#send {
   padding: 1.2em 1.2em;
   width: 15vw;
   background-color: #FF6B00;

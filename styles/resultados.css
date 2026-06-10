@@ -5,7 +5,12 @@
   box-sizing: border-box;
 }
 
+html,
+body{
+  overflow-x: hidden;
+}
 .menu {
+  
   position: relative;
   display: flex;
   margin: 1rem;
@@ -397,7 +402,7 @@ input {/* Inputs de texto*/
   font-weight: 600;    
   color: #333;
 }
-#pasajeros{ /* Alinar el numero de pasajeros*/
+#passengers{ /* Alinar el numero de pasajeros*/
   text-align: center;
 }
 .buscar { /*boton buscar*/

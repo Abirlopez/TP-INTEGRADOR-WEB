@@ -65,27 +65,22 @@
                         <h3>Datos del pasajero</h3>
                     </div>
                     <div class="campo">
-                        <label for="nombre_completo">Nombre completo</label>
-                        <input type="text" id="nombre_completo" name="nombre_completo" placeholder="Juan Pérez" required>
+                        <label for="full_name">Nombre completo</label>
+                        <input type="text" id="full_name" name="nombre_completo" placeholder="Juan Pérez" required>
                     </div>
                     <div class="campo">
-                        <label for="nro_documento">Documento de identidad</label>
+                        <label for="document_number">Documento de identidad</label>
                         <div class="grupo-mixto">
-                            <select id="tipo_documento" name="tipo_documento" required>
-                                <option value="dni">DNI</option>
-                                <option value="pasaporte">PASAPORTE</option>
-                                <option value="cuil">CUIL</option>
-                            </select>
-                            <input type="text" id="nro_documento" name="nro_documento" placeholder="12345678" required>
+                            <input type="text" id="document_number" name="nro_documento" placeholder="12345678" required>
                         </div>
                     </div>
                     <div class="campo">
-                        <label for="email_pasajero">Correo electrónico</label>
-                        <input type="email" id="email_pasajero" name="email_pasajero" placeholder="juanperez@gmail.com" required>
+                        <label for="passenger_email">Correo electrónico</label>
+                        <input type="email" id="passenger_email" name="email_pasajero" placeholder="juanperez@gmail.com" required>
                     </div>
                     <div class="campo">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="+54 11 2345 6789" required>
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="telefono" placeholder="+54 11 2345 6789" required>
                     </div>
                 </section>
 
@@ -93,8 +88,8 @@
                     <h3>Método de pago</h3>
 
                     <div class="metodo-item">
-                        <input type="radio" name="metodo_pago" id="pago_tarjeta" value="tarjeta" checked>
-                        <label for="pago_tarjeta" class="metodo-header">
+                        <input type="radio" name="metodo_pago" id="car_payment" value="tarjeta" checked>
+                        <label for="car_payment" class="metodo-header">
                             <span class="radio-custom"></span>
                             <img class="icon-pago" src="../images/Tarjeta.svg" alt="Tarjeta">
                             <span class="texto-metodo">Tarjeta de Crédito</span>
@@ -102,13 +97,13 @@
 
                         <div class="datos tarjeta">
                             <p>Paga de forma segura con tu tarjeta.</p><br>
-                            <label for="nro_tarjeta">Número de tarjeta</label>
-                            <input type="text" id="nro_tarjeta" placeholder="1234 5678 9012 3456">
+                            <label for="card_number">Número de tarjeta</label>
+                            <input type="text" id="card_number" placeholder="1234 5678 9012 3456">
 
                             <div class="row" style="margin-top: 10px;">
                                 <div>
-                                    <label for="vencimiento">Vencimiento</label>
-                                    <input type="text" id="vencimiento" placeholder="MM/AA">
+                                    <label for="expiration">Vencimiento</label>
+                                    <input type="text" id="expiration" placeholder="MM/AA">
                                 </div>
                                 <div>
                                     <label for="cvv">CVV</label>
@@ -119,8 +114,8 @@
                     </div>
 
                     <div class="metodo-item">
-                        <input type="radio" name="metodo_pago" id="pago_paypal" value="paypal">
-                        <label for="pago_paypal" class="metodo-header">
+                        <input type="radio" name="metodo_pago" id="paypal_payment" value="paypal">
+                        <label for="paypal_payment" class="metodo-header">
                             <span class="radio-custom"></span>
                             <img class="icon-pago" src="../images/paypal.svg" alt="PayPal">
                             <span class="texto-metodo">PayPal</span>
@@ -132,8 +127,8 @@
                     </div>
 
                     <div class="metodo-item">
-                        <input type="radio" name="metodo_pago" id="pago_transferencia" value="transferencia">
-                        <label for="pago_transferencia" class="metodo-header">
+                        <input type="radio" name="metodo_pago" id="payment_transfer" value="transferencia">
+                        <label for="payment_transfer" class="metodo-header">
                             <span class="radio-custom"></span>
                             <img class="icon-pago" src="../images/Banco.svg" alt="Banco">
                             <span class="texto-metodo">Transferencia bancaria</span>
@@ -197,8 +192,8 @@
                     <div class="separador-puntos"></div>
 
                     <div class="campo-cupon">
-                        <label for="cupon_descuento" style="display: none;">Cupón</label>
-                        <input class="cupon" type="text" id="cupon_descuento" name="cupon_descuento"
+                        <label for="discount_coupon" style="display: none;">Cupón</label>
+                        <input class="cupon" type="text" id="discount_coupon" name="cupon_descuento"
                             placeholder="Ingrese tu cupón de descuento">
                         <button type="button" class="boton-cupon">Aplicar</button>
                     </div>
@@ -226,7 +221,7 @@
                 <div class="divForm">
                     <!-- <label for="mail">E-mail:</label> -->
                     <input placeholder="Ingresá tu mail" type="email" id="mail" name="mail" required="">
-                    <button id="Enviar" type="submit">Enviar</button>
+                    <button id="send" type="submit">Enviar</button>
                 </div>
             </form>
         </div>
