@@ -1,93 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Poppins, sans-serif;
-  box-sizing: border-box;
-}
-
-.menu {
-  position: relative;
-  display: flex;
-  margin: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #315762;
-  width: 100%;
-  height: 3.5rem;
-  padding: 2rem;
-  margin: 0;
-}
-
-.menu .menu-izquierda {
-  display: flex;
-  align-items: center;
-
-}
-
-.menu .menu-medio ul {
-  display: flex;
-  list-style-type: none;
-  gap: 3rem;
-  justify-content: center;
-}
-
-a{
-  text-decoration: none;
-}
-
-
-
-.menu-medio a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 1rem;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.menu-medio a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-
-.menu .menu-derecha {
-  justify-content: flex-end;
-  display: flex;
-  align-items: center;
-  gap:0.4rem;
-}
-
-.iniciar-sesion {
-  position: relative;
-}
-
-.iniciar-sesion summary{
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  background-color: #E9631A;
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 1.20rem;
-  font-weight: bold;
-}
-
-.iniciar-sesion summary::after {
-  content: "▼";
-  font-size: 0.7rem;
-  margin-left: 0.3rem;
-}
-
-.iniciar-sesion a{
-  position: absolute;
-  background-color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 0.8rem;
-  text-decoration: none;
-  top: 100%;
-  white-space: nowrap; 
-  color: black;
-}
 
 
 main {
@@ -293,167 +203,6 @@ select:focus {
   font-size: 18px;
 }
 
-
-
-  
-    
-
-/* GONZA */
-/* Empieza el FOOTER */
-
-.footer {
-  background-color: #315762;
- 
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  padding: 1em 5em;
-  color: white;
-}
-
-.f-suscripcion {
-  text-align: center;
-
-  padding: 1em;
-}
-
-.divForm {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1em;
-  padding-top: 1em;
-
- 
-}
-
-#mail {
-  /* width: 35em; */
-  padding: 1.2em 1.2em;
-  width: 35vw;
-}
-
-#Enviar {
-  padding: 1.2em 1.2em;
-  width: 15vw;
-  background-color: #FF6B00;
-  border-color: #977a7a33;
-  border-radius: 2em;
-  box-shadow: 0%;
-
-}
-
-.f-Menu {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr 1fr;
-  background-color: #315762;
-  /* #073B4C */
-}
-
-.f-section {
-  padding: 0.5em;
-}
-
-.f-section ul li {
-  list-style-type: none;
-}
-
-
-.f-section a{
-    color: white;
-    text-decoration: none;
-}
-
-
-.iconoRedes {
-  width: 2em;
-  margin-right: 1em;
-}
-
-.f-logo {
-  width: 15em;
-}
-
-.f-redes {
-  display: flex;
-  flex-direction: row;
-}
-
-.f-Derechos {
-  text-align: center;
-}
-
-/* FIN FOOTER */
-
-/* SECCION BENEFICIOS FLYNOW */
-.benefits-section {
-  background-color: #EFEFEF;
-  /* El azul oscuro de la imagen */
-  padding: 60px 20px;
-  text-align: center;
-  font-family: 'Arial', sans-serif;
-}
-
-.benefits-title {
-  font-size: 24px;
-  margin-bottom: 50px;
-  font-weight: bold;
-}
-
-.benefits-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  /* Para que bajen si no entran */
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 30px;
-}
-
-.benefit-item {
-  flex: 1;
-  /* Todos ocupan el mismo ancho */
-  min-width: 250px;
-  /* Para que no se achiquen demasiado */
-  max-width: 280px;
-}
-
-.benefit-icon {
-  height: 120px;
-  /* Espacio para el icono */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.benefit-icon img {
-  max-width: 100%;
-  height: auto;
-}
-
-.benefit-item h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-.benefit-item p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #334155;
-  
-}
-
-.iconoBeneficios {
-  width: 5em;
-}
-
-
-/* FIN SECCION BENEFICIOS FLYNOW */
-
-/* SECCION FAQ */
 .faq-section {
   text-align: center;
   padding: 20px;
@@ -462,16 +211,13 @@ select:focus {
 .faq-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* Crea las dos columnas */
   gap: 15px;
-  /* Espacio entre las preguntas */
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .faq-item {
   background-color: #f8f9fa;
-  /* Color gris clarito de fondo */
   border-radius: 10px;
   text-align: left;
   overflow: hidden;
@@ -480,7 +226,6 @@ select:focus {
 .faq-item summary {
   padding: 15px 20px;
   list-style: none;
-  /* Quita la flechita por defecto del navegador */
   cursor: pointer;
   font-weight: bold;
   color: #334155;
@@ -489,89 +234,22 @@ select:focus {
   align-items: center;
 }
 
-/* El contenido que se despliega */
+
 .faq-item p {
   padding: 0 20px 15px 20px;
   margin: 0;
   color: #64748b;
 }
 
-/* Flechita personalizada (el icono de la derecha) */
+
 .faq-item summary::after {
   content: '▼';
-  /* Puedes usar un icono de FontAwesome o una imagen */
   font-size: 0.8rem;
   color: #FF6B00;
 }
 
-/* FIN SECCCIÖN FAQ */
 
-/* PAG CONTACTO */
-.contacto-section {
-  max-width: 500px;
-  /* Ajusta el ancho del formulario */
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.contacto-section h2 {
-  color: #444;
-  font-weight: 300;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.contacto-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  /* Espacio entre los campos */
-}
-
-.contacto-form input,
-.contacto-form textarea {
-  padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  /* Bordes redondeados sutiles */
-  font-size: 16px;
-  color: #666;
-  outline: none;
-}
-
-.contacto-form input:focus,
-.contacto-form textarea:focus {
-  border-color: #FF6B00;
-  /* Color dorado al hacer clic */
-  border-color: #977a7a33;
-}
-
-/* Estilo del botón */
-.btn-enviar {
-  background-color: #FF6B00;
-  color: white;
-  padding: 15px;
-  border: none;
-  border-radius: 25px;
-  /* Botón muy redondeado */
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 10px;
-}
-
-
-textarea {
-  resize: vertical;
-}
-
-.redireccion {
-  color: #FF6B00;
-}
-
-/* CSS CONDICIONES */
+/* css de terminos y condiciones*/
 .condiciones{
   background-color: white;
   display: flex;
