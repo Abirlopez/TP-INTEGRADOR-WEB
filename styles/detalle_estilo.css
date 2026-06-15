@@ -542,3 +542,606 @@ li{
 .f-Derechos {
   text-align: center;
 }
+@media (min-width: 37.6em) and (max-width: 64em) {
+    /* ==========================================================================
+       1. CONFIGURACIÓN GENERAL Y RESET DE PANTALLA
+       ========================================================================== */
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        font-size: 11px; /* Bajamos la fuente base para achicar textos de golpe */
+    }
+
+    header, nav, .navbar, .menu {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ==========================================================================
+       2. GRID PRINCIPAL (Mantenemos las 2 columnas fijas de Notebook)
+       ========================================================================== */
+    .contenedor-principal {
+        display: grid ;
+        grid-template-columns: 30% 68% ; /* Ajuste para dar margen al mapa */
+        gap: 10px ;
+        width: 100% ;
+        max-width: 100% ;
+        height: auto ;
+        min-height: 100% ;
+        padding: 0 5px ;
+        margin: 0 auto ;
+        box-sizing: border-box;
+        align-items: start ; /* Evita el estiramiento vertical de la izq */
+    }
+
+    .detalle {
+        width: 100%;
+        box-sizing: border-box ;
+        padding: 0.8rem ; /* Compactamos el panel izquierdo */
+    }
+
+    .detalle h2, .detalle h3, .detalle p {
+        font-size: 0.95rem ; /* Achica los textos del detalle */
+    }
+
+    /* ==========================================================================
+       3. ITINERARIO (ORIGEN IZQUIERDA / DESTINO DERECHA)
+       ========================================================================== */
+  .detalle .vuelo-info, 
+.detalle [class*="info-vuelo"], 
+.detalle [class*="itinerario"] {
+    display: flex ;
+    flex-direction: row ; /* Fuerza una sola línea horizontal */
+    justify-content: space-between ; /* Distribuye origen a la izquierda, destino a la derecha */
+    align-items: center ;
+    width: 100% ;
+    max-width: 100% ;
+    padding: 10px 0 ;
+    margin: 10px 0 20px 0 ; /* Margen sucesivo inferior controlado */
+    box-sizing: border-box ;
+    position: relative ;
+}
+
+/* Forzamos que los elementos internos se comporten como columnas verticales ordenadas */
+.detalle .vuelo-info > div,
+.detalle [class*="info-vuelo"] > div {
+    display: flex ;
+    flex-direction: column;
+    justify-content: center ;
+}
+
+/* --- ORIGEN (Izquierda) --- */
+.detalle .vuelo-info > div:first-child,
+.detalle [class*="info-vuelo"] > div:first-of-type {
+    align-items: flex-start ;
+    text-align: left ;
+    flex: 1 ;
+    min-height: 38px;       /* Fuerza a que ambos bloques tengan exactamente la misma altura */
+    justify-content: flex-end ; /* Alinea los textos al piso de forma idéntica */
+}
+
+/* --- GRÁFICO CENTRAL (Duración y Avión) --- */
+.detalle .vuelo-info > div:nth-child(2),
+.detalle [class*="info-vuelo"] > div:nth-of-type(2),
+.detalle .linea-con-avion,
+.detalle [class*="grafico-vuelo"] {
+    align-items: center ;
+    text-align: center ;
+    flex: 1.5 ; /* Le damos un poco más de espacio al centro para que no se encime */
+    margin: 0 10px ;
+}
+
+/* --- DESTINO (Derecha) --- */
+.detalle .vuelo-info > div:last-child,
+.detalle [class*="info-vuelo"] > div:last-of-type {
+    align-items: flex-end ;
+    text-align: right ;
+    flex: 1 ;
+    min-height: 38px ;       /* Espejo exacto del bloque izquierdo */
+    justify-content: flex-end ; /* Alinea los textos al piso de forma idéntica */
+}
+
+/* --- ESTILOS DE TEXTO ESTRICTOS --- */
+/* Las Horas */
+.detalle .vuelo-info strong,
+.detalle .vuelo-info .hora {
+    font-size: 15px ;
+    font-weight: bold ;
+    color: #000000 ;
+    margin: 0 ;
+    line-height: 1.2 ;
+}
+
+/* Códigos de Aeropuerto (EZE, MAD) */
+.detalle .vuelo-info span,
+.detalle .vuelo-info .aeropuerto {
+    font-size: 11px ;
+    color: #666666 ;
+    margin-top: 2px ;
+}
+
+/* Duración (11h 40m) encima de la línea */
+.detalle .vuelo-info small,
+.detalle .vuelo-info .duracion,
+.detalle .vuelo-info span[class*="duracion"] {
+    font-size: 11px ;
+    color: #666666 ;
+    font-weight: 500 ;
+    margin-bottom: 4px ;
+}
+
+/* --- DISEÑO DE LA LÍNEA DE TIEMPO HORIZONTAL --- */
+.detalle .linea-horizontal,
+.detalle [class*="linea-tiempo"] {
+    width: 100% ;
+    height: 1px ;
+    background-color: #cccccc ;
+    position: relative ;
+    margin: 4px auto 0 auto ;
+    display: block ;
+}
+
+.detalle-vuelo-info {
+    display: flex ;
+    flex-direction: column ;
+    gap: 8px ;
+    padding: 10px 0 ;
+}
+
+/* Fila de horarios y ruta (EZE ✈ MAD) */
+.vuelo-ruta-linea {
+    display: flex ;
+    align-items: center ;
+    justify-content: space-between ;
+    width: 100% ;
+    margin: 10px 0 ;
+}
+
+/* Bloques de texto de salida y llegada */
+.vuelo-hitos {
+    text-align: center;
+    min-width: 45px ;
+}
+
+.vuelo-hitos .hora {
+    font-size: 15px ;
+    font-weight: bold ;
+    color: #000000 ;
+    display: block ;
+}
+
+.vuelo-hitos .aeropuerto {
+    font-size: 11px ;
+    color: #666666 ;
+    display: block ;
+}
+
+/* El trayecto central (Línea gris y avión negro) */
+.vuelo-duracion-linea {
+    flex-grow: 1 ;
+    display: flex ;
+    flex-direction: column ;
+    align-items: center ;
+    margin: 0 12px ;
+}
+
+.vuelo-duracion-linea .tiempo {
+    font-size: 11px ;
+    color: #666666 ;
+    margin-bottom: 2px ;
+}
+
+.vuelo-duracion-linea .trayecto-linea {
+    width: 100% ;
+    height: 1px ;
+    background-color: #666666 ; /* Línea gris continua */
+    position: relative ;
+    display: flex t;
+    align-items: center ;
+    justify-content: center ;
+}
+
+/* El ícono del avión centrado que pisa la línea gris */
+.vuelo-duracion-linea .trayecto-linea i,
+.vuelo-duracion-linea .trayecto-linea img {
+    background-color: #ffffff ; /* Fondo blanco para tapar la línea de atrás */
+    padding: 0 6px ;
+    color: #000000 ; /* Avión color negro sólido */
+    font-size: 13px ;
+}
+    /* ==========================================================================
+       4. SECCIÓN CONTENEDORA DE ASIENTOS
+       ========================================================================== */
+    .mapas-flex {
+        display: flex ;
+        flex-direction: row ;
+        justify-content: center ; /* Centra los dos bloques horizontalmente */
+        align-items: start ;
+        gap: 35px ; /* Espacio elegante entre el avión de Ida y el de Vuelta */
+        width: 100% ;
+        max-width: 100% ;
+        margin: 25px auto ;
+        box-sizing: border-box ;
+    }
+
+    /* Tarjetas contenedoras de cada avión (Ida / Vuelta) */
+    .vuelo-columna {
+        flex: 1 ;
+        max-width: 300px; /* Ancho ideal para contener el mapa sin que flote a la izquierda */
+        background-color: #ffffff ;
+        border-radius: 12px ;
+        padding: 25px 15px ; /* Aire interno de la tarjeta */
+        box-sizing: border-box ;
+        border: 1px solid #f0f0f0 ;
+    }
+
+    .vuelo-columna h3 {
+        font-size: 15px ;
+        color: #e65c00;
+        font-weight: bold ;
+        margin-bottom: 20px ; /* Espacio entre el título y las letras A B C */
+        text-align: center ;
+    }
+
+    /* ==========================================================================
+       5. LEYENDA DE ESTADOS
+       ========================================================================== */
+    .cuadrado-asiento {
+        display: flex ;
+        justify-content: center ;
+        gap: 10px ;
+        margin-top: 5px ;
+        margin-bottom: 15px ;
+        font-size: 0.9rem ;
+    }
+
+    /* ==========================================================================
+       6. DISTRIBUCIÓN DE AVIONES (Dos columnas adentro de la tarjeta)
+       ========================================================================== */
+    .mapas-flex {
+        display: flex ;
+        flex-direction: row ; /* Uno al lado del otro */
+        justify-content: space-between ;
+        align-items: stretch ;
+        gap: 10px ;
+        width: 100% ;
+        box-sizing: border-box ;
+    }
+
+    /* Tarjetas independientes de los aviones */
+    .vuelo-columna {
+        flex: 1 ;
+        min-width: 0 ; /* Obligatorio para permitir encoger la tabla */
+        background-color: #ffffff ;
+        border-radius: 8px ;
+        padding: 12px 6px ;
+        box-sizing: border-box ;
+    }
+
+    .vuelo-columna h3 {
+        font-size: 12px ;
+        color: #e65c00 ;
+        font-weight: bold ;
+        margin-bottom: 10px ;
+        text-align: center ;
+    }
+
+    /* ==========================================================================
+       7. ESTRUCTURA COMPACTA DE LAS TABLAS
+       ========================================================================== */
+   .mapa-asientos {
+    display: block ;
+    width: 100% ;
+    max-width: 260px; /* Ancho ideal para que entre perfecto en la tarjeta */
+    margin: 0 auto ;
+    border-collapse: collapse ;
+}
+
+/* Forzamos a que el thead, tbody y cada tr actúen bajo la misma regla Grid */
+.mapa-asientos thead,
+.mapa-asientos tbody,
+.mapa-asientos tr {
+    display: block ;
+    width: 100% ;
+}
+
+.mapa-asientos tr {
+    display: grid ;
+    /* 8 Columnas estrictas: Nº de fila | A B C | Pasillo | D E F */
+    grid-template-columns: 24px 28px 28px 28px 16px 28px 28px 28px ;
+    gap: 6px 0 ; /* Espaciado vertical entre filas */
+    justify-content: space-between ; /* Distribución simétrica */
+    align-items: center ;
+    margin-bottom: 4px ;
+}
+
+/* Forzamos a las celdas a ser cubos perfectos e independientes */
+.mapa-asientos th,
+.mapa-asientos td {
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    width: 28px ;  
+    height: 28px ; 
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box;
+}
+
+/* Letras de las columnas superiores (A B C D E F) */
+.mapa-asientos th {
+    font-size: 13px ;
+    font-weight: bold ;
+    color: #333333 ;
+    height: auto ; 
+    padding-bottom: 6px ;
+}
+
+/* Números de las filas (Columna 1) */
+.mapa-asientos th:first-child,
+.mapa-asientos tr td:first-child {
+    width: 24px ;
+    font-weight: bold ;
+    color: #aaaaaa ;
+    font-size: 12px ;
+    background: transparent ;
+}
+
+/* El Pasillo Central (Columna 5 - Totalmente limpio) */
+.mapa-asientos .pasillo,
+.mapa-asientos tr td:nth-child(5),
+.mapa-asientos th:nth-child(5) {
+    width: 16px ;
+    background: transparent ;
+    pointer-events: none ; /* Bloquea clicks en el vacío del pasillo */
+}
+    /* ==========================================================================
+       8. RESET DE CHECKBOXES OCULTOS
+       ========================================================================== */
+    .mapa-asientos input[type="checkbox"] {
+        position: absolute ;
+        width: 1px ;
+        height: 1px ;
+        padding: 0;
+        margin: -1px ;
+        overflow: hidden ;
+        clip: rect(0,0,0,0) ;
+        border: 0 ;
+        opacity: 0 ;
+    }
+
+    .mapa-asientos input[type="checkbox"]:checked + label {
+        background-color: #e9631a ;
+        color: white;
+    }
+
+    /* ==========================================================================
+       9. MINI-CUADRITOS DE ASIENTOS
+       ========================================================================== */
+ .mapa-asientos label,
+.mapa-asientos .disponible,
+.mapa-asientos .ocupado,
+.mapa-asientos .cuadrito {
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    width: 100% ;  
+    height: 100% ; 
+    border-radius: 6px ; /* Bordes redondeados idénticos a tu muestra */
+    margin: 0 ;
+    cursor: pointer ;
+    box-sizing: border-box ;
+    transition: background-color 0.15s ease ;
+}
+
+/* Escondemos los inputs nativos para que no floten elementos extra */
+.mapa-asientos input[type="checkbox"],
+.mapa-asientos input[type="radio"] {
+    display: none ;
+}
+
+/* --- COLORES DE ESTADOS DE LOS ASIENTOS --- */
+/* Estado: Disponible (Azul Petróleo corporativo) */
+.mapa-asientos .disponible,
+.mapa-asientos td.disponible label {
+    background-color: #2f5f6e ;
+}
+
+/* Estado: Ocupado (Gris Claro plano) */
+.mapa-asientos .ocupado,
+.mapa-asientos td.ocupado,
+.mapa-asientos td.ocupado label {
+    background-color: #e0e0e0 ;
+    cursor: not-allowed ;
+}
+
+/* Estado: Seleccionado (Cambio dinámico a Naranja al hacer click) */
+.mapa-asientos input:checked + label,
+.mapa-asientos .seleccionado {
+    background-color: #e65c00;
+}
+
+    /* ==========================================================================
+       10. LIMPIEZA DE RESIDUOS
+       ========================================================================== */
+    .divisor-vertical {
+        display: none ;
+    }
+
+    
+}
+@media screen and (max-width: 37.5em) { /* 600px o menos */
+
+    /* 1. ESTRUCTURA DE LA PÁGINA: Todo pasa a una sola columna */
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden; /* Cero desborde hacia los costados */
+        font-size: 12px;    /* Ajustamos el texto general de la app */
+    }
+
+    /* Modificamos el Grid General para que se comporte como bloque vertical */
+    .contenedor-principal {
+        display: flex !important;
+        flex-direction: column !important; /* Detalle arriba, mapas abajo */
+        gap: 15px !important;
+        padding: 0 10px !important;
+        width: 100% !important;
+    }
+
+    /* 2. BARRA DE NAVEGACIÓN MOBILE (Ajuste para que no rompa el ancho) */
+    .menu {
+        padding: 1rem !important;
+        gap: 0.5rem !important;
+    }
+
+    .menu .menu-medio ul {
+        gap: 1rem !important; /* Achicamos la distancia entre Inicio, Vuelos, etc. */
+    }
+
+    #mail {
+        width: 50vw !important; /* El formulario del footer se adapta al ancho */
+    }
+    #send {
+        width: 25vw !important;
+    }
+
+    /* 3. COLUMNA IZQUIERDA: Detalle de Vuelo */
+    .detalle {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .grafico-vuelo {
+        width: 100% !important;
+        margin: 1em 0 !important;
+    }
+
+    .linea-horizontal {
+        width: 30px !important; /* Línea del avioncito cómoda en mobile */
+    }
+
+    /* 4. COLUMNA DERECHA: Tarjeta gris contenedora de Asientos */
+    .asientos {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 1rem 0.5rem !important;
+    }
+
+    /* Leyendas de estados (Disponible, Ocupado...) */
+    .cuadrado-asiento {
+        flex-wrap: wrap !important; /* Si no entran de corrido, bajan elegantemente */
+        justify-content: center !important;
+        gap: 10px !important;
+        margin-left: 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 5. ¡EL TRUCO DE LOS MAPAS!: Apilamos los aviones uno abajo del otro */
+    .mapas-flex {
+        display: flex !important;
+        flex-direction: column !important; /* Ida arriba, Vuelta abajo */
+        align-items: center !important;
+        gap: 20px !important; /* Espacio entre las dos tarjetas de aviones */
+        width: 100% !important;
+    }
+
+    /* 6. Cada avión vuelve a ser una tarjeta blanca completa y cómoda */
+    .vuelo-columna {
+        width: 100% !important;
+        max-width: 300px !important; /* Ancho máximo ideal para que parezca la cabina de un avión */
+        margin: 0 auto !important;
+        padding: 15px !important;
+        background-color: #ffffff !important;
+        border-radius: 12px !important;
+    }
+
+    /* 7. TABLAS DE ASIENTOS COMPACTAS PERO ACCESIBLES */
+   .mapa-asientos {
+        width: 100% !important;
+        table-layout: fixed !important; /* Clave para que el navegador respete los porcentajes */
+        border-collapse: collapse !important;
+        margin: 0 auto !important;
+    }
+
+    .mapa-asientos th, 
+    .mapa-asientos td {
+        padding: 6px 0 !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+        box-sizing: border-box !important;
+    }
+   .mapa-asientos th {
+        font-weight: bold !important;
+        color: #333 !important;
+    }
+
+    /* Reparto exacto de las columnas en mobile */
+    .mapa-asientos th:first-child, .mapa-asientos td:first-child { width: 10% !important; } /* Números */
+    .mapa-asientos th.pasillo, .mapa-asientos td.pasillo { width: 12% !important; }        /* Pasillo */
+    
+    .mapa-asientos th:nth-child(2), .mapa-asientos td:nth-child(2),
+    .mapa-asientos th:nth-child(3), .mapa-asientos td:nth-child(3),
+    .mapa-asientos th:nth-child(4), .mapa-asientos td:nth-child(4),
+    .mapa-asientos th:nth-child(6), .mapa-asientos td:nth-child(6),
+    .mapa-asientos th:nth-child(7), .mapa-asientos td:nth-child(7),
+    .mapa-asientos th:nth-child(8), .mapa-asientos td:nth-child(8) {
+        width: 13% !important; /* Columnas A, B, C, D, E, F */
+    }
+
+    /* inputs ocultos por accesibilidad pero interactivos */
+    .mapa-asientos input[type="checkbox"] {
+        position: absolute !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important; /* Recorta cualquier remanente visual del input nativo */
+        pointer-events: none !important;
+    }
+
+    /* 8. TAMAÑO DE ASIENTO RECOMENDADO PARA PANTALLAS TÁCTILES */
+    .mapa-asientos label,
+    .mapa-asientos td.ocupado .cuadrito, /* Asegura compatibilidad con tu clase .cuadrito */
+    .mapa-asientos .disponible,
+    .mapa-asientos .ocupado {
+        display: block !important;
+        width: 22px !important;  /* Escalamos el tamaño para llenar el espacio de la tablet */
+        height: 22px !important;
+        margin: 0 auto !important;
+        border-radius: 4px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Mantenemos el color dinámico al seleccionar asiento */
+    .mapa-asientos input[type="checkbox"]:checked + label {
+        background-color: #e9631a !important;
+        color: white !important;
+    }
+    /* 9. SECCIÓN RESUMEN (El bloque de abajo de todo con el botón Continuar) */
+    .resumen {
+        flex-direction: column !important; /* Precio arriba, botón abajo */
+        gap: 15px !important;
+        padding: 1.5em !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .resumen-precio {
+        width: 100% !important; /* El desglose de precios toma todo el ancho */
+    }
+
+    .boton-continuar {
+        width: 100% !important; /* El botón ocupa todo el ancho disponible, siendo fácil de clickear */
+        padding: 1em !important;
+    }
+
+    /* El divisor viejo se queda oculto */
+    .divisor-vertical {
+        display: none !important;
+    }
+}
