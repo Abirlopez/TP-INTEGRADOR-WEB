@@ -11,11 +11,18 @@
 <body>
     <header>
     <nav class="menu">
-        <section class="menu-izquierda">
-          <a href="../index.html"><img class="logo"  src="../images/logo.png" alt="logo" height="35"></a>
-        </section>
+    <section class="menu-izquierda">
+        <a href="../index.html"><img class="logo" src="../images/logo.png" alt="logo" height="35"></a>
+    </section>
 
-        <section class="menu-medio">
+    <section class="menu-medio">
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="menu-icono-hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="../pages/vuelos.html">Vuelos</a></li>
@@ -24,28 +31,18 @@
             <li><a href="../pages/MiCuenta.html">Reservas</a></li>
             <li><a href="../pages/perfil.html">Perfil</a></li>
         </ul>
-        </section>
+    </section>
 
-         <section class="menu-derecha">
-        
-            
-            <details class="iniciar-sesion">
-
-                <summary>
-                    ¡Hola!
-                </summary>
-
-                <a href="../index.html" class="cerrar-sesion">
-                    Cerrar sesión
-                </a>
-
-            </details>
-
-            <a href="InicioSesion.html">
-                <img class="usuario" src="../images/usuario.png" alt="usuario" width="30">
-            </a>
-        </section>
-    </nav>
+    <section class="menu-derecha">
+        <details class="iniciar-sesion">
+            <summary>¡Hola!</summary>
+            <a href="../index.html" class="cerrar-sesion">Cerrar sesión</a>
+        </details>
+        <a href="InicioSesion.html">
+            <img class="usuario" src="../images/usuario.png" alt="usuario" width="30">
+        </a>
+    </section>
+</nav>
 </header>
         <main>
          <div class="titulo">
