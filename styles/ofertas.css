@@ -40,7 +40,6 @@ select {
 .contenedor-ofertas{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr ;
   align-content: center;
   gap: 3rem;
   margin: 2rem 0 4rem 0;
@@ -49,14 +48,10 @@ select {
 .tarjeta img{
    width: 20rem;
   height: 15rem;
-  border-radius: 8px;
   border-top-left-radius:10px;
   border-top-right-radius: 10px;
 }
 
-.tarjeta {
-  border-radius: 10px;
-  text-align: center;
 .tarjeta{
   position: relative;
     width: 20rem;
@@ -69,8 +64,6 @@ select {
 }
 
 .info {
-  position: absolute;
-  color: white;
   color: black;
   z-index: 2;
   top: 1.8rem;
@@ -78,8 +71,6 @@ select {
   text-align: left;
 }
 
-.promo {
-  top: 1.5rem;
  .promo {
   position: absolute;
   top: 1rem;
@@ -93,9 +84,6 @@ select {
   z-index: 10;
 }
 
-.info h3 {
-  margin: 5px 0;
-  font-weight: 500;
 
 
 
@@ -110,10 +98,7 @@ select {
      padding: 1rem 0;
 }
 
-.precio {
-  font-weight: 600;
-  font-size: 18px;
-}.ver-vuelos{
+.ver-vuelos{
     display: flex;
     justify-content: center;
     align-items: center;
