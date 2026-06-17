@@ -217,7 +217,7 @@ function inicializarRangoPrecio() {
   if (!range) return;
 
  
-  const PRECIO_MIN = 1013;
+  const PRECIO_MIN = 100;
   const PRECIO_MAX = 5000;
   range.min = PRECIO_MIN;
   range.max = PRECIO_MAX;
