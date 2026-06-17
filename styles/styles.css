@@ -740,4 +740,12 @@ select:focus {
   }
 }
 
+/*chicos este en el css del mensaje que va en la busqueda*/
+#mensajeDeError {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: red;
+  min-height: 20px;
+}
 

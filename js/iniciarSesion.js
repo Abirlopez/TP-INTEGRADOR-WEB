@@ -1,20 +1,27 @@
-var form = document.getElementById("formLogin");
-var email = document.getElementById("email");
-var mensaje = document.getElementById("mensaje");
+const form = document.getElementById("formLogin");
+const mensaje = document.getElementById("mensaje");
 
-form.addEventListener("submit", function(e){
-    e.preventDefault();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-    var valorEmail = email.value;
+  const email = document.getElementById("email").value.trim();
+  const pass = document.getElementById("contrasenia").value.trim();
 
-    mensaje.innerHTML = "";
+  mensaje.textContent = "";
 
+  if (!email || !pass) {
+    mensaje.textContent = "❌ Completá todos los campos";
+    return;
+  }
 
-    if(valorEmail.indexOf(".") == -1){
-        mensaje.innerHTML = "Debe tener un punto";
-        mensaje.style.color = "red";
-        return;
-    }
+  if (pass.length < 6) {
+    mensaje.textContent = "❌ La contraseña debe tener al menos 6 caracteres";
+    return;
+  }
 
-    window.location.href = "../index.html";
+  localStorage.setItem("usuario", email);
+
+  mensaje.style.color = "green";
+  mensaje.textContent = "✔ Ingresando...";
+
 });

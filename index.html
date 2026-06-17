@@ -65,7 +65,12 @@
     </section>
 
     <section class="busqueda">
+<<<<<<< HEAD
+        <p id="mensajeDeError"></p>
+        <form  id="form-busqueda" >
+=======
         <form id="form-busqueda">
+>>>>>>> 0653d8ebfd88394fa79d17bb64809271acba4e03
 
         <div class="opcion-1">
       <label><input type="radio" name="tipo"> Ida y vuelta</label>
@@ -76,31 +81,31 @@
 
         <div class="opcion-3">
             <label for="origen">Origen</label>
-      <input type="text" placeholder="Origen" name="origen" required>
+      <input type="text" placeholder="Origen" name="origen" id="origen" required>
        </div>
 
        <div class="opcion-4">
        <label for="destino">Destino</label>
-        <input type="text" placeholder="Destino" name="destino" required>
+        <input type="text" placeholder="Destino" name="destino" id="destino" required>
         </div>
         
         <div class="opcion-5">
             <label for="fecha-ida">Fecha ida</label>
-      <input type="date" name="fecha-ida"  required>
+      <input type="date" name="fecha-ida" id="fecha-ida" required>
         </div>
 
         <div class="opcion-6">
             <label for="fecha-vuelta">Fecha vuelta</label>
-      <input type="date" name="fecha-vuelta">
+      <input type="date" name="fecha-vuelta" id="fecha-vuelta">
         </div>
 
          <div class="opcion-7">
             <label for="pasajeros">Pasajeros</label>
-      <input type="number" name="pasajeros" placeholder="Cantidad de pasajeros" min="1" required>
+      <input type="number" name="pasajeros" id="pasajeros" placeholder="Cantidad de pasajeros" min="1" required>
         </div>
         <div class="opcion-8">
             <label for="clase">Clase</label>
-      <select name="clase">
+      <select name="clase" id="clase">
     <option value="Economica">Economica</option>
     <option value="Premium economy">Premium economy</option>
     <option value="Primera clase">Primera clase</option>
@@ -110,10 +115,14 @@
 
 
        <div class="boton">
+<<<<<<< HEAD
+    <button type="submit" class="btn-buscar"> Buscar vuelos</button>
+    </div>
+=======
     <button type="submit" class="btn-buscar">Buscar vuelos</button>
 </div>
+>>>>>>> 0653d8ebfd88394fa79d17bb64809271acba4e03
     </form>
-    </div>
 
     </section>
 </main>
@@ -200,13 +209,12 @@
                 <p>El equipaje incluido varía según la aerolínea y la tarifa seleccionada. Esa información aparece antes de finalizar la compra. </p>
             </details>
 
-            <!-- Pregunta 2 -->
             <details class="faq-item">
                 <summary>¿Puedo cambiar la fecha de mi vuelo? <span class="arrow"></span></summary>
                 <p>Sí, dependiendo de las condiciones de la tarifa elegida. Algunos cambios pueden tener costo adicional.</p>
             </details>
 
-            <!-- Repite para las demás preguntas -->
+            
         </div>
     </section>
 
@@ -265,7 +273,10 @@
         </div>
 
     </footer>
+
+
     <script src="js/index.js"></script>
+
 </body>
 
 </html>
