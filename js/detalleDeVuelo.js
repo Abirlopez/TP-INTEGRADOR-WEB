@@ -1,41 +1,6 @@
-// ============================================================
-// DATOS DEL VUELO (de respaldo si no hay selección guardada)
-// ============================================================
-const datoVueloPorDefecto = {
-  precio: 1000,
-  aerolineaNombre: "Aerolineas Argentinas",
-  aerolineaLogo: "../images/AeroArgentinas.jpg",
-  ida: {
-    origen: "Buenos Aires (EZE)",
-    destino: "Madrid (MAD)",
-    horaSalida: "12:00",
-    horaLlegada: "08:40",
-    duracion: "11h 40m",
-    fecha: "Jue. 20 Abril"
-  },
-  vuelta: {
-    origen: "Madrid (MAD)",
-    destino: "Buenos Aires (EZE)",
-    horaSalida: "18:30",
-    horaLlegada: "06:40",
-    duracion: "11h 10m",
-    fecha: "Sab. 30 Abril"
-  }
-};
 
-let datoVuelo = datoVueloPorDefecto;
+// CARGA DINÁMICA DE INFORMACIÓN DEL VUELO
 
-const IMPUESTOS = 100; // monto fijo simulado de tasas e impuestos
-
-// Estado de selección de asientos
-const seleccion = {
-  ida: null,
-  vuelta: null
-};
-
-// ============================================================
-// 1. CARGA DINÁMICA DE INFORMACIÓN DEL VUELO
-// ============================================================
 function cargarVueloSeleccionado() {
   const guardado = sessionStorage.getItem("vueloSeleccionado");
   if (guardado) {
@@ -43,7 +8,7 @@ function cargarVueloSeleccionado() {
   }
 }
 
-// Extrae el código de 3 letras entre paréntesis, ej: "Madrid (MAD)" -> "MAD"
+
 function extraerCodigo(texto) {
   if (!texto) return "";
   const match = texto.match(/\(([^)]+)\)/);
@@ -110,9 +75,9 @@ function cargarInfoVuelo() {
   if (montoDetalle) montoDetalle.textContent = `US$ ${datoVuelo.precio.toLocaleString("es-AR")}`;
 }
 
-// ============================================================
-// 2. RECÁLCULO DINÁMICO DEL RESUMEN DE PRECIO
-// ============================================================
+
+//RECÁLCULO DINÁMICO DEL RESUMEN DE PRECIO
+
 function actualizarResumen() {
   const base = datoVuelo.precio;
   const total = base + IMPUESTOS;
@@ -143,12 +108,9 @@ function actualizarResumen() {
   resumenAsientos.innerHTML = `<p>${textoIda}</p><p>${textoVuelta}</p>`;
 }
 
-// ============================================================
-// 4 y 5. ESTADO VISUAL Y ALMACENAMIENTO DE ASIENTOS
-// (El cambio visual disponible -> seleccionado ya lo maneja el CSS
-//  vía ".check-asiento:checked + .disponible". Acá solo guardamos
-//  cuál fue el asiento elegido.)
-// ============================================================
+
+// ESTADO VISUAL Y ALMACENAMIENTO DE ASIENTOS
+
 function inicializarAsientos() {
   document.querySelectorAll('input[name="asiento-ida"]').forEach(radio => {
     radio.addEventListener("change", function () {
@@ -167,9 +129,8 @@ function inicializarAsientos() {
   });
 }
 
-// ============================================================
-// 3. VALIDACIÓN DEL BOTÓN CONTINUAR
-// ============================================================
+
+// VALIDACIÓN DEL BOTÓN CONTINUAR
 function inicializarBotonContinuar() {
   const boton = document.querySelector(".boton-continuar");
   if (!boton) return;
@@ -194,9 +155,7 @@ function inicializarBotonContinuar() {
   });
 }
 
-// ============================================================
-// UTILIDADES: notificación y mensaje de error
-// ============================================================
+// notificación y mensaje de error
 function mostrarNotificacion(mensaje) {
   mostrarMensajeFlotante(mensaje, "notif-asiento", "#315762");
 }
@@ -224,9 +183,7 @@ function mostrarMensajeFlotante(mensaje, id, color) {
   el._timeout = setTimeout(() => (el.style.opacity = "0"), 2800);
 }
 
-// ============================================================
 // INICIALIZACIÓN
-// ============================================================
 document.addEventListener("DOMContentLoaded", () => {
   cargarVueloSeleccionado();
   cargarInfoVuelo();
