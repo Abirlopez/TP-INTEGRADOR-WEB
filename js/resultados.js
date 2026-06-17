@@ -1,7 +1,5 @@
 
-// ============================================================
-// GUARDAR VUELO ELEGIDO AL HACER CLICK EN "COMPRAR"
-// ============================================================
+// GUARDAR VUELO ELEGIDO AL HACER CLICK EN COMPRAR
 function inicializarBotonesComprar() {
   document.querySelectorAll(".tarjeta-vuelo .boton-accion").forEach(boton => {
     boton.addEventListener("click", function (e) {
@@ -25,7 +23,7 @@ function extraerDatosVuelo(tarjeta) {
   const nombreAerolinea = filaIda.querySelector(".nombreAerolinea").textContent.trim();
   const logoAerolinea = filaIda.querySelector("img").getAttribute("src");
 
-  // toma el precio que se ve en pantalla (puede incluir el extra de equipaje ya calculado)
+  
   const montoTexto = tarjeta.querySelector(".monto").textContent;
   const precio = parseInt(montoTexto.replace(/[^\d]/g, ""), 10);
 
@@ -277,9 +275,9 @@ function mostrarMensajeSinResultados(cantidadVisible) {
   }
 }
 
-//  EQUIPAJE: actualizar costo mostrado según selección
+//  EQUIPAJE
 function tarjetaIncluyeEquipaje(tarjeta, tipo) {
-  // tipo: "personal" -> mochila, "mano" -> valija, "bodega" -> maleta
+  
   const claseImg = { personal: "mochila", mano: "valija", bodega: "maleta" }[tipo];
   const img = tarjeta.querySelector(`.${claseImg}`);
   if (!img) return false;
@@ -329,5 +327,11 @@ document.addEventListener("DOMContentLoaded", () => {
   inicializarFiltros();
   inicializarRangoPrecio();
   aplicarFiltros();
+});
+document.addEventListener("DOMContentLoaded", () => {
+  inicializarFiltros();
+  inicializarRangoPrecio();
+  aplicarFiltros();
+  inicializarBotonesComprar(); // ← agregar esta línea
 });
 
