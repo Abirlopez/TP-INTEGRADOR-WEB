@@ -459,1018 +459,1048 @@ input:checked + .slider:before {/* Movimiento del círculo al activar */
   transform: translateX(24px);
 }
 
-
+ 
 /* Oculta el checkbox y el icono en la versión de escritorio */
 .menu-checkbox,
 .menu-icono-hamburguesa {
-    display: none !important;
+    display: none;
 }
-
+ 
+/* Oculta el checkbox y botón de filtros (solo deben verse en mobile) */
 .filtro-checkbox,
 .btn-abrir-filtros {
-    display: none !important;
+    display: none;
 }
-
+ 
 /* ==========================================================================
     RESPONSIVE PARA TABLET (De 37.6em a 64em)
    ========================================================================== */
 @media (min-width: 37.6em) and (max-width: 64em) {
-
+ 
     html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
     }
-
+ 
     /* --- MENÚ SUPERIOR --- */
     .menu {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        width: 100% !important;
-        padding: 0.5em 1em !important;
-        box-sizing: border-box !important;
-        height: auto !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0.5em 0.6em;
+        box-sizing: border-box;
+        height: auto;
+        gap: 0.3em;
     }
-
+ 
+    .menu-izquierda {
+        flex-shrink: 0;
+    }
+ 
+    .menu-izquierda .logo {
+        height: 26px;
+        width: auto;
+    }
+ 
+    .menu-medio {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+ 
     .menu-medio ul {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 0.5rem !important;
-        list-style: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
+        display: flex;
+        flex-direction: row;
+        gap: 0.1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        flex-wrap: nowrap;
     }
-
+ 
     .menu-medio a {
-        font-size: 0.7em !important;
-        padding: 0.4rem 0.5rem !important;
+        font-size: 0.62em;
+        padding: 0.3rem 0.35rem;
+        white-space: nowrap;
     }
-
+ 
+    .menu-derecha {
+        flex-shrink: 0;
+        gap: 0.3em;
+    }
+ 
     .iniciar-sesion summary {
-        font-size: 0.75em !important;
-        padding: 0.3rem 0.7rem !important;
+        font-size: 0.65em;
+        padding: 0.25rem 0.5rem;
+        white-space: nowrap;
     }
-
+ 
+    .menu-derecha .usuario {
+        width: 22px;
+    }
+ 
     .menu-checkbox,
     .menu-icono-hamburguesa {
-        display: none !important;
+        display: none;
     }
-
+ 
     main {
-        display: grid !important;
-        grid-template-columns: 30% 70% !important;
-        width: 100% !important;
-        padding: 0 !important;
-        margin-top: 0.5em !important;
-        box-sizing: border-box !important;
-        align-items: start !important;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        width: 100%;
+        padding: 0;
+        margin-top: 0.5em;
+        box-sizing: border-box;
+        align-items: start;
     }
-
+ 
     aside {
-        grid-column: 1 / 2 !important;
-        width: 100% !important;
-        margin-left: 0 !important;
-        padding: 0 0.5em !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.5em !important;
+        grid-column: 1 / 2;
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0.5em;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
     }
-
+ 
     /* Buscador verde */
     .vuelos {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0.8em 0.5em !important;
-        height: auto !important;
-        box-sizing: border-box !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8em 0.5em;
+        height: auto;
+        box-sizing: border-box;
     }
-
+ 
     .vuelos h1 {
-        font-size: 1.1em !important;
-        margin-left: 5% !important;
-        align-self: flex-start !important;
+        font-size: 1.1em;
+        margin-left: 5%;
+        align-self: flex-start;
     }
-
+ 
     .tipo-vuelo {
-        margin-left: 5% !important;
-        gap: 5px !important;
+        margin-left: 5%;
+        gap: 5px;
     }
-
+ 
     .tipo-vuelo button {
-        font-size: 0.7em !important;
-        padding: 5px 8px !important;
+        font-size: 0.7em;
+        padding: 5px 8px;
     }
-
+ 
     .contenedor-viaje {
-        width: 92% !important;
-        padding: 6px !important;
+        width: 92%;
+        padding: 6px;
     }
-
+ 
     .origenydestino {
-        gap: 8px !important;
-        padding: 3px 0 !important;
+        gap: 8px;
+        padding: 3px 0;
     }
-
+ 
     .origen, .destino, .logo-pasajero {
-        width: 14% !important;
+        width: 14%;
     }
-
+ 
     .texto label {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .texto input {
-        font-size: 0.72em !important;
-        width: 100% !important;
+        font-size: 0.72em;
+        width: 100%;
     }
-
+ 
     .contenedor-fechas {
-        width: 92% !important;
-        padding: 6px 4px !important;
-        margin-top: 8px !important;
-        overflow: hidden !important;
+        width: 92%;
+        padding: 6px 4px;
+        margin-top: 8px;
+        overflow: hidden;
     }
-
+ 
     .fecha {
-        flex: 1 !important;
-        min-width: 0 !important;
-        overflow: hidden !important;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
     }
-
+ 
     .fecha label {
-        font-size: 0.6em !important;
-        white-space: nowrap !important;
+        font-size: 0.6em;
+        white-space: nowrap;
     }
-
+ 
     .fecha input[type="date"] {
-        font-size: 0.58em !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 2px !important;
+        font-size: 0.58em;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 2px;
     }
-
+ 
     .contenedor-pasajero {
-        width: 92% !important;
-        padding: 6px !important;
-        margin-top: 8px !important;
-        margin-bottom: 8px !important;
-        gap: 4px !important;
+        width: 92%;
+        padding: 6px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        gap: 4px;
     }
-
+ 
     .contenedor-pasajero label {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .datos input[type="number"],
     .datos select {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .buscar {
-        width: 85% !important;
-        font-size: 0.8em !important;
-        padding: 7px !important;
+        width: 85%;
+        font-size: 0.8em;
+        padding: 7px;
     }
-
+ 
     .filtros {
-        margin-top: 0.5em !important;
-        padding-bottom: 1em !important;
+        margin-top: 0.5em;
+        padding-bottom: 1em;
     }
-
+ 
     .filtros summary {
-        font-size: 0.85em !important;
-        padding: 8px 10px !important;
+        font-size: 0.85em;
+        padding: 8px 10px;
     }
-
+ 
     .filtros details {
-        display: block !important;
+        display: block;
     }
-
+ 
     .filtros details > br {
-        display: block !important;
+        display: block;
     }
-
+ 
     .filtros input[type="checkbox"] {
-        width: 12px !important;
-        height: 12px !important;
-        flex-shrink: 0 !important;
-        margin: 0 4px 0 10px !important;
-        vertical-align: middle !important;
-        display: inline-block !important;
-        float: none !important;
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+        margin: 0 4px 0 10px;
+        vertical-align: middle;
+        display: inline-block;
+        float: none;
     }
-
+ 
     .filtros details > label,
     .filtros label {
-        font-size: 0.72em !important;
-        display: inline !important;
-        align-items: unset !important;
-        gap: unset !important;
-        padding: 0 !important;
-        cursor: pointer !important;
-        white-space: normal !important;
-        vertical-align: middle !important;
+        font-size: 0.72em;
+        display: inline;
+        align-items: unset;
+        gap: unset;
+        padding: 0;
+        cursor: pointer;
+        white-space: normal;
+        vertical-align: middle;
     }
-
+ 
     .filtros h2 {
-        font-size: 0.85em !important;
-        padding: 8px 10px 4px !important;
+        font-size: 0.85em;
+        padding: 8px 10px 4px;
     }
-
+ 
     .range {
-        width: 88% !important;
-        margin: 0 6% !important;
+        width: 88%;
+        margin: 0 6%;
     }
-
+ 
     .rango-valores {
-        font-size: 0.65em !important;
-        padding: 0 6% !important;
+        font-size: 0.65em;
+        padding: 0 6%;
     }
-
+ 
     .contenedor-politica {
-        padding: 0 10px !important;
+        padding: 0 10px;
     }
-
+ 
     .politica-item {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 8px !important;
-        padding: 4px 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 4px 0;
     }
-
+ 
     .politica-texto {
-        max-width: 75% !important;
-        width: auto !important;
+        max-width: 75%;
+        width: auto;
     }
-
+ 
     .titulo-opcion {
-        font-size: 0.7em !important;
+        font-size: 0.7em;
     }
-
+ 
     .subtitulo-opcion {
-        font-size: 0.6em !important;
+        font-size: 0.6em;
     }
-
+ 
     .switch {
-        width: 36px !important;
-        height: 20px !important;
-        flex-shrink: 0 !important;
+        width: 36px;
+        height: 20px;
+        flex-shrink: 0;
     }
-
+ 
     .slider:before {
-        height: 14px !important;
-        width: 14px !important;
-        left: 3px !important;
-        bottom: 3px !important;
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
     }
-
+ 
     input:checked + .slider:before {
-        transform: translateX(16px) !important;
+        transform: translateX(16px);
     }
-
+ 
     .contenido {
-        grid-column: 2 / 3 !important;
-        width: 100% !important;
-        padding: 0.5em 0.5em 0.5em 0 !important;
-        box-sizing: border-box !important;
+        grid-column: 2 / 3;
+        width: 100%;
+        padding: 0.5em 0.5em 0.5em 0;
+        box-sizing: border-box;
     }
-
+ 
     .opciones-vuelos {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.5em !important;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
     }
-
+ 
     .tarjeta-vuelo {
-        display: grid !important;
-        grid-template-columns: 72% 28% !important;
-        width: 97% !important;
-        margin-left: 1.5% !important;
-        margin-bottom: 0 !important;
-        border-radius: 0.5em !important;
-        box-sizing: border-box !important;
-        overflow: hidden !important;
+        display: grid;
+        grid-template-columns: 72% 28%;
+        width: 97%;
+        margin-left: 1.5%;
+        margin-bottom: 0;
+        border-radius: 0.5em;
+        box-sizing: border-box;
+        overflow: hidden;
     }
-
+ 
     .informacion {
-        padding: 0.5em 0.4em !important;
-        gap: 0.4em !important;
+        padding: 0.5em 0.4em;
+        gap: 0.4em;
     }
-
+ 
     .fila {
-        display: grid !important;
-        grid-template-columns: 4em 3.2em 1fr 3.2em 4em !important;
-        align-items: center !important;
-        gap: 0.1em !important;
-        padding: 0.2em 0 !important;
+        display: grid;
+        grid-template-columns: 4em 3.2em 1fr 3.2em 4em;
+        align-items: center;
+        gap: 0.1em;
+        padding: 0.2em 0;
     }
-
+ 
     .aerolinea {
-        gap: 3px !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        overflow: hidden !important;
-        min-width: 0 !important;
+        gap: 3px;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: hidden;
+        min-width: 0;
     }
-
+ 
     .aeroargentina {
-        width: 2em !important;
-        height: auto !important;
-        flex-shrink: 0 !important;
+        width: 2em;
+        height: auto;
+        flex-shrink: 0;
     }
-
+ 
     .nombreAerolinea {
-        font-size: 0.46em !important;
-        line-height: 1.2 !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        white-space: nowrap !important;
-        max-width: 4.5em !important;
+        font-size: 0.46em;
+        line-height: 1.2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 4.5em;
     }
-
+ 
     .etiqueta {
-        font-size: 0.55em !important;
+        font-size: 0.55em;
     }
-
+ 
     .hora {
-        font-size: 0.75em !important;
+        font-size: 0.75em;
     }
-
+ 
     .ciudad {
-        font-size: 0.6em !important;
+        font-size: 0.6em;
     }
-
+ 
     .duracion {
-        font-size: 0.55em !important;
-        padding: 0 0.2em !important;
+        font-size: 0.55em;
+        padding: 0 0.2em;
     }
-
+ 
     .tiempo {
-        font-size: 1em !important;
+        font-size: 1em;
     }
-
+ 
     .tipo-vuelo-texto, .tipo-vuelo {
-        font-size: 0.9em !important;
+        font-size: 0.9em;
     }
-
+ 
     .mochila, .valija, .maleta {
-        width: 0.9em !important;
-        height: auto !important;
-        vertical-align: bottom !important;
+        width: 0.9em;
+        height: auto;
+        vertical-align: bottom;
     }
-
+ 
     .icono-servicio {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: flex-end !important;
-        justify-content: flex-end !important;
-        gap: 2px !important;
-        flex-wrap: nowrap !important;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 2px;
+        flex-wrap: nowrap;
     }
-
+ 
     
     .precio {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        padding: 0.5em 0.3em !important;
-        gap: 0.25em !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em 0.3em;
+        gap: 0.25em;
     }
-
+ 
     .desde {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .monto {
-        font-size: 0.9em !important;
-        margin-top: 0 !important;
-        text-align: center !important;
+        font-size: 0.9em;
+        margin-top: 0;
+        text-align: center;
     }
-
+ 
     .boton-accion {
-        padding: 0.35em 0.5em !important;
-        font-size: 0.65em !important;
-        width: 90% !important;
-        text-align: center !important;
-        border-radius: 0.4em !important;
+        padding: 0.35em 0.5em;
+        font-size: 0.65em;
+        width: 90%;
+        text-align: center;
+        border-radius: 0.4em;
     }
-
+ 
     /* --- FOOTER --- */
     .footer {
-        padding: 1em 1.5em !important;
+        padding: 1em 1.5em;
     }
-
+ 
     .f-suscripcion h2 {
-        font-size: 1em !important;
+        font-size: 1em;
     }
-
+ 
     .f-suscripcion p {
-        font-size: 0.8em !important;
+        font-size: 0.8em;
     }
-
+ 
     #mail {
-        width: 50vw !important;
-        padding: 0.7em !important;
-        font-size: 0.8em !important;
+        width: 50vw;
+        padding: 0.7em;
+        font-size: 0.8em;
     }
-
+ 
     #Enviar {
-        width: 20vw !important;
-        padding: 0.7em !important;
-        font-size: 0.8em !important;
+        width: 20vw;
+        padding: 0.7em;
+        font-size: 0.8em;
     }
-
+ 
     .f-Menu {
-        grid-template-columns: 1fr 1fr 1fr 1fr !important;
-        gap: 0.5em !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.5em;
     }
-
+ 
     .f-titulos {
-        font-size: 0.85em !important;
+        font-size: 0.85em;
     }
-
+ 
     .f-section a,
     .f-section li {
-        font-size: 0.75em !important;
+        font-size: 0.75em;
     }
-
+ 
     .iconoRedes {
-        width: 1.4em !important;
+        width: 1.4em;
     }
-
+ 
     .f-logo {
-        width: 8em !important;
+        width: 8em;
     }
-
+ 
     .f-Derechos p {
-        font-size: 0.7em !important;
+        font-size: 0.7em;
     }
 }
-
+ 
 /* ==========================================================================
    RESPONSIVE MOBILE (hasta 37.5em)
    ========================================================================== */
 @media (max-width: 37.5em) {
-
+ 
     
     html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
     }
-
+ 
     /* MENÚ HAMBURGUESA SUPERIOR*/
     .menu {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 10px 15px !important;
-        position: relative !important;
-        height: auto !important;
-        background-color: #315762 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        position: relative;
+        height: auto;
+        background-color: #315762;
+        width: 100%;
+        box-sizing: border-box;
     }
-
+ 
     .menu-izquierda, .menu-derecha {
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
-
+ 
     .iniciar-sesion summary {
-        font-size: 11px !important;
-        padding: 4px 8px !important;
+        font-size: 11px;
+        padding: 4px 8px;
     }
-
+ 
     /* Botón hamburguesa visible en mobile */
     .menu-icono-hamburguesa {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
-        width: 22px !important;
-        height: 16px !important;
-        cursor: pointer !important;
-        margin: 0 10px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 22px;
+        height: 16px;
+        cursor: pointer;
+        margin: 0 10px;
     }
-
+ 
     .menu-icono-hamburguesa .linea-hamburguesa {
-        display: block !important;
-        width: 100% !important;
-        height: 3px !important;
-        background-color: #ffffff !important;
-        border-radius: 2px !important;
-        transition: all 0.3s ease !important;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
     }
-
+ 
     /* Menú desplegable */
     .menu .menu-medio ul {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background-color: #264b56 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        max-height: 0 !important;
-        overflow: hidden !important;
-        transition: max-height 0.3s ease-in-out !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
-        z-index: 99999 !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #264b56;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 99999;
     }
-
+ 
     .menu-medio ul li {
-        width: 100% !important;
-        text-align: center !important;
+        width: 100%;
+        text-align: center;
     }
-
+ 
     .menu-medio ul li a {
-        display: block !important;
-        padding: 12px 0 !important;
-        width: 100% !important;
-        color: #ffffff !important;
-        font-size: 1.1rem !important;
-        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+        display: block;
+        padding: 12px 0;
+        width: 100%;
+        color: #ffffff;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-
+ 
     .menu-checkbox:checked ~ .menu-medio ul {
-        max-height: 320px !important;
+        max-height: 320px;
     }
-
+ 
     
     .menu-checkbox:checked ~ .menu-icono-hamburguesa .linea-hamburguesa:nth-child(1) {
-        transform: translateY(6.5px) rotate(45deg) !important;
+        transform: translateY(6.5px) rotate(45deg);
     }
     .menu-checkbox:checked ~ .menu-icono-hamburguesa .linea-hamburguesa:nth-child(2) {
-        opacity: 0 !important;
+        opacity: 0;
     }
     .menu-checkbox:checked ~ .menu-icono-hamburguesa .linea-hamburguesa:nth-child(3) {
-        transform: translateY(-6.5px) rotate(-45deg) !important;
+        transform: translateY(-6.5px) rotate(-45deg);
     }
-
+ 
     
     main {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        padding: 0.6em 0.5em !important;
-        box-sizing: border-box !important;
-        gap: 0.6em !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0.6em 0.5em;
+        box-sizing: border-box;
+        gap: 0.6em;
     }
-
+ 
     /*BOTÓN QUE ABRE FILTROS Y BUSCADOR */
-    .btn-abrir-filtros {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 0.5em !important;
-        width: 92% !important;
-        background-color: #E9631A !important;
-        color: #ffffff !important;
-        padding: 0.75em 1em !important;
-        border-radius: 0.5em !important;
-        font-size: 0.9em !important;
-        font-weight: bold !important;
-        cursor: pointer !important;
-        box-sizing: border-box !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
-        margin: 0 auto !important;
-        user-select: none !important;
-    }
-
-    .btn-abrir-filtros .icono-filtro {
-        font-size: 1.1em !important;
-    }
-
-    /*ASIDE: oculto por defecto, se abre con checkbox*/
-    
     .filtro-checkbox {
-        display: none !important;
+        display: none;
     }
-
+ 
+    .btn-abrir-filtros {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5em;
+        width: 92%;
+        background-color: #E9631A;
+        color: #ffffff;
+        padding: 0.75em 1em;
+        border-radius: 0.5em;
+        font-size: 0.9em;
+        font-weight: bold;
+        cursor: pointer;
+        box-sizing: border-box;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        margin: 0 auto;
+        user-select: none;
+    }
+ 
+    .btn-abrir-filtros .icono-filtro {
+        font-size: 1.1em;
+    }
+ 
+    /*ASIDE: oculto por defecto, se abre con checkbox*/
+ 
     aside {
-        width: 92% !important;
-        margin: 0 auto !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.6em !important;
-        max-height: 0 !important;
-        overflow: hidden !important;
-        opacity: 0 !important;
-        transition: max-height 0.45s ease-in-out, opacity 0.3s ease-in-out !important;
+        width: 92%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6em;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.45s ease-in-out, opacity 0.3s ease-in-out;
     }
-
-
+ 
+ 
     .filtro-checkbox:checked ~ aside {
-        max-height: 120em !important;
-        opacity: 1 !important;
-        margin-bottom: 0.5em !important;
+        max-height: 120em;
+        opacity: 1;
+        margin-bottom: 0.5em;
     }
-
+ 
     /* El botón cambia de texto cuando está abierto */
     .filtro-checkbox:checked ~ .btn-abrir-filtros .texto-filtro::before {
-        content: "✕  Cerrar buscador y filtros" !important;
+        content: "✕  Cerrar buscador y filtros";
     }
     .filtro-checkbox:not(:checked) ~ .btn-abrir-filtros .texto-filtro::before {
-        content: "☰  Buscador y filtros" !important;
+        content: "☰  Buscador y filtros";
     }
     .btn-abrir-filtros .texto-filtro {
-        font-size: 1em !important;
+        font-size: 1em;
     }
-
+ 
     /*BUSCADOR VERDE*/
     .vuelos {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 1em 0.8em !important;
-        height: auto !important;
-        box-sizing: border-box !important;
-        border-radius: 0.4em !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0.8em;
+        height: auto;
+        box-sizing: border-box;
+        border-radius: 0.4em;
     }
-
+ 
     .vuelos h1 {
-        font-size: 1.1em !important;
-        align-self: flex-start !important;
-        margin-left: 4% !important;
+        font-size: 1.1em;
+        align-self: flex-start;
+        margin-left: 4%;
     }
-
+ 
     .tipo-vuelo {
-        margin-left: 4% !important;
-        gap: 6px !important;
+        margin-left: 4%;
+        gap: 6px;
     }
-
+ 
     .tipo-vuelo button {
-        font-size: 0.75em !important;
-        padding: 6px 10px !important;
+        font-size: 0.75em;
+        padding: 6px 10px;
     }
-
+ 
     .contenedor-viaje {
-        width: 93% !important;
-        padding: 8px !important;
-        box-sizing: border-box !important;
+        width: 93%;
+        padding: 8px;
+        box-sizing: border-box;
     }
-
+ 
     .origenydestino {
-        gap: 10px !important;
-        padding: 4px 0 !important;
+        gap: 10px;
+        padding: 4px 0;
     }
-
+ 
     .origen, .destino, .logo-pasajero {
-        width: 10% !important;
+        width: 10%;
     }
-
+ 
     .texto label {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .texto input {
-        font-size: 0.8em !important;
-        width: 100% !important;
+        font-size: 0.8em;
+        width: 100%;
     }
-
+ 
     .contenedor-fechas {
-        width: 93% !important;
-        display: flex !important;
-        flex-direction: row !important;
-        padding: 8px !important;
-        margin-top: 8px !important;
-        box-sizing: border-box !important;
-        overflow: hidden !important;
+        width: 93%;
+        display: flex;
+        flex-direction: row;
+        padding: 8px;
+        margin-top: 8px;
+        box-sizing: border-box;
+        overflow: hidden;
     }
-
+ 
     .fecha {
-        flex: 1 !important;
-        min-width: 0 !important;
-        overflow: hidden !important;
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
     }
-
+ 
     .fecha label {
-        font-size: 0.6em !important;
-        white-space: nowrap !important;
+        font-size: 0.6em;
+        white-space: nowrap;
     }
-
+ 
     .fecha input[type="date"] {
-        font-size: 0.6em !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 2px !important;
+        font-size: 0.6em;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 2px;
     }
-
+ 
     .contenedor-pasajero {
-        width: 93% !important;
-        padding: 8px !important;
-        margin-top: 8px !important;
-        margin-bottom: 10px !important;
-        gap: 6px !important;
-        box-sizing: border-box !important;
+        width: 93%;
+        padding: 8px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        gap: 6px;
+        box-sizing: border-box;
     }
-
+ 
     .contenedor-pasajero label {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .datos input[type="number"],
     .datos select {
-        font-size: 0.7em !important;
+        font-size: 0.7em;
     }
-
+ 
     .buscar {
-        width: 85% !important;
-        font-size: 0.85em !important;
-        padding: 9px !important;
+        width: 85%;
+        font-size: 0.85em;
+        padding: 9px;
     }
-
+ 
     /* FILTROS */
     .filtros {
-        margin-top: 0 !important;
-        padding-bottom: 1em !important;
-        border: 1px solid #eee !important;
-        box-sizing: border-box !important;
+        margin-top: 0;
+        padding-bottom: 1em;
+        border: 1px solid #eee;
+        box-sizing: border-box;
     }
-
+ 
     .filtros summary {
-        font-size: 0.9em !important;
-        padding: 10px 12px !important;
+        font-size: 0.9em;
+        padding: 10px 12px;
     }
-
+ 
     .filtros input[type="checkbox"] {
-        width: 13px !important;
-        height: 13px !important;
-        flex-shrink: 0 !important;
-        margin: 0 5px 0 12px !important;
-        vertical-align: middle !important;
+        width: 13px;
+        height: 13px;
+        flex-shrink: 0;
+        margin: 0 5px 0 12px;
+        vertical-align: middle;
     }
-
+ 
     .filtros label {
-        font-size: 0.78em !important;
-        display: inline !important;
-        vertical-align: middle !important;
-        cursor: pointer !important;
+        font-size: 0.78em;
+        display: inline;
+        vertical-align: middle;
+        cursor: pointer;
     }
-
+ 
     .filtros h2 {
-        font-size: 0.9em !important;
-        padding: 10px 12px 4px !important;
+        font-size: 0.9em;
+        padding: 10px 12px 4px;
     }
-
+ 
     .range {
-        width: 88% !important;
-        margin: 0 6% !important;
+        width: 88%;
+        margin: 0 6%;
     }
-
+ 
     .rango-valores {
-        font-size: 0.7em !important;
-        padding: 0 6% !important;
+        font-size: 0.7em;
+        padding: 0 6%;
     }
-
+ 
     .contenedor-politica {
-        padding: 0 12px !important;
+        padding: 0 12px;
     }
-
+ 
     .politica-item {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 8px !important;
-        padding: 5px 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 5px 0;
     }
-
+ 
     .politica-texto {
-        max-width: 78% !important;
-        width: auto !important;
+        max-width: 78%;
+        width: auto;
     }
-
+ 
     .titulo-opcion {
-        font-size: 0.75em !important;
+        font-size: 0.75em;
     }
-
+ 
     .subtitulo-opcion {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .switch {
-        width: 38px !important;
-        height: 22px !important;
-        flex-shrink: 0 !important;
+        width: 38px;
+        height: 22px;
+        flex-shrink: 0;
     }
-
+ 
     .slider:before {
-        height: 16px !important;
-        width: 16px !important;
-        left: 3px !important;
-        bottom: 3px !important;
+        height: 16px;
+        width: 16px;
+        left: 3px;
+        bottom: 3px;
     }
-
+ 
     input:checked + .slider:before {
-        transform: translateX(16px) !important;
+        transform: translateX(16px);
     }
-
+ 
     /*TARJETAS DE VUELO */
     .contenido {
-        width: 92% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.7em !important;
-        margin: 0 auto !important;
+        width: 92%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7em;
+        margin: 0 auto;
     }
-
+ 
     .tarjeta-vuelo {
-        display: flex !important;
-        flex-direction: column !important;
-        padding: 0.75em !important;
-        border-radius: 0.5em !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        background-color: #ffffff !important;
-        border: 1px solid #e0e0e0 !important;
+        display: flex;
+        flex-direction: column;
+        padding: 0.75em;
+        border-radius: 0.5em;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
     }
-
+ 
     .tarjeta-vuelo .fila {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        width: 100% !important;
-        border-bottom: 1px dashed #e5e5e5 !important;
-        padding-bottom: 0.5em !important;
-        margin-bottom: 0.5em !important;
-        gap: 0.3em !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px dashed #e5e5e5;
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
+        gap: 0.3em;
     }
-
+ 
     .aerolinea {
-        flex: 0 0 22% !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 2px !important;
-        overflow: hidden !important;
+        flex: 0 0 22%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        overflow: hidden;
     }
-
+ 
     .aeroargentina, .aerolinea img {
-        width: 1.8em !important;
-        height: 1.8em !important;
-        object-fit: contain !important;
+        width: 1.8em;
+        height: 1.8em;
+        object-fit: contain;
     }
-
+ 
     .nombreAerolinea {
-        font-size: 0.5em !important;
-        text-align: center !important;
-        line-height: 1.2 !important;
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        white-space: nowrap !important;
-        max-width: 4.5em !important;
+        font-size: 0.5em;
+        text-align: center;
+        line-height: 1.2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 4.5em;
     }
-
+ 
     .info {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
-
+ 
     .etiqueta {
-        font-size: 0.55em !important;
+        font-size: 0.55em;
     }
-
+ 
     .hora {
-        font-size: 0.85em !important;
+        font-size: 0.85em;
     }
-
+ 
     .ciudad {
-        font-size: 0.65em !important;
+        font-size: 0.65em;
     }
-
+ 
     .duracion {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        font-size: 0.55em !important;
-        flex: 1 !important;
-        padding: 0 0.3em !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.55em;
+        flex: 1;
+        padding: 0 0.3em;
     }
-
+ 
     .linea-trayecto {
-        width: 100% !important;
+        width: 100%;
     }
-
+ 
     
     .icono-servicio {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: flex-end !important;
-        justify-content: flex-end !important;
-        gap: 2px !important;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 2px;
     }
-
+ 
     .mochila, .valija, .maleta {
-        width: 0.95em !important;
-        height: auto !important;
-        vertical-align: bottom !important;
+        width: 0.95em;
+        height: auto;
+        vertical-align: bottom;
     }
-
+ 
     /* Precio */
     .tarjeta-vuelo .precio {
-        width: 100% !important;
-        border: none !important;
-        padding: 0.3em 0 0 !important;
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
+        width: 100%;
+        border: none;
+        padding: 0.3em 0 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-
+ 
     .desde {
-        font-size: 0.7em !important;
+        font-size: 0.7em;
     }
-
+ 
     .monto {
-        font-size: 1.1em !important;
-        margin-top: 0 !important;
+        font-size: 1.1em;
+        margin-top: 0;
     }
-
+ 
     .boton-accion {
-        width: auto !important;
-        padding: 0.4em 0.9em !important;
-        font-size: 0.75em !important;
+        width: auto;
+        padding: 0.4em 0.9em;
+        font-size: 0.75em;
     }
-
+ 
     /* ============================================================
        FOOTER
     ============================================================ */
     .footer {
-        padding: 1em !important;
+        padding: 1em;
     }
-
+ 
     .f-suscripcion h2 {
-        font-size: 1em !important;
+        font-size: 1em;
     }
-
+ 
     .f-suscripcion p {
-        font-size: 0.78em !important;
+        font-size: 0.78em;
     }
-
+ 
     .divForm {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 0.6em !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6em;
     }
-
+ 
     #mail {
-        width: 85vw !important;
-        padding: 0.7em !important;
-        font-size: 0.85em !important;
+        width: 85vw;
+        padding: 0.7em;
+        font-size: 0.85em;
     }
-
+ 
     #Enviar {
-        width: 85vw !important;
-        padding: 0.7em !important;
-        font-size: 0.85em !important;
+        width: 85vw;
+        padding: 0.7em;
+        font-size: 0.85em;
     }
-
+ 
     .f-Menu {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 1em !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
     }
-
+ 
     .f-titulos {
-        font-size: 0.9em !important;
+        font-size: 0.9em;
     }
-
+ 
     .f-section a,
     .f-section li {
-        font-size: 0.78em !important;
+        font-size: 0.78em;
     }
-
+ 
     .iconoRedes {
-        width: 1.6em !important;
+        width: 1.6em;
     }
-
+ 
     .f-logo {
-        width: 7em !important;
+        width: 7em;
     }
-
+ 
     .f-Derechos p {
-        font-size: 0.7em !important;
+        font-size: 0.7em;
     }
 }
