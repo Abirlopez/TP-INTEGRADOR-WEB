@@ -1,12 +1,73 @@
-// ============================================================
-// CAPTURA DE DATOS DEL FORMULARIO DE BÚSQUEDA (index.html)
-// ============================================================
+const form = document.getElementById("form-busqueda");
+const mensaje = document.getElementById("mensajeDeError");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const origen = document.getElementById("origen").value.trim();
+  const destino = document.getElementById("destino").value.trim();
+  const ida = document.getElementById("fecha-ida").value;
+  const vuelta = document.getElementById("fecha-vuelta").value;
+  const pasajeros = document.getElementById("pasajeros").value;
+  const clase = document.getElementById("clase").value;
+
+  
+  mensaje.textContent = "";
+
+
+
+  if (!origen || !destino || !ida || !pasajeros) {
+    mensaje.textContent = "❌ Completá todos los campos obligatorios";
+    return;
+  }
+
+  if (origen.toLowerCase() === destino.toLowerCase()) {
+    mensaje.textContent = "❌ Origen y destino no pueden ser iguales";
+    return;
+  }
+
+  const fechaIda = new Date(ida);
+  const fechaVuelta = new Date(vuelta);
+
+  if (vuelta && fechaVuelta < fechaIda) {
+    mensaje.textContent = "❌ La fecha de vuelta no puede ser anterior a la ida";
+    return;
+  }
+
+  const cant = parseInt(pasajeros);
+  if (isNaN(cant) || cant < 1) {
+    mensaje.textContent = "❌ Ingresá cantidad válida de pasajeros";
+    return;
+  }
+
+
+  mensaje.style.color = "green";
+  mensaje.textContent = "✔ Buscando vuelos...";
+
+  const busqueda = {
+    origen,
+    destino,
+    ida,
+    vuelta,
+    pasajeros: cant,
+    clase
+  };
+
+  localStorage.setItem("busqueda", JSON.stringify(busqueda));
+
+ 
+  setTimeout(() => {
+    window.location.href = "pages/resultados.html";
+  }, 800);
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-busqueda");
   if (!form) return;
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // evita que el form recargue la página
+    e.preventDefault(); 
 
     const origen = form.querySelector('input[name="origen"]').value;
     const destino = form.querySelector('input[name="destino"]').value;
@@ -18,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const radioTipo = form.querySelector('input[name="tipo"]:checked');
     const tipoVuelo = radioTipo ? radioTipo.parentElement.textContent.trim() : "Ida y vuelta";
 
-    // Guardamos todo en sessionStorage para leerlo en resultados.html
+    
     const busqueda = {
       origen,
       destino,
@@ -31,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sessionStorage.setItem("busquedaVuelo", JSON.stringify(busqueda));
 
-    // Redirigimos a la página de resultados
+    
     window.location.href = "pages/resultados.html";
   });
 });
