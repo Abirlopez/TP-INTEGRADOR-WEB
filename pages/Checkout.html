@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../styles/footer.css">
     <title>Checkout</title>
+    <script src ="../js/checkout.js" defer></script>
     
 </head>
 
@@ -70,20 +71,24 @@
                     <div class="campo">
                         <label for="full_name">Nombre completo</label>
                         <input type="text" id="full_name" name="nombre_completo" placeholder="Juan Pérez" required>
+                        <span class="error-mensaje" id="error_full_name"></span>
                     </div>
                     <div class="campo">
                         <label for="document_number">Documento de identidad</label>
                         <div class="grupo-mixto">
                             <input type="text" id="document_number" name="nro_documento" placeholder="12345678" required>
                         </div>
+                        <span class="error-mensaje" id="error_document_number"></span>
                     </div>
                     <div class="campo">
                         <label for="passenger_email">Correo electrónico</label>
                         <input type="email" id="passenger_email" name="email_pasajero" placeholder="juanperez@gmail.com" required>
+                        <span class="error-mensaje" id="error_passenger_email"></span>
                     </div>
                     <div class="campo">
                         <label for="phone">Teléfono</label>
                         <input type="tel" id="phone" name="telefono" placeholder="+54 11 2345 6789" required>
+                        <span class="error-mensaje" id="error_phone"></span>
                     </div>
                 </section>
 
@@ -149,47 +154,26 @@
                     </div>
                 </section>
 
-                <section class="tarjeta">
+                <section class="tarjeta" id="resumen-vuelo-card">
                     <div class="pasajero">
                         <img src="../images/ticket-color.svg" alt="">
                         <h3>Resumen de vuelo</h3>
                     </div>
 
-                    <section class="tramo-vuelo">
-                        <p class="itinerario"><strong>Ida:</strong> Buenos Aires (EZE) ➔ Madrid (MAD)</p>
-                        <div class="info-salida">
-                            <span><img src="../images/calendario.svg" alt=""> 10/08/2026</span>
-                            <span><img src="../images/tiempo.svg" alt=""> 12:00 - 08:40 (+1)</span>
-                        </div>
-                        <p class="detalle-escala">1 escala en Lima (LIM) — 11h 40m</p>
-                    </section>
-
-                    <div class="separador-puntos"></div>
-                    <section class="tramo-vuelo">
-                        <p class="itinerario"><strong>Vuelta:</strong> Madrid (MAD) ➔ Buenos Aires (EZE)</p>
-                        <div class="info-salida">
-                            <span><img src="../images/calendario.svg" alt=""> 20/08/2026</span>
-                            <span><img src="../images/tiempo.svg" alt=""> 18:30 - 06:40 (+1)</span>
-                        </div>
-                        <p class="detalle-escala">1 escala en Lima (LIM) — 11h 10m</p>
-                    </section>
-
-                    <div class="separador-puntos"></div>
-
-                    <div class="fila-precio">
-                        <span>1 Adulto</span>
-                        <span>US$ 1.739</span>
+                    <div id="resumen-itinerario">
+                        <!-- Renderizado dinámicamente por JS (checkout.js) -->
                     </div>
 
-                    <div class="fila-precio">
-                        <span>Impuestos y tasas</span>
-                        <span>US$ 100</span>
+                    <div class="separador-puntos"></div>
+
+                    <div id="resumen-precios">
+                        <!-- Renderizado dinámicamente por JS (checkout.js) -->
                     </div>
 
                     <div class="separador-puntos"></div>
 
                     <div class="total-pago">
-                        Total <span class="monto">US$ 1.839</span>
+                        Total <span class="monto" id="monto-resumen">US$ 1.839</span>
                     </div>
 
                     <div class="separador-puntos"></div>
@@ -198,16 +182,18 @@
                         <label for="discount_coupon" style="display: none;">Cupón</label>
                         <input class="cupon" type="text" id="discount_coupon" name="cupon_descuento"
                             placeholder="Ingrese tu cupón de descuento">
-                        <button type="button" class="boton-cupon">Aplicar</button>
+                        <button type="button" class="boton-cupon" id="btn-aplicar-cupon">Aplicar</button>
                     </div>
+
+                    <span class="error-mensaje" id="error_cupon"></span>
 
                 </section>
 
                 <section class="resumen">
                     <div class="total-pago">
-                        Total a pagar <span class="monto">US$ 1.839</span>
+                        Total a pagar <span class="monto" id="monto-total-pagar">US$ 1.839</span>
                     </div>
-                    <button type="button" class="boton-accion" onclick="window.location.href='MiCuenta.html'">
+                    <button type="button" class="boton-accion" id="btn-pagar">
                         Pagar
                     </button>
                 </section>
