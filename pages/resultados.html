@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/resultados.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    
     <title>Resultados</title>
 </head>
 
@@ -64,7 +65,7 @@
                         <img class="origen" src="..\images\Origen.svg">
                         <div class="texto">
                             <label>ORIGEN</label>
-                            <input type="text" value="Buenos Aires, Argentina">
+                            <input type="text" id="input-origen" value="Buenos Aires, Argentina">
                         </div>
                     </div>
                     <div class="linea-separadora"></div>
@@ -72,7 +73,7 @@
                         <img class="destino" src="..\images\Destino.svg">
                         <div class="texto">
                             <label>DESTINO</label>
-                            <input type="text" value="Madrid, España">
+                            <input type="text" id="input-destino" value="Madrid, España">
                         </div>
                     </div>
                 </div>
@@ -80,12 +81,12 @@
                 <div class="contenedor-fechas"><!-- Contenedor de fecha de ida y vuelta -->
                     <div class="fecha">
                         <label>FECHA SALIDA</label>
-                        <input type="date" value="2026-05-01">
+                        <input type="date" id="input-fecha-salida" value="2026-05-01">
                     </div>
                     <div class="divisor-vertical"></div>
                     <div class="fecha">
                         <label>FECHA VUELTA</label>
-                        <input type="date" value="2026-05-20">
+                        <input type="date" id="input-fecha-vuelta" value="2026-05-20">
                     </div>
                 </div>
 
@@ -95,7 +96,7 @@
                         <label>PASAJEROS Y CLASES</label>
                         <div class="datos">
                             <input type="number" id="passengers" min="1" max="10" value="1">
-                            <select>
+                            <select id="select-clase">
                                 <option>Económica</option>
                                 <option>Premium Economy</option>
                                 <option>Business</option>
@@ -141,7 +142,7 @@
                 <input class="range" type="range">
                 <div class="rango-valores">
                     <span>US$ 1.013</span>
-                    <span>US$ 14.630</span>
+                    <span>US$ 5.000</span>
                 </div>
                 <div class="linea-separadora"></div>
 
@@ -196,7 +197,7 @@
 
         <section class="contenido">
             <article class="opciones-vuelos">
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="1739" data-aerolinea="argentinas" data-escalas="directo">
                     <div class="informacion">
 
                         <div class="fila">
@@ -260,7 +261,7 @@
                     </div>
                 </div>
 
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="2036" data-aerolinea="iberia" data-escalas="directo">
                     <div class="informacion">
 
                         <div class="fila">
@@ -324,7 +325,7 @@
                     </div>
                 </div>
 
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="2286" data-aerolinea="argentinas" data-escalas="directo">
                     <div class="informacion">
 
                         <div class="fila">
@@ -389,7 +390,7 @@
                 </div>
 
 
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="3303" data-aerolinea="europa" data-escalas="directo">
                     <div class="informacion">
 
                         <div class="fila">
@@ -454,7 +455,7 @@
                 </div>
 
 
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="1667" data-aerolinea="latam" data-escalas="2escalas">
                     <div class="informacion">
 
                         <div class="fila">
@@ -518,7 +519,7 @@
                     </div>
                 </div>
 
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="1973" data-aerolinea="lufthansa" data-escalas="2escalas">
                     <div class="informacion">
 
                         <div class="fila">
@@ -583,7 +584,7 @@
                 </div>
 
 
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="2009" data-aerolinea="latam" data-escalas="2escalas">
                     <div class="informacion">
 
                         <div class="fila">
@@ -646,7 +647,7 @@
                         <a href="DetalleDeVuelo.html" class="boton-accion">Comprar</a>
                     </div>
                 </div>
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="1982" data-aerolinea="lufthansa" data-escalas="2escalas">
                     <div class="informacion">
 
                         <div class="fila">
@@ -710,7 +711,7 @@
                     </div>
                 </div>
 
-                <div class="tarjeta-vuelo">
+                <div class="tarjeta-vuelo" data-precio="4077" data-aerolinea="europa" data-escalas="directo">
                     <div class="informacion">
 
                         <div class="fila">
@@ -832,6 +833,7 @@
         </div>
 
     </footer>
+    <script src="../js/resultados.js"></script>
 </body>
 
 </html>
