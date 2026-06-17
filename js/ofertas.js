@@ -1,13 +1,16 @@
 import { destinos } from "./data/destinosList.js";
 
 const contenedor = document.querySelector(".contenedor-ofertas");
-
-destinos.forEach(oferta => {
-    contenedor.innerHTML += `
-    
-         <div class="tarjeta">
+const selectOrden = document.getElementById("orden");
 
 
+function mostrarOfertas(lista) {
+    // Asegurarse que el contenedor este limpio
+    contenedor.innerHTML = ""; 
+
+    lista.forEach(oferta => {
+        contenedor.innerHTML += `
+             <div class="tarjeta">
                 <span class="promo">PROMO</span>
                 <img src="${oferta.imagen}" alt="${oferta.destino}">
 
@@ -31,11 +34,34 @@ destinos.forEach(oferta => {
                                 <img src="../images/flecha-naranja.png" alt="flecha">
                             </a>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-    `;
-});                                
+        `;
+    });
+}
+
+// escucha el cambio
+selectOrden.addEventListener("change", (e) => {
+    const valorSeleccionado = e.target.value;
+    
+    
+    let listaFiltrada = [...destinos];
+
+    if (valorSeleccionado === "precio") {
+       
+        listaFiltrada.sort((a, b) => Number(a.precio) - Number(b.precio));
+    } else if (valorSeleccionado === "nacional") {
+        
+        listaFiltrada = listaFiltrada.filter(oferta => oferta.tipo === "nacional");
+    } else if (valorSeleccionado === "internacional") {
+       
+        listaFiltrada = listaFiltrada.filter(oferta => oferta.tipo === "internacional");
+    }
+
+    
+    mostrarOfertas(listaFiltrada);
+});
+
+
+mostrarOfertas(destinos);
