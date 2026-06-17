@@ -1180,123 +1180,103 @@ nav, .navbar, .menu-container {
     }
     /*FOOTER DEL MOBILE*/
     
-    footer, 
-    .footer-container, 
-    [class*="footer"] {
-        display: flex ;
-        flex-direction: column ; 
-        align-items: center ;
-        text-align: center ;
-        padding: 30px 20px ;
-        gap: 30px ;
+    .footer {
         width: 100%;
-        box-sizing: border-box ;
+        padding: 30px 15px 15px 15px; 
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     
-    footer form, 
-    .newsletter, 
-    [class*="suscribite"] {
-        display: flex ;
-        flex-direction: column ; 
-        align-items: center ;
-        width: 100% ;
-        gap: 12px ;
+    .f-suscripcion {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .f-suscripcion h2 {
+        font-size: 1.5rem; 
+        margin-bottom: 10px;
+    }
+
+    .f-suscripcion p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+        margin-bottom: 20px;
     }
 
     
-    #mail {
-        width: 85% ;
-        max-width: 280px ;
-        padding: 12px ;
-        margin: 0 auto ;
-        border-radius: 25px ;
-        text-align: center ;
+    .divForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 340px;      
+        margin: 0 auto;         
+        gap: 15px;              
     }
 
-   
-    #send, 
-    footer button, 
-    footer input[type="submit"] {
-        width: 50% ;
-        max-width: 140px ;
-        padding: 10px 20px ;
-        margin: 0 auto ;
+  
+    .divForm input[type="email"],
+    .divForm button#Enviar {
+        width: 100% !important; 
+        box-sizing: border-box;
+        padding: 12px 20px;     
+        text-align: center;
     }
 
-    .footer-columnas, 
-    footer .columnas, 
-    [class*="links-footer"] {
-        display: flex ;
-        flex-direction: column ;
-        align-items: center ;
-        width: 100% ;
-        gap: 25px ;
-    }
 
-    footer section, 
-    footer div[class*="col"] {
-        width: 100% ;
-        text-align: center ;
-        margin: 0 ;
-    }
-
-    footer h3, 
-    footer h4, 
-    .footer-columnas h4 {
-        font-size: 1.3rem ;
-        margin-bottom: 10px ;
-        white-space: nowrap ; 
+    
+    .f-Menu {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;   
+        text-align: center;     
+        gap: 30px;             
+        width: 100%;
+        margin-bottom: 40px;
     }
 
     
-    footer ul {
-        padding: 0 ;
-        margin: 0 ;
-        list-style: none ;
+    .f-section {
+        width: 100%;
+        margin: 0 !important; 
     }
 
-    footer ul li {
-        margin-bottom: 8px ;
+    .f-section ul {
+        padding: 0;
+        list-style: none;
     }
 
-    footer ul li a {
-        text-decoration: none ;
-        font-size: 1rem ;
+    .f-section ul li {
+        margin-bottom: 10px;    
     }
 
-    .redes-iconos, 
-    footer .social, 
-    [class*="Redes"] ul {
-        display: flex ;
-        flex-direction: row ; 
-        justify-content: center ;
-        gap: 15px ;
-        width: 100% ;
+    
+    .f-redes {
+        display: flex;
+        justify-content: center; 
+        gap: 15px;
+        padding: 0;
     }
 
-    footer .logo, 
-    footer img[alt*="logo"], 
-    footer [class*="FlyNow"] {
-        display: block ;
-        margin: 10px auto ; 
-        height: 35px ; 
-        width: auto ;
+
+    /* El Logo de FlyNow en el Footer  */
+    .f-logo {
+        max-width: 140px;       
+        height: auto;
+        margin-top: 10px;       
     }
 
-    footer small, 
-    footer .copyright, 
-    footer p:last-child {
-        font-size: 0.85rem ;
-        margin-top: 15px ;
-        width: 100% ;
-        color: rgba(255, 255, 255, 0.7) ;
+
+    /*Copyright / Derechos */
+    .f-Derechos {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); 
+        padding-top: 15px;
     }
 
-    /*11. OCULTAR ELEMENTOS INNECESARIOS EN MOBILE*/
-    a[href*="resultado"], 
-    .volver-resultados,
-    [class*="volver"] {
-        display: none ;
+    .f-Derechos p {
+        font-size: 0.8rem;      
+        margin: 0;
     }
 }
