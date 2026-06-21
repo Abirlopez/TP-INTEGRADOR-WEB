@@ -1,4 +1,5 @@
-import { destinos } from "./data/destinosList.js";
+import { destinos } from "./data/vuelos-data.js";
+
 
 const vuelosNacionales = destinos.filter(destino => destino.tipo === "nacional");
 const vuelosEuropa = destinos.filter(destino => destino.tipo === "internacional");

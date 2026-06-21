@@ -1,6 +1,6 @@
 
 
-const destinos = [
+ export const destinos = [
     {
         destino: "Bariloche",
         pais: "Argentina",

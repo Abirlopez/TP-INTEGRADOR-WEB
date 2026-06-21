@@ -1,4 +1,4 @@
-import { destinos } from "./data/destinosList.js";
+import { destinos } from "./data/ofertasList.js";
 
 const contenedor = document.querySelector(".contenedor-ofertas");
 const selectOrden = document.getElementById("orden");
