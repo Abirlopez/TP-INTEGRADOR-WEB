@@ -241,6 +241,10 @@ function inicializarRangoPrecio() {
 // FILTRAR RESULTADOS 
 function aplicarFiltros() {
   const tarjetas = document.querySelectorAll(".tarjeta-vuelo");
+
+  // Si no hay vuelos cargados, no mostrar mensaje de filtros
+  if (tarjetas.length === 0) return;
+
   let visibles = 0;
 
   tarjetas.forEach(tarjeta => {
@@ -248,12 +252,14 @@ function aplicarFiltros() {
     const aerolinea = tarjeta.dataset.aerolinea;
     const escalas = tarjeta.dataset.escalas;
 
-    let pasaPrecio = precio <= filtros.precioMax;
-    let pasaEscalas = filtros.escalas.size === 0 || filtros.escalas.has(escalas);
-    let pasaAerolinea = filtros.aerolineas.size === 0 || filtros.aerolineas.has(aerolinea);
+    const pasaPrecio = precio <= filtros.precioMax;
+    const pasaEscalas = filtros.escalas.size === 0 || filtros.escalas.has(escalas);
+    const pasaAerolinea = filtros.aerolineas.size === 0 || filtros.aerolineas.has(aerolinea);
 
     const visible = pasaPrecio && pasaEscalas && pasaAerolinea;
+
     tarjeta.style.display = visible ? "" : "none";
+
     if (visible) visibles++;
   });
 
@@ -261,13 +267,20 @@ function aplicarFiltros() {
 }
 
 function mostrarMensajeSinResultados(cantidadVisible) {
+  const tarjetas = document.querySelectorAll(".tarjeta-vuelo");
+
+  if (tarjetas.length === 0) return;
+
   let mensaje = document.getElementById("sin-resultados");
+
   if (cantidadVisible === 0) {
     if (!mensaje) {
       mensaje = document.createElement("p");
       mensaje.id = "sin-resultados";
       mensaje.textContent = "No se encontraron vuelos con los filtros seleccionados.";
-      mensaje.style.cssText = "text-align:center; padding: 2em; color:#777; font-size:1.1em;";
+      mensaje.style.cssText =
+        "text-align:center; padding:2em; color:#777; font-size:1.1em;";
+
       document.querySelector(".opciones-vuelos").appendChild(mensaje);
     }
   } else if (mensaje) {

@@ -77,27 +77,28 @@
 
         <div class="opcion-3">
             <label for="origen">Origen</label>
-      <input type="text" placeholder="Origen" name="origen" id="origen" required>
+      <input type="text" placeholder="Origen" name="origen" id="origen">
        </div>
 
        <div class="opcion-4">
        <label for="destino">Destino</label>
-        <input type="text" placeholder="Destino" name="destino" id="destino" required>
+        <input type="text" placeholder="Destino" name="destino" id="destino">
         </div>
         
         <div class="opcion-5">
             <label for="fecha-ida">Fecha ida</label>
-      <input type="date" name="fecha-ida" id="fecha-ida" required>
+      <input type="date" name= "fecha-ida" id="fecha-ida" max="2027-12-31">
+
         </div>
 
         <div class="opcion-6">
             <label for="fecha-vuelta">Fecha vuelta</label>
-      <input type="date" name="fecha-vuelta" id="fecha-vuelta">
+      <input type="date" name="fecha-vuelta" id="fecha-vuelta" max="2027-12-31"> 
         </div>
 
          <div class="opcion-7">
             <label for="pasajeros">Pasajeros</label>
-      <input type="number" name="pasajeros" id="pasajeros" placeholder="Cantidad de pasajeros" min="1" required>
+      <input type="number" name="pasajeros" id="pasajeros" placeholder="Cantidad de pasajeros" min="1">
         </div>
         <div class="opcion-8">
             <label for="clase">Clase</label>
@@ -266,7 +267,7 @@
     </footer>
 
 
-    <script src="js/index.js"></script>
+    <script type="module" src="js/index.js"></script>
 
 </body>
 

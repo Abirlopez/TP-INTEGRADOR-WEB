@@ -1,98 +1,103 @@
-const form = document.getElementById("form-busqueda");
-const mensaje = document.getElementById("mensajeDeError");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const origen = document.getElementById("origen").value.trim();
-  const destino = document.getElementById("destino").value.trim();
-  const ida = document.getElementById("fecha-ida").value;
-  const vuelta = document.getElementById("fecha-vuelta").value;
-  const pasajeros = document.getElementById("pasajeros").value;
-  const clase = document.getElementById("clase").value;
-
-  
-  mensaje.textContent = "";
-
-
-
-  if (!origen || !destino || !ida || !pasajeros) {
-    mensaje.textContent = "❌ Completá todos los campos obligatorios";
-    return;
-  }
-
-  if (origen.toLowerCase() === destino.toLowerCase()) {
-    mensaje.textContent = "❌ Origen y destino no pueden ser iguales";
-    return;
-  }
-
-  const fechaIda = new Date(ida);
-  const fechaVuelta = new Date(vuelta);
-
-  if (vuelta && fechaVuelta < fechaIda) {
-    mensaje.textContent = "❌ La fecha de vuelta no puede ser anterior a la ida";
-    return;
-  }
-
-  const cant = parseInt(pasajeros);
-  if (isNaN(cant) || cant < 1) {
-    mensaje.textContent = "❌ Ingresá cantidad válida de pasajeros";
-    return;
-  }
-
-
-  mensaje.style.color = "green";
-  mensaje.textContent = "✔ Buscando vuelos...";
-
-  const busqueda = {
-    origen,
-    destino,
-    ida,
-    vuelta,
-    pasajeros: cant,
-    clase
-  };
-
-  localStorage.setItem("busqueda", JSON.stringify(busqueda));
-
- 
-  setTimeout(() => {
-    window.location.href = "pages/resultados.html";
-  }, 800);
-});
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-busqueda");
+  const mensaje = document.getElementById("mensajeDeError");
+  const inputVuelta = document.getElementById("fecha-vuelta");
+
   if (!form) return;
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); 
+  // --- 1. Lógica para bloquear/desbloquear fecha de vuelta ---
+  const radioTipos = form.querySelectorAll('input[name="tipo"]');
 
-    const origen = form.querySelector('input[name="origen"]').value;
-    const destino = form.querySelector('input[name="destino"]').value;
-    const fechaIda = form.querySelector('input[name="fecha-ida"]').value;
-    const fechaVuelta = form.querySelector('input[name="fecha-vuelta"]').value;
-    const pasajeros = form.querySelector('input[name="pasajeros"]').value;
-    const clase = form.querySelector('select[name="clase"]').value;
+  function actualizarEstadoVuelta() {
+    const radioTipo = form.querySelector('input[name="tipo"]:checked');
+    const tipoVueloText = radioTipo ? radioTipo.parentElement.textContent.trim().toLowerCase() : "ida y vuelta";
+
+    if (inputVuelta) {
+      // Si el texto del tipo de vuelo NO incluye la palabra "vuelta" (ej. "Solo ida" o "Ida")
+      if (!tipoVueloText.includes("vuelta")) {
+        inputVuelta.disabled = true;
+        inputVuelta.value = ""; // Limpiamos el valor para no enviar una fecha residual
+        inputVuelta.style.opacity = "0.5"; // Efecto visual de deshabilitado
+      } else {
+        inputVuelta.disabled = false;
+        inputVuelta.style.opacity = "1";
+      }
+    }
+  }
+
+  // Escuchar cambios en los botones de tipo de vuelo
+  radioTipos.forEach(radio => {
+    radio.addEventListener("change", actualizarEstadoVuelta);
+  });
+
+  // Ejecutar al cargar la página por si el formulario inicia con "Solo ida" preseleccionado
+  actualizarEstadoVuelta();
+
+
+  // --- 2. Manejo del Envío del Formulario ---
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const origen = document.getElementById("origen").value.trim();
+    const destino = document.getElementById("destino").value.trim();
+    const ida = document.getElementById("fecha-ida").value;
+    const vuelta = inputVuelta ? inputVuelta.value : "";
+    const pasajeros = document.getElementById("pasajeros").value;
+    const clase = document.getElementById("clase").value;
 
     const radioTipo = form.querySelector('input[name="tipo"]:checked');
     const tipoVuelo = radioTipo ? radioTipo.parentElement.textContent.trim() : "Ida y vuelta";
 
-    
+    if (mensaje) {
+      mensaje.textContent = "";
+      mensaje.style.color = "red";
+    }
+
+    // Validaciones básicas de campos vacíos
+    if (!origen || !destino || !ida || !pasajeros) {
+      if (mensaje) mensaje.textContent = "❌ Completá todos los campos obligatorios";
+      return;
+    }
+
+    if (origen.toLowerCase() === destino.toLowerCase()) {
+      if (mensaje) mensaje.textContent = "❌ Origen y destino no pueden ser iguales";
+      return;
+    }
+
+    const cant = parseInt(pasajeros);
+    if (isNaN(cant) || cant < 1) {
+      if (mensaje) mensaje.textContent = "❌ Ingresá una cantidad válida de pasajeros";
+      return;
+    }
+
+    // Validación de fecha de vuelta (solo si el campo está activo y fue completado)
+    if (inputVuelta && !inputVuelta.disabled && vuelta) {
+      if (vuelta < ida) {
+        if (mensaje) mensaje.textContent = "❌ La fecha de vuelta no puede ser anterior a la de ida";
+        return;
+      }
+    }
+
+    if (mensaje) {
+      mensaje.style.color = "green";
+      mensaje.textContent = "✔ Buscando vuelos...";
+    }
+
     const busqueda = {
       origen,
       destino,
-      fechaIda,
-      fechaVuelta,
-      pasajeros,
+      fechaIda: ida,
+      // Si la fecha de vuelta está deshabilitada, guardamos un string vacío
+      fechaVuelta: inputVuelta && !inputVuelta.disabled ? vuelta : "",
+      pasajeros: cant,
       clase,
       tipoVuelo
     };
 
     sessionStorage.setItem("busquedaVuelo", JSON.stringify(busqueda));
 
-    
-    window.location.href = "pages/resultados.html";
+    setTimeout(() => {
+      window.location.href = "pages/resultados.html";
+    }, 800);
   });
 });
