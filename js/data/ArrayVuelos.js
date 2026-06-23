@@ -1,4 +1,9 @@
+// ============================================================
+// ArrayVuelos.js
+// ============================================================
 
+
+// ─── ARRAY DE VUELOS (usado por otras páginas del grupo) ────
 
 export const vuelos = [
     {
