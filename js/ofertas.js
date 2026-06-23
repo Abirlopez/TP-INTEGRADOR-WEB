@@ -1,8 +1,8 @@
-import { destinos } from "./data/ofertasList.js";
+import { vuelos } from "./data/ArrayVuelos.js";
 
 const contenedor = document.querySelector(".contenedor-ofertas");
 const selectOrden = document.getElementById("orden");
-
+const ofertas = vuelos.filter(vuelo => vuelo.oferta === true);
 
 function mostrarOfertas(lista) {
     // Asegurarse que el contenedor este limpio
@@ -23,7 +23,7 @@ function mostrarOfertas(lista) {
 
                     <div class="parte-abajo">
                         <p>Desde</p>
-                        <p class="precio">US$${oferta.precio}</p>
+                        <p class="precio">US$${oferta.precioBase}</p>
 
                         <div class="ver-vuelos">
                             <a href="../pages/detalleDestino.html?destino=${oferta.destino}">
@@ -46,17 +46,17 @@ selectOrden.addEventListener("change", (e) => {
     const valorSeleccionado = e.target.value;
     
     
-    let listaFiltrada = [...destinos];
+    let listaFiltrada = [...ofertas];
 
     if (valorSeleccionado === "precio") {
        
-        listaFiltrada.sort((a, b) => Number(a.precio) - Number(b.precio));
+        listaFiltrada.sort((a, b) => Number(a.precioBase) - Number(b.precioBase));
     } else if (valorSeleccionado === "nacional") {
         
-        listaFiltrada = listaFiltrada.filter(oferta => oferta.tipo === "nacional");
+        listaFiltrada = listaFiltrada.filter(oferta => oferta.tipoVuelo === "Nacional");
     } else if (valorSeleccionado === "internacional") {
        
-        listaFiltrada = listaFiltrada.filter(oferta => oferta.tipo === "internacional");
+        listaFiltrada = listaFiltrada.filter(oferta => oferta.tipoVuelo === "Internacional");
     }
 
     
@@ -64,4 +64,4 @@ selectOrden.addEventListener("change", (e) => {
 });
 
 
-mostrarOfertas(destinos);
+mostrarOfertas(ofertas);

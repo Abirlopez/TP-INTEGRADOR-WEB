@@ -1,8 +1,8 @@
-import { destinos } from "./data/vuelos-data.js";
+import { vuelos } from "./data/ArrayVuelos.js";
 
 
-const vuelosNacionales = destinos.filter(destino => destino.tipo === "nacional");
-const vuelosEuropa = destinos.filter(destino => destino.tipo === "internacional");
+const vuelosNacionales = vuelos.filter(vuelo => vuelo.tipoVuelo === "Nacional" && !vuelo.oferta);
+const vuelosEuropa = vuelos.filter(vuelo => vuelo.tipoVuelo === "Internacional" && !vuelo.oferta);
 const contenedorNacional = document.getElementById("vuelos-nacionales");
 const contenedorInternacional = document.getElementById("vuelos-inter");
 
@@ -30,7 +30,7 @@ function mostrarVuelos(lista, contenedorId) {
 
                     <div class="parte-abajo">
                         <p>Desde</p>
-                        <p class="precio">US$${vuelo.precio}</p>
+                        <p class="precio">US$${vuelo.precioBase}</p>
 
                         <div class="ver-vuelos">
                             <a href="../pages/resultados.html">
