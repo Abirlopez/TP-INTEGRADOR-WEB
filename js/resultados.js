@@ -1,350 +1,269 @@
+import { renderizarVuelos } from "./data/ArrayVuelos.js";
 
-// GUARDAR VUELO ELEGIDO AL HACER CLICK EN COMPRAR
+
+// ─── PRECARGAR FORMULARIO LATERAL CON LA BÚSQUEDA ───────────
+
+function precargarFormularioBusqueda() {
+    const busquedaGuardada = sessionStorage.getItem("busquedaVuelo");
+    if (!busquedaGuardada) return;
+    const busqueda = JSON.parse(busquedaGuardada);
+
+    const inputOrigen      = document.querySelector(".contenedor-viaje .origenydestino:first-child input");
+    const inputDestino     = document.querySelector(".contenedor-viaje .origenydestino:last-child input");
+    const inputFechaIda    = document.querySelector(".contenedor-fechas .fecha:first-child input");
+    const inputFechaVuelta = document.querySelector(".contenedor-fechas .fecha:last-child input");
+    const inputPasajeros   = document.getElementById("passengers");
+    const selectClase      = document.getElementById("select-clase");
+
+    if (inputOrigen    && busqueda.origen)    inputOrigen.value    = busqueda.origen;
+    if (inputDestino   && busqueda.destino)   inputDestino.value   = busqueda.destino;
+    if (inputFechaIda  && busqueda.fechaIda)  inputFechaIda.value  = busqueda.fechaIda;
+    if (inputPasajeros && busqueda.pasajeros) inputPasajeros.value = busqueda.pasajeros;
+
+    // Si es "Solo ida", limpiar y deshabilitar el campo de fecha vuelta
+    const esSoloIda = busqueda.tipoVuelo && busqueda.tipoVuelo.toLowerCase().includes("solo");
+    if (inputFechaVuelta) {
+        if (esSoloIda) {
+            inputFechaVuelta.value    = "";
+            inputFechaVuelta.disabled = true;
+            inputFechaVuelta.style.opacity = "0.5";
+        } else {
+            if (busqueda.fechaVuelta) inputFechaVuelta.value = busqueda.fechaVuelta;
+            inputFechaVuelta.disabled = false;
+            inputFechaVuelta.style.opacity = "1";
+        }
+    }
+
+    if (selectClase && busqueda.clase) {
+        const match = Array.from(selectClase.options).find(
+            opt => opt.value.toLowerCase().trim() === busqueda.clase.toLowerCase().trim()
+        );
+        if (match) selectClase.value = match.value;
+    }
+
+    // Botones Ida y vuelta / Solo ida
+    const botones = document.querySelectorAll(".tipo-vuelo button");
+    if (busqueda.tipoVuelo && botones.length === 2) {
+        botones.forEach(b => b.classList.remove("activo"));
+        botones[esSoloIda ? 1 : 0].classList.add("activo");
+    }
+}
+
+
+// ─── GUARDAR VUELO AL HACER CLICK EN COMPRAR ────────────────
+
 function inicializarBotonesComprar() {
-  document.querySelectorAll(".tarjeta-vuelo .boton-accion").forEach(boton => {
-    boton.addEventListener("click", function (e) {
-      e.preventDefault();
-      const tarjeta = this.closest(".tarjeta-vuelo");
-      const vuelo = extraerDatosVuelo(tarjeta);
-      sessionStorage.setItem("vueloSeleccionado", JSON.stringify(vuelo));
-      window.location.href = this.getAttribute("href");
+    document.querySelectorAll(".tarjeta-vuelo .boton-accion").forEach(boton => {
+        boton.addEventListener("click", function (e) {
+            e.preventDefault();
+            const tarjeta = this.closest(".tarjeta-vuelo");
+            const vuelo   = extraerDatosVuelo(tarjeta);
+            sessionStorage.setItem("vueloSeleccionado", JSON.stringify(vuelo));
+            window.location.href = this.getAttribute("href");
+        });
     });
-  });
 }
 
 function extraerDatosVuelo(tarjeta) {
-  const filas = tarjeta.querySelectorAll(".fila");
-  const filaIda = filas[0];
-  const filaVuelta = filas[1];
+    const filas   = tarjeta.querySelectorAll(".fila");
+    const filaIda = filas[0];
+    const filaVuelta = filas[1] || null;
+    const busqueda   = JSON.parse(sessionStorage.getItem("busquedaVuelo") || "{}");
 
-  const busquedaGuardada = sessionStorage.getItem("busquedaVuelo");
-  const busqueda = busquedaGuardada ? JSON.parse(busquedaGuardada) : {};
+    const nombreAerolinea = filaIda.querySelector(".nombreAerolinea")?.textContent.trim() || "";
+    const logoAerolinea   = filaIda.querySelector("img")?.getAttribute("src") || "";
+    const precio          = parseInt((tarjeta.querySelector(".monto")?.textContent || "0").replace(/[^\d]/g, ""), 10);
 
-  const nombreAerolinea = filaIda.querySelector(".nombreAerolinea").textContent.trim();
-  const logoAerolinea = filaIda.querySelector("img").getAttribute("src");
-
-  
-  const montoTexto = tarjeta.querySelector(".monto").textContent;
-  const precio = parseInt(montoTexto.replace(/[^\d]/g, ""), 10);
-
-  function datosFila(fila) {
-    const horas = fila.querySelectorAll(".info .hora strong");
-    const ciudades = fila.querySelectorAll(".info .ciudad");
-    return {
-      horaSalida: horas[0] ? horas[0].textContent.trim() : "",
-      horaLlegada: horas[1] ? horas[1].textContent.trim() : "",
-      ciudadSalida: ciudades[0] ? ciudades[0].textContent.trim() : "",
-      ciudadLlegada: ciudades[1] ? ciudades[1].textContent.trim() : "",
-      duracion: fila.querySelector(".tiempo").textContent.trim()
-    };
-  }
-
-  const datosIda = datosFila(filaIda);
-  const datosVuelta = datosFila(filaVuelta);
-
-  return {
-    precio,
-    aerolineaNombre: nombreAerolinea,
-    aerolineaLogo: logoAerolinea,
-    ida: {
-      origen: busqueda.origen ? `${busqueda.origen} (${datosIda.ciudadSalida})` : datosIda.ciudadSalida,
-      destino: busqueda.destino ? `${busqueda.destino} (${datosIda.ciudadLlegada})` : datosIda.ciudadLlegada,
-      horaSalida: datosIda.horaSalida,
-      horaLlegada: datosIda.horaLlegada,
-      duracion: datosIda.duracion,
-      fecha: formatearFecha(busqueda.fechaIda)
-    },
-    vuelta: {
-      origen: busqueda.destino ? `${busqueda.destino} (${datosVuelta.ciudadSalida})` : datosVuelta.ciudadSalida,
-      destino: busqueda.origen ? `${busqueda.origen} (${datosVuelta.ciudadLlegada})` : datosVuelta.ciudadLlegada,
-      horaSalida: datosVuelta.horaSalida,
-      horaLlegada: datosVuelta.horaLlegada,
-      duracion: datosVuelta.duracion,
-      fecha: formatearFecha(busqueda.fechaVuelta)
+    function datosFila(fila) {
+        if (!fila) return {};
+        const horas    = fila.querySelectorAll(".hora strong");
+        const ciudades = fila.querySelectorAll(".ciudad");
+        return {
+            horaSalida:    horas[0]?.textContent.trim()    || "",
+            horaLlegada:   horas[1]?.textContent.trim()    || "",
+            ciudadSalida:  ciudades[0]?.textContent.trim() || "",
+            ciudadLlegada: ciudades[1]?.textContent.trim() || "",
+            duracion:      fila.querySelector(".tiempo")?.textContent.trim() || ""
+        };
     }
-  };
+
+    const ida    = datosFila(filaIda);
+    const vuelta = datosFila(filaVuelta);
+
+    return {
+        precio, aerolineaNombre: nombreAerolinea, aerolineaLogo: logoAerolinea,
+        ida: {
+            origen:      busqueda.origen  ? `${busqueda.origen} (${ida.ciudadSalida})`    : ida.ciudadSalida,
+            destino:     busqueda.destino ? `${busqueda.destino} (${ida.ciudadLlegada})`  : ida.ciudadLlegada,
+            horaSalida:  ida.horaSalida,
+            horaLlegada: ida.horaLlegada,
+            duracion:    ida.duracion,
+            fecha:       formatearFecha(busqueda.fechaIda)
+        },
+        vuelta: filaVuelta ? {
+            origen:      busqueda.destino ? `${busqueda.destino} (${vuelta.ciudadSalida})`  : vuelta.ciudadSalida,
+            destino:     busqueda.origen  ? `${busqueda.origen} (${vuelta.ciudadLlegada})` : vuelta.ciudadLlegada,
+            horaSalida:  vuelta.horaSalida,
+            horaLlegada: vuelta.horaLlegada,
+            duracion:    vuelta.duracion,
+            fecha:       formatearFecha(busqueda.fechaVuelta)
+        } : null
+    };
 }
 
 function formatearFecha(fechaISO) {
-  if (!fechaISO) return "";
-  const dias = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
-  const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-                 "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-  const fecha = new Date(fechaISO + "T00:00:00");
-  return `${dias[fecha.getDay()]}. ${fecha.getDate()} ${meses[fecha.getMonth()]}`;
+    if (!fechaISO) return "";
+    const dias  = ["Dom","Lun","Mar","Mie","Jue","Vie","Sab"];
+    const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
+                   "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    const f = new Date(fechaISO + "T00:00:00");
+    return `${dias[f.getDay()]}. ${f.getDate()} ${meses[f.getMonth()]}`;
 }
-// CARGAR DATOS DE BÚSQUEDA GUARDADOS 
 
-function cargarDatosBusqueda() {
-  const datosGuardados = sessionStorage.getItem("busquedaVuelo");
-  if (!datosGuardados) return; 
- 
-  const busqueda = JSON.parse(datosGuardados);
- 
-  const inputOrigen = document.getElementById("input-origen");
-  const inputDestino = document.getElementById("input-destino");
-  const inputFechaSalida = document.getElementById("input-fecha-salida");
-  const inputFechaVuelta = document.getElementById("input-fecha-vuelta");
-  const inputPasajeros = document.getElementById("passengers");
-  const selectClase = document.getElementById("select-clase");
- 
-  if (inputOrigen && busqueda.origen) inputOrigen.value = busqueda.origen;
-  if (inputDestino && busqueda.destino) inputDestino.value = busqueda.destino;
-  if (inputFechaSalida && busqueda.fechaIda) inputFechaSalida.value = busqueda.fechaIda;
-  if (inputFechaVuelta && busqueda.fechaVuelta) inputFechaVuelta.value = busqueda.fechaVuelta;
-  if (inputPasajeros && busqueda.pasajeros) inputPasajeros.value = busqueda.pasajeros;
- 
-  if (selectClase && busqueda.clase) {
-    
-    const opciones = Array.from(selectClase.options);
-    const coincidencia = opciones.find(
-      opt => opt.value.toLowerCase().trim() === busqueda.clase.toLowerCase().trim()
-    );
-    if (coincidencia) selectClase.value = coincidencia.value;
-  }
- 
-  
-  const botonesTipo = document.querySelectorAll(".tipo-vuelo button");
-  if (busqueda.tipoVuelo && botonesTipo.length === 2) {
-    botonesTipo.forEach(btn => btn.classList.remove("activo"));
-    if (busqueda.tipoVuelo.toLowerCase().includes("solo")) {
-      botonesTipo[1].classList.add("activo");
-    } else {
-      botonesTipo[0].classList.add("activo");
-    }
-  }
-}
- 
-document.addEventListener("DOMContentLoaded", cargarDatosBusqueda);
- 
 
-// COSTOS SIMULADOS DE EQUIPAJE 
+// ─── FILTROS ─────────────────────────────────────────────────
 
-const COSTO_EQUIPAJE = {
-  personal: 0,  
-  mano: 35,
-  bodega: 60
-};
-
+const COSTO_EQUIPAJE = { personal: 0, mano: 35, bodega: 60 };
 
 const filtros = {
-  escalas: new Set(),      
-  equipaje: new Set(),    
-  aerolineas: new Set(),   
-  precioMax: Infinity
+    escalas:    new Set(),
+    equipaje:   new Set(),
+    aerolineas: new Set(),
+    precioMax:  Infinity
 };
 
-
-// 1. INICIALIZAR FILTROS (Escalas, Equipaje, Aerolíneas)
-
 function inicializarFiltros() {
-  configurarGrupoFiltro("escalas", ["direct", "1scale", "2scale"], "all-scales", {
-    direct: "directo",
-    "1scale": "1escala",
-    "2scale": "2escalas"
-  });
+    configurarGrupo("escalas",
+        ["direct","1scale","2scale"], "all-scales",
+        { direct:"directo", "1scale":"1escala", "2scale":"2escalas" });
 
-  configurarGrupoFiltro("equipaje", ["staff", "hand", "store"], "all-options", {
-    staff: "personal",
-    hand: "mano",
-    store: "bodega"
-  });
+    configurarGrupo("equipaje",
+        ["staff","hand","store"], "all-options",
+        { staff:"personal", hand:"mano", store:"bodega" });
 
-  configurarGrupoFiltro("aerolineas", ["argentinas", "europa", "iberia", "latam", "lufthansa"], "all-airlines", {
-    argentinas: "argentinas",
-    europa: "europa",
-    iberia: "iberia",
-    latam: "latam",
-    lufthansa: "lufthansa"
-  });
+    configurarGrupo("aerolineas",
+        ["argentinas","europa","iberia","latam","lufthansa"], "all-airlines",
+        { argentinas:"argentinas", europa:"europa", iberia:"iberia", latam:"latam", lufthansa:"lufthansa" });
 }
 
+function configurarGrupo(nombre, ids, idTodas, mapa) {
+    const todos   = document.getElementById(idTodas);
+    const checks  = ids.map(id => document.getElementById(id));
 
-function configurarGrupoFiltro(nombreFiltro, ids, idTodas, mapaValores) {
-  const checkboxTodas = document.getElementById(idTodas);
-  const checkboxesIndividuales = ids.map(id => document.getElementById(id));
-
-  if (checkboxTodas) {
-    checkboxTodas.addEventListener("change", function () {
-      checkboxesIndividuales.forEach(cb => {
-        if (cb) cb.checked = checkboxTodas.checked;
-      });
-      actualizarFiltro(nombreFiltro, ids, mapaValores);
-      aplicarFiltros();
+    todos?.addEventListener("change", () => {
+        checks.forEach(cb => { if (cb) cb.checked = todos.checked; });
+        actualizarFiltro(nombre, ids, mapa);
+        aplicarFiltros();
     });
-  }
 
-  // Click en cada checkbox individual
-  checkboxesIndividuales.forEach(cb => {
-    if (!cb) return;
-    cb.addEventListener("change", function () {
-      
-      if (!cb.checked && checkboxTodas) {
-        checkboxTodas.checked = false;
-      }
-      
-      const todosMarcados = checkboxesIndividuales.every(c => c && c.checked);
-      if (checkboxTodas) checkboxTodas.checked = todosMarcados;
-
-      actualizarFiltro(nombreFiltro, ids, mapaValores);
-      aplicarFiltros();
-
-      
-      if (nombreFiltro === "equipaje") {
-        actualizarPreciosConEquipaje();
-      }
+    checks.forEach(cb => {
+        if (!cb) return;
+        cb.addEventListener("change", () => {
+            if (!cb.checked && todos) todos.checked = false;
+            if (checks.every(c => c?.checked) && todos) todos.checked = true;
+            actualizarFiltro(nombre, ids, mapa);
+            aplicarFiltros();
+            if (nombre === "equipaje") actualizarPreciosConEquipaje();
+        });
     });
-  });
 }
 
-
-function actualizarFiltro(nombreFiltro, ids, mapaValores) {
-  filtros[nombreFiltro].clear();
-  ids.forEach(id => {
-    const cb = document.getElementById(id);
-    if (cb && cb.checked) {
-      filtros[nombreFiltro].add(mapaValores[id]);
-    }
-  });
+function actualizarFiltro(nombre, ids, mapa) {
+    filtros[nombre].clear();
+    ids.forEach(id => {
+        const cb = document.getElementById(id);
+        if (cb?.checked) filtros[nombre].add(mapa[id]);
+    });
 }
-
-
-// RANGE DE PRECIO EN TIEMPO REAL
 
 function inicializarRangoPrecio() {
-  const range = document.querySelector(".range");
-  const spans = document.querySelectorAll(".rango-valores span");
-  if (!range) return;
+    const range = document.querySelector(".range");
+    const spans = document.querySelectorAll(".rango-valores span");
+    if (!range) return;
 
- 
-  const PRECIO_MIN = 100;
-  const PRECIO_MAX = 5000;
-  range.min = PRECIO_MIN;
-  range.max = PRECIO_MAX;
-  range.value = PRECIO_MAX;
+    const MIN = 100, MAX = 5000;
+    range.min = MIN; range.max = MAX; range.value = MAX;
 
-  function actualizarTextoRango() {
-    const valorActual = parseInt(range.value, 10);
-    spans[0].textContent = `US$ ${PRECIO_MIN.toLocaleString("es-AR")}`;
-    spans[1].textContent = `US$ ${valorActual.toLocaleString("es-AR")}`;
-    filtros.precioMax = valorActual;
-  }
-
-  range.addEventListener("input", function () {
-    actualizarTextoRango();
-    aplicarFiltros();
-  });
-
-  actualizarTextoRango();
+    const actualizar = () => {
+        const val = parseInt(range.value, 10);
+        if (spans[0]) spans[0].textContent = `US$ ${MIN.toLocaleString("es-AR")}`;
+        if (spans[1]) spans[1].textContent = `US$ ${val.toLocaleString("es-AR")}`;
+        filtros.precioMax = val;
+    };
+    range.addEventListener("input", () => { actualizar(); aplicarFiltros(); });
+    actualizar();
 }
 
-// FILTRAR RESULTADOS 
 function aplicarFiltros() {
-  const tarjetas = document.querySelectorAll(".tarjeta-vuelo");
+    const tarjetas = document.querySelectorAll(".tarjeta-vuelo");
+    if (tarjetas.length === 0) return;
 
-  // Si no hay vuelos cargados, no mostrar mensaje de filtros
-  if (tarjetas.length === 0) return;
+    let visibles = 0;
+    tarjetas.forEach(t => {
+        const precio    = parseInt(t.dataset.precio, 10);
+        const aerolinea = t.dataset.aerolinea;
+        const escalas   = t.dataset.escalas;
 
-  let visibles = 0;
+        const visible =
+            precio <= filtros.precioMax &&
+            (filtros.escalas.size    === 0 || filtros.escalas.has(escalas)) &&
+            (filtros.aerolineas.size === 0 || filtros.aerolineas.has(aerolinea));
 
-  tarjetas.forEach(tarjeta => {
-    const precio = parseInt(tarjeta.dataset.precio, 10);
-    const aerolinea = tarjeta.dataset.aerolinea;
-    const escalas = tarjeta.dataset.escalas;
+        t.style.display = visible ? "" : "none";
+        if (visible) visibles++;
+    });
 
-    const pasaPrecio = precio <= filtros.precioMax;
-    const pasaEscalas = filtros.escalas.size === 0 || filtros.escalas.has(escalas);
-    const pasaAerolinea = filtros.aerolineas.size === 0 || filtros.aerolineas.has(aerolinea);
-
-    const visible = pasaPrecio && pasaEscalas && pasaAerolinea;
-
-    tarjeta.style.display = visible ? "" : "none";
-
-    if (visible) visibles++;
-  });
-
-  mostrarMensajeSinResultados(visibles);
+    let msg = document.getElementById("sin-resultados-filtros");
+    if (visibles === 0) {
+        if (!msg) {
+            msg = document.createElement("p");
+            msg.id = "sin-resultados-filtros";
+            msg.textContent = "No se encontraron vuelos con los filtros seleccionados.";
+            msg.style.cssText = "text-align:center;padding:2em;color:#777;font-size:1.1em;";
+            document.querySelector(".opciones-vuelos")?.appendChild(msg);
+        }
+    } else msg?.remove();
 }
 
-function mostrarMensajeSinResultados(cantidadVisible) {
-  const tarjetas = document.querySelectorAll(".tarjeta-vuelo");
-
-  if (tarjetas.length === 0) return;
-
-  let mensaje = document.getElementById("sin-resultados");
-
-  if (cantidadVisible === 0) {
-    if (!mensaje) {
-      mensaje = document.createElement("p");
-      mensaje.id = "sin-resultados";
-      mensaje.textContent = "No se encontraron vuelos con los filtros seleccionados.";
-      mensaje.style.cssText =
-        "text-align:center; padding:2em; color:#777; font-size:1.1em;";
-
-      document.querySelector(".opciones-vuelos").appendChild(mensaje);
-    }
-  } else if (mensaje) {
-    mensaje.remove();
-  }
-}
-
-//  EQUIPAJE
 function tarjetaIncluyeEquipaje(tarjeta, tipo) {
-  
-  const claseImg = { personal: "mochila", mano: "valija", bodega: "maleta" }[tipo];
-  const img = tarjeta.querySelector(`.${claseImg}`);
-  if (!img) return false;
-  return img.getAttribute("src").toLowerCase().includes("-color");
+    const clase = { personal:"mochila", mano:"valija", bodega:"maleta" }[tipo];
+    const img   = tarjeta.querySelector(`.${clase}`);
+    return img ? img.getAttribute("src").toLowerCase().includes("-color") : false;
 }
 
 function actualizarPreciosConEquipaje() {
-  const tarjetas = document.querySelectorAll(".tarjeta-vuelo");
-
-  tarjetas.forEach(tarjeta => {
-    const precioBase = parseInt(tarjeta.dataset.precio, 10);
-    let extra = 0;
-
-    filtros.equipaje.forEach(tipo => {
-      const incluido = tarjetaIncluyeEquipaje(tarjeta, tipo);
-      if (!incluido) {
-        extra += COSTO_EQUIPAJE[tipo];
-      }
+    document.querySelectorAll(".tarjeta-vuelo").forEach(t => {
+        const base  = parseInt(t.dataset.precio, 10);
+        let extra   = 0;
+        filtros.equipaje.forEach(tipo => {
+            if (!tarjetaIncluyeEquipaje(t, tipo)) extra += COSTO_EQUIPAJE[tipo];
+        });
+        const montoEl = t.querySelector(".monto");
+        if (montoEl) {
+            montoEl.textContent = `US$ ${(base + extra).toLocaleString("es-AR")}`;
+            montoEl.style.color = extra > 0 ? "#E9631A" : "";
+        }
+        let detalle = t.querySelector(".extra-equipaje");
+        if (extra > 0) {
+            if (!detalle) {
+                detalle = document.createElement("span");
+                detalle.className = "extra-equipaje";
+                detalle.style.cssText = "font-size:0.7em;color:#999;display:block;";
+                t.querySelector(".precio")?.insertBefore(detalle, t.querySelector(".boton-accion"));
+            }
+            detalle.textContent = `+US$ ${extra} por equipaje`;
+        } else detalle?.remove();
     });
-
-    const totalConExtra = precioBase + extra;
-    const montoEl = tarjeta.querySelector(".monto");
-    if (montoEl) {
-      montoEl.textContent = `US$ ${totalConExtra.toLocaleString("es-AR")}`;
-      montoEl.style.color = extra > 0 ? "#E9631A" : "";
-    }
-
-   
-    let detalleExtra = tarjeta.querySelector(".extra-equipaje");
-    if (extra > 0) {
-      if (!detalleExtra) {
-        detalleExtra = document.createElement("span");
-        detalleExtra.className = "extra-equipaje";
-        detalleExtra.style.cssText = "font-size:0.7em; color:#999; display:block;";
-        tarjeta.querySelector(".precio").insertBefore(detalleExtra, tarjeta.querySelector(".boton-accion"));
-      }
-      detalleExtra.textContent = `incluye +US$ ${extra} equipaje`;
-    } else if (detalleExtra) {
-      detalleExtra.remove();
-    }
-  });
 }
 
-// INICIALIZACIÓN GENERAL
+
+// ─── INICIALIZACIÓN ──────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
-  inicializarFiltros();
-  inicializarRangoPrecio();
-  aplicarFiltros();
+    precargarFormularioBusqueda();
+    renderizarVuelos();          // genera las tarjetas en el DOM
+    inicializarFiltros();
+    inicializarRangoPrecio();
+    aplicarFiltros();
+    inicializarBotonesComprar(); // debe ir DESPUÉS de renderizarVuelos para que las tarjetas ya existan
 });
-document.addEventListener("DOMContentLoaded", () => {
-  inicializarFiltros();
-  inicializarRangoPrecio();
-  aplicarFiltros();
-  inicializarBotonesComprar(); // ← agregar esta línea
-});
-
