@@ -5,20 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/footer.css">   
+    <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/contacto.css">
     <title>Contacto</title>
 </head>
 
 <body>
 
-   <header>
+    <header>
         <nav class="menu">
             <section class="menu-izquierda">
                 <a href="../index.html"><img class="logo" src="../images/logo.png" alt="logo" height="35"></a>
             </section>
 
             <section class="menu-medio">
+                <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="menu-icono-hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="vuelos.html">Vuelos</a></li>
@@ -28,25 +34,25 @@
                     <li><a href="perfil.html">Perfil</a></li>
                 </ul>
             </section>
-         <section class="menu-derecha">
-        
-            
-            <details class="iniciar-sesion">
+            <section class="menu-derecha">
 
-                <summary>
-                    ¡Hola!
-                </summary>
 
-                <a href="../index.html" class="cerrar-sesion">
-                    Cerrar sesión
+                <details class="iniciar-sesion">
+
+                    <summary>
+                        ¡Hola!
+                    </summary>
+
+                    <a href="../index.html" class="cerrar-sesion">
+                        Cerrar sesión
+                    </a>
+
+                </details>
+
+                <a href="InicioSesion.html">
+                    <img class="usuario" src="../images/usuario.png" alt="usuario" width="30">
                 </a>
-
-            </details>
-
-            <a href="InicioSesion.html">
-                <img class="usuario" src="../images/usuario.png" alt="usuario" width="30">
-            </a>
-        </section>
+            </section>
         </nav>
     </header>
 
@@ -54,15 +60,29 @@
         <h2>Contacto</h2>
         <div>
             <p>
-                Te invitamos a mirar la sección de <a class="redireccion" href="../index.html">preguntas frecuentes</a> donde seguro podrás encontrar muchas de las respuestas a tus consultas. En caso de sugerencias, problemas u otra consula podes ponerte en contacto con nosotros por el formulario.
+                Te invitamos a mirar la sección de <a class="redireccion" href="../index.html">preguntas frecuentes</a>
+                donde seguro podrás encontrar muchas de las respuestas a tus consultas. En caso de sugerencias,
+                problemas u otra consula podes ponerte en contacto con nosotros por el formulario.
             </p>
         </div>
 
-        <form class="contacto-form">
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Teléfono">
-            <textarea placeholder="Mensaje" rows="5"></textarea>
+        <!-- novalidate para que el navegador no use sus validaciones por defecto -->
+        <form class="contacto-form" id="form-contacto" novalidate>
+            <div class="grupo-input">
+                <input type="text" id="nombre" placeholder="Nombre">
+            </div>
+
+            <div class="grupo-input">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+
+            <div class="grupo-input">
+                <input type="tel" id="telefono" placeholder="Teléfono">
+            </div>
+
+            <div class="grupo-input">
+                <textarea id="mensaje" placeholder="Mensaje" rows="5"></textarea>
+            </div>
 
             <button type="submit" class="btn-enviar">Enviar</button>
         </form>
@@ -72,7 +92,7 @@
         <div class="f-suscripcion">
             <h2>¡No te pierdas de nada!</h2>
             <p>Hey! Suscribite a nuestro newsletter para enterarte de todo antes que nadie. Que no se corte!</p>
-            <form action="/procesar-datos" method="POST">
+            <form action="../index.html" method="POST">
                 <div class="divForm">
                     <!-- <label for="mail">E-mail:</label> -->
                     <input placeholder="Ingresá tu mail" type="email" id="mail" name="mail" required="">
@@ -122,6 +142,7 @@
         </div>
 
     </footer>
+    <script src="../js/contacto.js"></script>
 </body>
 
 </html>
