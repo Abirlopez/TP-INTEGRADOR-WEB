@@ -1,4 +1,3 @@
-
 function crearBloqueHorario(tramo) {
     if (!tramo.horaSalida) return "";
  
@@ -25,7 +24,7 @@ function crearVueloItem(reserva, index) {
     checkbox.id = id;
     checkbox.className = "boton-vuelo";
  
-    // cabecera: ruta, fechas, precio
+   
     const label = document.createElement("label");
     label.setAttribute("for", id);
     label.className = "vuelo-header";
@@ -40,7 +39,6 @@ function crearVueloItem(reserva, index) {
         </div>
     `;
  
-    // detalle: tramo de ida y vuelta (la vuelta es opcional, ej. "Solo ida")
     const htmlVuelta = reserva.vuelta ? `
         <div class="datos-vuelta">
             <p><strong>Vuelta:</strong> ${reserva.vuelta.origenNombre} (${reserva.vuelta.origenCodigo}) — ${reserva.vuelta.destinoNombre} (${reserva.vuelta.destinoCodigo})</p>
