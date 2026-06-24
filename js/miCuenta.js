@@ -1,62 +1,4 @@
-const reservas = [
-    {
-        origenCiudad: "Buenos Aires",
-        destinoCiudad: "Madrid",
-        destinoCodigo: "MAD",
-        fechaInicio: "10/08/2024",
-        fechaFin: "20/08/2024",
-        precio: 1739,
-        moneda: "USD",
-        ida: {
-            origenNombre: "Buenos Aires",
-            origenCodigo: "BUE",
-            destinoNombre: "París",
-            destinoCodigo: "PAR",
-            horaSalida: "05:30",
-            horaLlegada: "12:45",
-            duracion: "11h 30m",
-            fecha: "23/04 11:30"
-        },
-        vuelta: {
-            origenNombre: "París",
-            origenCodigo: "PAR",
-            destinoNombre: "Buenos Aires",
-            destinoCodigo: "BUE"
-           
-        }
-    },
-    {
-        origenCiudad: "Buenos Aires",
-        destinoCiudad: "París",
-        destinoCodigo: "PAR",
-        fechaInicio: "23/03/2023",
-        fechaFin: "07/04/2023",
-        precio: 2100,
-        moneda: "USD",
-        ida: {
-            origenNombre: "Buenos Aires",
-            origenCodigo: "BUE",
-            destinoNombre: "París",
-            destinoCodigo: "PAR",
-            horaSalida: "05:30",
-            horaLlegada: "12:45",
-            duracion: "11h 30m",
-            fecha: "23/04 11:30"
-        },
-        vuelta: {
-            origenNombre: "París",
-            origenCodigo: "PAR",
-            destinoNombre: "Buenos Aires",
-            destinoCodigo: "BUE",
-            horaSalida: "14:20",
-            horaLlegada: "23:10",
-            duracion: "12h 50m",
-            fecha: "07/04 08:15"
-        }
-    }
-];
- 
-//Construye el bloque "horarios" (ida o vuelta) si hay datos
+
 function crearBloqueHorario(tramo) {
     if (!tramo.horaSalida) return "";
  
@@ -70,8 +12,7 @@ function crearBloqueHorario(tramo) {
     `;
 }
  
-// Crea el HTML de una reserva (un .vuelo-item completo)
-//   a partir de un objeto del array "reservas"
+
 function crearVueloItem(reserva, index) {
     const id = `vuelo-${index + 1}`;
  
@@ -99,7 +40,14 @@ function crearVueloItem(reserva, index) {
         </div>
     `;
  
-    // detalle: tramo de ida y vuelta
+    // detalle: tramo de ida y vuelta (la vuelta es opcional, ej. "Solo ida")
+    const htmlVuelta = reserva.vuelta ? `
+        <div class="datos-vuelta">
+            <p><strong>Vuelta:</strong> ${reserva.vuelta.origenNombre} (${reserva.vuelta.origenCodigo}) — ${reserva.vuelta.destinoNombre} (${reserva.vuelta.destinoCodigo})</p>
+            ${crearBloqueHorario(reserva.vuelta)}
+        </div>
+    ` : '';
+
     const detalle = document.createElement("div");
     detalle.className = "vuelo-detalle";
     detalle.innerHTML = `
@@ -107,10 +55,7 @@ function crearVueloItem(reserva, index) {
             <p><strong>Ida:</strong> ${reserva.ida.origenNombre} (${reserva.ida.origenCodigo}) — ${reserva.ida.destinoNombre} (${reserva.ida.destinoCodigo})</p>
             ${crearBloqueHorario(reserva.ida)}
         </div>
-        <div class="datos-vuelta">
-            <p><strong>Vuelta:</strong> ${reserva.vuelta.origenNombre} (${reserva.vuelta.origenCodigo}) — ${reserva.vuelta.destinoNombre} (${reserva.vuelta.destinoCodigo})</p>
-            ${crearBloqueHorario(reserva.vuelta)}
-        </div>
+        ${htmlVuelta}
     `;
  
     item.appendChild(checkbox);
@@ -153,5 +98,13 @@ function renderizarReservas(listaReservas) {
 // Punto de entrada
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderizarReservas(reservas);
+    const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+    if (!usuarioLogueado) {
+        renderizarReservas([]);
+        return;
+    }
+
+    const reservasGuardadas = JSON.parse(localStorage.getItem("reservasGuardadas")) || [];
+    renderizarReservas(reservasGuardadas);
 });
