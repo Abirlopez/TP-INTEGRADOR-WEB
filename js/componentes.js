@@ -1,4 +1,4 @@
-// COMPONENTE DEL HEADER
+
 class MiHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -40,7 +40,7 @@ class MiHeader extends HTMLElement {
   }
 }
 
-// COMPONENTE DEL FOOTER
+
 class MiFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -95,11 +95,9 @@ class MiFooter extends HTMLElement {
   }
 }
 
-// Registramos los componentes en el navegador
 customElements.define('mi-header', MiHeader);
 customElements.define('mi-footer', MiFooter);
 
-// ─── LOGOUT ──────────────────────────────────────────────────
 document.addEventListener('click', (e) => {
     if (e.target && e.target.id === 'btn-cerrar-sesion') {
         e.preventDefault();
@@ -109,11 +107,19 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ─── MOSTRAR NOMBRE DEL USUARIO EN EL HEADER ─────────────────
 document.addEventListener('DOMContentLoaded', () => {
     const usuario = JSON.parse(localStorage.getItem('usuarioLogueado'));
+
+    const contenedorSesion = document.querySelector('.iniciar-sesion');
     const summary = document.querySelector('.iniciar-sesion summary');
+
+    if (!usuario) {
+
+        if (contenedorSesion) contenedorSesion.style.display = "none";
+        return;
+    }
+
     if (summary) {
-        summary.textContent = usuario ? `¡Hola, ${usuario.nombre.split(' ')[0]}!` : '¡Hola!';
+        summary.textContent = `¡Hola, ${usuario.nombre.split(' ')[0]}!`;
     }
 });
