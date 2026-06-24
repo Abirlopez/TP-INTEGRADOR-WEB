@@ -1,4 +1,4 @@
-import { renderizarVuelos } from "../data/ArrayVuelos.js";
+import { renderizarVuelos } from "./data/ArrayVuelos.js";
 
 
 // ─── PRECARGAR FORMULARIO LATERAL CON LA BÚSQUEDA ───────────
