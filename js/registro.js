@@ -14,8 +14,10 @@ boton.addEventListener("click", (e) =>{
     if(!validarEmail(email))
         errores += " email invalido ";
 
-    if(!validarContrasenia(password, confirmar))
-        errores += "las contrasenias deben ser iguales ";
+    let errorPass = validarContrasenia(password, confirmar);
+
+    if (errorPass !== "") 
+        errores += errorPass;
 
     if(!validarCheckbox())
         errores += "se debe aceptar terminos y condiciones ";
@@ -73,9 +75,14 @@ function validarEmail(email){
         return false;
 }
 
-function validarContrasenia(password, confirmar){
-    if(password === confirmar)
-        return true;
-    else
-        return false;
+function validarContrasenia(password, confirmar) {
+    if (password.length < 6) {
+        return " La contraseña debe tener al menos 6 caracteres";
+    }
+
+    if (password !== confirmar) {
+        return " Las contraseñas no coinciden";
+    }
+
+    return "";
 }
