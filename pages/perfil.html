@@ -7,54 +7,73 @@
     <link rel="stylesheet" href="../styles/perfil.css">
     <link rel="stylesheet" href="../styles/footer.css">
 </head>
+
 <body>
 
-   <mi-header></mi-header>
-    <main class="contenedor">
-        <section class="form_perfil">
+<header class="encabezado">
+  <a href="../index.html">
+    <img class="logo" src="../images/logo.png" height="35">
+  </a>
 
-            <h2>Mi Perfil</h2>
+  <nav>
+    <a href="../index.html">Inicio</a>
+  </nav>
+</header>
 
-            <h3>Datos Personales</h3>
+<main class="contenedor">
 
-            <form>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" placeholder="Nombre" required>
+  <!-- MENSAJE SI NO ESTÁ LOGUEADO -->
+  <section id="sinSesion" class="sin-sesion">
+    <h2>Debes iniciar sesión</h2>
+    <p>Para acceder a tu perfil necesitas iniciar sesión.</p>
+    <a href="InicioSesion.html">Ir al login</a>
+  </section>
 
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido" placeholder="Apellido" required>
+  
+  <section id="perfil" class="perfil">
 
-                <label for="fechaNacimiento">Fecha de nacimiento</label>
-                <input type="date" id="fechaNacimiento" >
+    <h2>Mi perfil</h2>
 
-                <div class="genero">
-                    <label > Masculino
-                        <input type="radio" name="genero" value="M">
-                    </label>
+    <form id="formPerfil">
+    <p id="mensajeError" class="error"></p>
+      <label>Nombre</label>
+      <input id="nombre" type="text">
 
-                    <label> Femenino
-                        <input type="radio" name="genero" value="F">
-                    </label>
-                </div>
-    
-                <h3>Telefonos</h3>
-                <p>Agregá tus teléfonos para que podamos contactarte en caso que ocurra algún cambio.</p>
-                    <label for="pais">Pais De Residencia</label>
-                    <input type="text" id="pais" required>
+      <label>Email</label>
+      <input id="email" type="email" disabled>
 
-                    <label for="area">Area</label>
-                    <input type="tel" id="area" required>
-                   
-                    <label for="telefono">Telefono</label>
-                    <input type="tel" id="telefono" required> 
+      <label>Teléfono</label>
+      <input id="telefono" type="text">
 
-                    <button type="submit" class="boton">Guardar</button>
-                </form> 
-               
-            </section>
-            
-    </main>
-    <mi-footer></mi-footer>
+      <label>Género</label>
+
+<div class="genero">
+  <label> <input type="radio" name="genero" value="m"> Masculino </label>
+
+  <label> <input type="radio" name="genero" value="f"> Femenino </label>
+</div>
+
+      <label>Fecha de nacimiento</label>
+      <input id="nacimiento" type="date">
+
+      <label>Nueva contraseña</label>
+      <input id="password" type="password">
+
+      <button type="submit">Guardar cambios</button>
+
+    </form>
+
+    <button id="logout">Cerrar sesión</button>
+    <button id="eliminar">Eliminar cuenta</button>
+
+  </section>
+
+</main>
+
+<script src="../js/perfil.js"></script>
+
+ <mi-footer></mi-footer>
 <script src="../js/componentes.js"></script>
 </body>
+
 </html>

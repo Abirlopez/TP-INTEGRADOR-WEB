@@ -96,7 +96,7 @@ button{
     font-size: 1rem;
 }
 
-/* LINK ABAJO */
+
 .volver-inicio{
     margin-top: 15px;
     font-size: 14px;
@@ -106,4 +106,85 @@ button{
 .volver-inicio a{
     color: orange;
     text-decoration: none;
+}
+
+
+@media (max-width: 48rem) {
+
+    .encabezado{
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .contenedor{
+        padding: 1rem;
+    }
+
+    .form_registro{
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .form_registro h2{
+        font-size: 1.5rem;
+    }
+
+    .form_registro p{
+        font-size: 0.85rem;
+    }
+
+    input{
+        font-size: 0.9rem;
+    }
+
+    button{
+        width: 100%;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 30rem) {
+
+    .encabezado{
+        padding: 1rem;
+    }
+
+    .logo{
+        height: 2rem;
+    }
+
+    .form_registro{
+        width: 100%;
+        padding: 1.2rem;
+        border-radius: 0.75rem;
+    }
+
+    .form_registro h2{
+        font-size: 1.3rem;
+    }
+
+    .form_registro p{
+        font-size: 0.8rem;
+    }
+
+    .form_registro input{
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .check{
+        font-size: 0.8rem;
+    }
+
+    button{
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .volver-inicio{
+        font-size: 0.8rem;
+    }
 }

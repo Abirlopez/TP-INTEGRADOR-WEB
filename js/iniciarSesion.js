@@ -8,7 +8,7 @@ boton.addEventListener("click", (e)=>{
   let errores = "";
 
   if(!validarEmail(email))
-    errores = "email invalido ";
+    errores += "email invalido ";
 
   if(!validarContrasenia(password))
     errores += "La contraseña debe tener al menos 6 caracteres";

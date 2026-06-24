@@ -3,7 +3,7 @@ const usuarios = [
     id: 1,
     nombre: "Juan Perez",
     email: "juan@gmail.com",
-    password: "1234",
+    password: "1234567",
     reservas: []
   },
   {

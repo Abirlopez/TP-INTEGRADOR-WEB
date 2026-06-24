@@ -27,16 +27,17 @@
                 Ingresá tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.
             </p>
 
-            <form action="InicioSesion.html">
+            <form id="formRecuperar">
                 <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" placeholder="Correo electrónico" required>
+                <input type="email" id="email" placeholder="Correo electrónico" required>
 
-                <button class="boton">Enviar enlace </button>
+                <button class="boton" id="boton">Enviar enlace </button>
+                <p id="mensaje"></p>
             </form>
 
         </section>
 
     </main>
-
+    <script src="../js/recuperar.js"></script>
 </body>
 </html>

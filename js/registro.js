@@ -32,6 +32,11 @@ boton.addEventListener("click", (e) =>{
         nombre: nombre,
         email: email,
         password: password,
+
+        telefono: "",
+        edad: "",
+        genero: "",
+        nacimiento: "", 
         reservas: []
         };
 
