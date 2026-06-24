@@ -88,3 +88,7 @@ a{
   white-space: nowrap; 
   color: black;
 }
+
+.menu-checkbox {
+  display: none !important;
+}
